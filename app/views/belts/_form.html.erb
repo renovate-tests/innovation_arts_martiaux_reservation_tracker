@@ -1,0 +1,22 @@
+<%= form_with(model: belt, local: true) do |form| %>
+  <% if belt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(belt.errors.count, "error") %> prohibited this belt from being saved:</h2>
+
+      <ul>
+      <% belt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

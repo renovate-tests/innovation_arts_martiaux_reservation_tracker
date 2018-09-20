@@ -1,0 +1,40 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+white:
+  color: White
+
+yellow:
+  color: Yellow
+
+orange:
+  color: Orange
+
+red:
+  color: Red
+
+green:
+  color: Green white stripe
+
+green-black:
+  color: Green black stripe
+
+blue:
+  color: Blue white stripe
+
+blue-black:
+  color: Blue black stripe
+
+brown:
+  color: Brown white stripe
+
+brown-stripe-1:
+  color: Brown black stripe
+
+brown-kyu-1:
+  color: Brown kyu 1
+
+brown-kyu-2:
+  color: Brown kyu 2
+
+black:
+  color: Black
