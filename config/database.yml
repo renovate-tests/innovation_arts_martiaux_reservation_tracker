@@ -13,6 +13,7 @@ development:
   <<: *default
   database: innovation_arts_martiaux_reservations_tracker
   password: '@llo123!'
+  user: 'innovation_arts_martiaux_reservations_tracker'
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

@@ -5,7 +5,8 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    sql = 'select students.id, students.name, students.date_of_birth, students.active, belts.color as color from students left join belts on students.belt_id = belts.id'
+    @students = ActiveRecord::Base.connection.execute(sql)
   end
 
   # GET /students/1

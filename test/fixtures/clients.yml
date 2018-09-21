@@ -5,9 +5,11 @@ David Cloutier:
   telephone: 418-998-3798
   email: sheldreyn@gmail.com
   active: true
+  id: 1
 
 Yan Carrier:
   name: Yan Carrier
   telephone: 581-977-0086
   email: innovationartsmartiaux@hotmail.com
   active: false
+  id: 2

@@ -4,27 +4,31 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Date of Birth</th>
-      <th>Active</th>
-      <th>Current Belt</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th><%=  t('name') %></th>
+    <th>Date of Birth</th>
+    <th>Active</th>
+    <th>Current Belt</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @students.each do |student| %>
-      <tr>
-        <td><%= student.name %></td>
-        <td><%= student.date_of_birth %></td>
-        <td><%= student.active %></td>
-        <td><%= student.belt_id %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @students.each do |student| %>
+    <tr>
+      <td><%= student['name'] %></td>
+      <td><%= student['date_of_birth'] %></td>
+      <td><%= student['active'] %></td>
+      <td><%= student['color'] %></td>
+      <td><%= link_to 'Show', student %></td>
+      <td>
+        <%=
+          link_to 'Edit', edit_student_path(student['id'])
+        %>
+      </td>
+      <td><%= link_to 'Destroy', student[:id], method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 

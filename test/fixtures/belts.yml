@@ -2,39 +2,52 @@
 
 white:
   color: White
+  id: 1
 
 yellow:
   color: Yellow
+  id: 2
 
 orange:
   color: Orange
+  id: 3
 
 red:
   color: Red
+  id: 4
 
 green:
   color: Green white stripe
+  id: 5
 
 green-black:
   color: Green black stripe
+  id: 6
 
 blue:
   color: Blue white stripe
+  id: 7
 
 blue-black:
   color: Blue black stripe
+  id: 8
 
 brown:
   color: Brown white stripe
+  id: 9
 
 brown-stripe-1:
   color: Brown black stripe
+  id: 10
 
 brown-kyu-1:
   color: Brown kyu 1
+  id: 11
 
 brown-kyu-2:
   color: Brown kyu 2
+  id: 12
 
 black:
   color: Black
+  id: 13
