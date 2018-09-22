@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Hyper Ninja
+  id: 1
+
+two:
+  name: Karate Gymnique Debutant
+  id: 2
+
+three:
+  name: Karate Psychomoteur avec parent
+    id: 3

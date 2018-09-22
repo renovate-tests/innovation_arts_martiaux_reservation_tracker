@@ -17,6 +17,9 @@ fr:
   destroy: "Effacer"
   editing: "Modification"
   new: "Nouveau"
+  submit: "Soumettre"
+  belts: "Ceintures"
+  course_type: "Types de Cours"
 
   # Default library
   activerecord:

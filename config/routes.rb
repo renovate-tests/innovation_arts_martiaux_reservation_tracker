@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :course_types
   resources :belts do
     scope '/:locale' do
 
