@@ -6,6 +6,8 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.boolean :active, default: true
       t.integer :client_id, null: false
       t.integer :belt_id, null: false
+      t.boolean :trial_class
+      t.boolean :uniform_promotion
       t.timestamps
     end
   end

@@ -6,6 +6,8 @@ ne:
   active: true
   client_id: 1
   belt_id: 5
+  trial_class: false
+  uniform_promotion: false
 
 two:
   name: Yan Carrier
@@ -13,6 +15,8 @@ two:
   active: false
   client_id: 2
   belt_id: 13
+  trial_class: false
+  uniform_promotion: false
 
 three:
   name: Yorrick Cloutier
@@ -20,3 +24,14 @@ three:
   active: true
   client_id: 1
   belt_id: 3
+  trial_class: false
+  uniform_promotion: true
+
+four:
+  name: Amy-Lee Cloutier
+  date_of_birth: 2009-05-18
+  active: true
+  client_id: 1
+  belt_id: 3
+  trial_class: true
+  uniform_promotion: false

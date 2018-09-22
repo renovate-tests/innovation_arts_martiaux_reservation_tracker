@@ -5,8 +5,18 @@ fr:
   email: "Courriel"
   student: "&Eacute;tudiant"
   student_link: "Étudiants"
+  new_student: "Ajouter Nouvel Étudiant"
   date_of_birth: "Date de naissance"
   current_belt: "Ceinture Actuelle"
+  trial_class: "Cours d'essai"
+  uniform_promotion: "Promotion Uniforme"
+  client_linked: "Client Associé"
+  show: "Consulter"
+  edit: "Modifier"
+  back: "Retour"
+  destroy: "Effacer"
+  editing: "Modification"
+  new: "Nouveau"
 
   # Default library
   activerecord:

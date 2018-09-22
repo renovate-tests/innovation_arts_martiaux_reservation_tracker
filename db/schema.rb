@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2018_09_20_014425) do
     t.boolean "active", default: true
     t.integer "client_id", null: false
     t.integer "belt_id", null: false
+    t.boolean "trial_class"
+    t.boolean "uniform_promotion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

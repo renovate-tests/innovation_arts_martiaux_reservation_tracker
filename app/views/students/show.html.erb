@@ -1,27 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('name') %>:</strong>
   <%= @student.name %>
 </p>
 
 <p>
-  <strong>Date of Birth:</strong>
+  <strong><%= t('date_of_birth') %>:</strong>
   <%= @student.date_of_birth %>
 </p>
 
 <p>
-  <strong>Active:</strong>
+  <strong><%= t('active') %>:</strong>
   <%= @student.active %>
 </p>
 <p>
-  <strong>Current Belt:</strong>
+  <strong><%= t('current_belt') %>:</strong>
   <%= @belt.color %>
 </p>
 <p>
-  <strong>Client Linked:</strong>
+  <strong><%= t('client_linked').html_safe %>:</strong>
   <%= @student.client.name %>
 </p>
+<p>
+  <strong><%= t('trial_class') %>:</strong>
+  <%= @student.trial_class %>
+</p>
+<p>
+  <strong><%= t('uniform_promotion') %>:</strong>
+  <%= @student.uniform_promotion %>
+</p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<%= link_to t('edit'), edit_student_path(@student) %> |
+<%= link_to t('back'), students_path %>
