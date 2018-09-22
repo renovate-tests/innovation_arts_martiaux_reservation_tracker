@@ -10,4 +10,28 @@ two:
 
 three:
   name: Karate Psychomoteur avec parent
-    id: 3
+  id: 3
+
+four:
+  name: Karate Gymnique Debutant+
+  id: 4
+
+five:
+  name: Karate Gymnique Intermédiaire
+  id: 5
+
+six:
+  name: Karate Gymnique Avancé
+  id: 6
+
+seven:
+  name: Tricking Débutant
+  id: 7
+
+eight:
+  name: Tricking Intermédiaire
+  id: 8
+
+nine:
+  name: Karaté Parents-Enfants
+  id: 9
