@@ -4,6 +4,9 @@ fr:
   active: "Actif"
   email: "Courriel"
   student: "&Eacute;tudiant"
+  student_link: "Étudiants"
+  date_of_birth: "Date de naissance"
+  current_belt: "Ceinture Actuelle"
 
   # Default library
   activerecord:

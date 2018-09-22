@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>InnovationArtsMartiauxReservationsTracker</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>InnovationArtsMartiauxReservationsTracker</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+<nav>
   <ul>
     <li><%= link_to 'Clients', clients_path %></li>
-    <li><%= link_to 'Students', students_path %></li>
+    <li><%= link_to t('student_link'), students_path %></li>
     <li><%= link_to 'Belts', belts_path %></li>
   </ul>
-    <%= yield %>
-  </body>
+  <div>
+    <% alternate_locales do |l| %>
+      <li class="language <%= l %>"><%= link_to(l, locale: l) %></li>
+    <% end %>
+  </div>
+</nav>
+
+<%= yield %>
+</body>
 </html>
