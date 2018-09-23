@@ -20,7 +20,7 @@
         <td><%= client.telephone %></td>
         <td><%= client.email %></td>
         <td><%= client.active %></td>
-        <td><%= link_to 'Show', client %></td>
+        <td><%= link_to t('show'), client %></td>
         <td><%= link_to 'Edit', edit_client_path(client) %></td>
         <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Client', new_client_path %>
+<%= link_to t('new_client'), new_client_path %>

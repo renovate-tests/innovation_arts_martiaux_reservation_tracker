@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('student').html_safe %>:</strong>
+  <%= @graduation['name'] %>
+</p>
+
+<p>
+  <strong><%= t('belt') %>:</strong>
+  <%= @graduation['color'] %>
+</p>
+
+<p>
+  <strong><%= t('graduation_date') %>:</strong>
+  <%= @graduation['graduation_date'] %>
+</p>
+
+<%= link_to t('edit'), edit_graduation_path(@graduation) %> |
+<%= link_to t('back'), graduations_path %>

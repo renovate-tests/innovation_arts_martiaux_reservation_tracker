@@ -34,6 +34,6 @@
     <%= form.select :belt_id, options_for_select(Belt.all.collect{ |belt| [belt.color, belt.id]}, student.belt_id) %>
   </div>
   <div class="actions">
-    <%= form.submit t('submit') %>
+    <%= form.submit %>
   </div>
 <% end %>

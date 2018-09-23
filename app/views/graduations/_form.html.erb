@@ -1,0 +1,32 @@
+<%= form_with(model: graduation, local: true) do |form| %>
+  <% if graduation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(graduation.errors.count, "error") %> prohibited this graduation from being saved:</h2>
+
+      <ul>
+      <% graduation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label t('student_label') %>
+    <%= form.select :student_id, options_for_select(Student.where(['active = ?', true]).collect {|student| [student.name, student.id]}, graduation.id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('belt') %>
+    <%= form.select :belt_id, options_for_select(Belt.all.collect{ |belt| [belt.color, belt.id]}, graduation.belt_id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('graduation_date') %>
+    <%= form.date_select :graduation_date, start_year: (1.year.ago).year, end_year: Time.now.year   %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

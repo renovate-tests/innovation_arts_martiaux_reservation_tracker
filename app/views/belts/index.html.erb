@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Belts</h1>
+<h1><%= t('belts') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Color</th>
+      <th><%= t('color') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
     <% @belts.each do |belt| %>
       <tr>
         <td><%= belt.color %></td>
-        <td><%= link_to 'Show', belt %></td>
-        <td><%= link_to 'Edit', edit_belt_path(belt) %></td>
-        <td><%= link_to 'Destroy', belt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('show'), belt %></td>
+        <td><%= link_to t('edit'), edit_belt_path(belt) %></td>
+        <td><%= link_to t('destroy'), belt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Belt', new_belt_path %>
+<%= link_to t('new_belt'), new_belt_path %>

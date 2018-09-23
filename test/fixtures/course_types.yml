@@ -35,3 +35,47 @@ eight:
 nine:
   name: Karaté Parents-Enfants
   id: 9
+
+ten:
+  name: Tricking Avancé
+  id: 10
+
+eleven:
+  name: Yoga / Pilates
+  id: 11
+
+twelve:
+  name: Yoga Doux / Yin
+  id: 12
+
+thirteen:
+  name: Combat Debout - MMA Fondamental
+  id: 13
+
+fourteen:
+  name: Ground and Pound - Grappling Fondamental
+  id: 14
+
+fifteen:
+  name: Cross Training
+  id: 15
+
+sixteen:
+  name: MMA fondamental
+  id: 16
+
+seventeen:
+  name: MMA Avancé / Compétition
+  id: 17
+
+eighteen:
+  name: MMA Sparring
+  id: 18
+
+nineteen:
+  name: Open Mat
+  id: 19
+
+twenty:
+  name: Team Innovation
+  id: 20

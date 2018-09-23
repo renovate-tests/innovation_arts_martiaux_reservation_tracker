@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Graduations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('student').html_safe %></th>
+      <th><%= t('belt') %></th>
+      <th><%= t('graduation_date') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @graduations.each do |graduation| %>
+      <tr>
+        <td><%= graduation['name'] %></td>
+        <td><%= graduation['color'] %></td>
+        <td><%= graduation['graduation_date'] %></td>
+        <td><%= link_to t('show'), graduation_path(graduation['id']) %></td>
+        <td><%= link_to t('edit'), edit_graduation_path(graduation['id']) %></td>
+        <td><%= link_to t('destroy'), Graduation.find(graduation['id']), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('new_graduation'), new_graduation_path %>

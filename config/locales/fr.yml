@@ -5,6 +5,7 @@ fr:
   email: "Courriel"
   student: "&Eacute;tudiant"
   student_link: "Étudiants"
+  student_label: "Étudiant"
   new_student: "Ajouter Nouvel Étudiant"
   date_of_birth: "Date de naissance"
   current_belt: "Ceinture Actuelle"
@@ -19,10 +20,22 @@ fr:
   new: "Nouveau"
   submit: "Soumettre"
   belts: "Ceintures"
+  belt: "Ceinture"
+  color: "Couleur"
+  new_belt: "Ajouter Nouvelle Ceinture"
   course_type: "Types de Cours"
+  new_client: "Nouveau Client"
+  new_course_type: "Nouveau type de Cours"
+  graduation_date: "Date de graduation"
+  new_graduation: "Ajouter Graduation"
 
   # Default library
   activerecord:
+    models:
+      belt: "Ceinture"
+      student: "Étudiant"
+      course_type: "Type de Cours"
+
     errors:
       messages:
         record_invalid: 'La validation a échoué : %{errors}'

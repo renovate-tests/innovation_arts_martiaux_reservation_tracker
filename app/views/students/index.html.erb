@@ -24,7 +24,7 @@
       <td><%= student['color'] %></td>
       <td><%= link_to t('show'), student_url(student['id']) %></td>
       <td><%= link_to t('edit'), edit_student_path(student['id']) %></td>
-      <td><%= link_to t('destroy'), student[:id], method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td><%= link_to t('destroy'), Student.find(student['id']), method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>
   </tbody>

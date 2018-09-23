@@ -8,6 +8,7 @@ ne:
   belt_id: 5
   trial_class: false
   uniform_promotion: false
+  id: 1
 
 two:
   name: Yan Carrier
@@ -17,6 +18,7 @@ two:
   belt_id: 13
   trial_class: false
   uniform_promotion: false
+  id: 2
 
 three:
   name: Yorrick Cloutier
@@ -26,6 +28,7 @@ three:
   belt_id: 3
   trial_class: false
   uniform_promotion: true
+  id: 3
 
 four:
   name: Amy-Lee Cloutier
@@ -35,3 +38,4 @@ four:
   belt_id: 3
   trial_class: true
   uniform_promotion: false
+  id: 4

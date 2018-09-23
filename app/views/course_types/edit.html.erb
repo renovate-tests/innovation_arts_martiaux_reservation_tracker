@@ -1,6 +1,6 @@
-<h1>Editing Course Type</h1>
+<h1><%=t('editing') %>  <%= t('course_type')%></h1>
 
 <%= render 'form', course_type: @course_type %>
 
-<%= link_to 'Show', @course_type %> |
-<%= link_to 'Back', course_types_path %>
+<%= link_to t('show'), @course_type %> |
+<%= link_to t('back'), course_types_path %>
