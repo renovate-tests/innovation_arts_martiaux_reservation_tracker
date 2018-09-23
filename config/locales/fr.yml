@@ -28,6 +28,9 @@ fr:
   new_course_type: "Nouveau type de Cours"
   graduation_date: "Date de graduation"
   new_graduation: "Ajouter Graduation"
+  age_group: "Groupe d'Âge"
+  age_groups: "Groupes d'Âge"
+  group: "Groupe"
 
   # Default library
   activerecord:
@@ -35,6 +38,7 @@ fr:
       belt: "Ceinture"
       student: "Étudiant"
       course_type: "Type de Cours"
+      age_group: "group d'Âge"
 
     errors:
       messages:

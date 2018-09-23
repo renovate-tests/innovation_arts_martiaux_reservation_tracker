@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('group')%>:</strong>
+  <%= @age_group.group %>
+</p>
+
+<%= link_to t('edit'), edit_age_group_path(@age_group) %> |
+<%= link_to t('back'), age_groups_path %>
