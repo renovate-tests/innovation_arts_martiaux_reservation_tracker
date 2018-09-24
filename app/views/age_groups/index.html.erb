@@ -4,21 +4,25 @@
 
 <table>
   <thead>
-    <tr>
-      <th><%= t('group') %></th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th><%= t('name') %></th>
+    <th><%= t('min_age') %></th>
+    <th><%= t('max_age') %></th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @age_groups.each do |age_group| %>
-      <tr>
-        <td><%= age_group.group %></td>
-        <td><%= link_to 'Show', age_group %></td>
-        <td><%= link_to t('edit'), edit_age_group_path(age_group) %></td>
-        <td><%= link_to t('destroy'), age_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @age_groups.each do |age_group| %>
+    <tr>
+      <td><%= age_group.name %></td>
+      <td><%= age_group.min_age %></td>
+      <td><%= age_group.max_age %></td>
+      <td><%= link_to t('show'), age_group %></td>
+      <td><%= link_to t('edit'), edit_age_group_path(age_group) %></td>
+      <td><%= link_to t('destroy'), age_group, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 

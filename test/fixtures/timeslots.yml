@@ -1,0 +1,86 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 1900-01-01 16:50:00
+  end_time: 1900-01-01 17:40:00
+  id: 1
+
+two:
+  start_time: 1900-01-01 17:40:00
+  end_time: 1900-01-01 18:30:00
+  id: 2
+
+three:
+  start_time: 1900-01-01 18:05:00
+  end_time: 1900-01-01 18:55:00
+  id: 3
+
+four:
+  start_time: 1900-01-01 18:55:00
+  end_time: 1900-01-01 19:45:00
+  id: 4
+
+five:
+  start_time: 1900-01-01 19:45:00
+  end_time: 1900-01-01 20:35:00
+  id: 5
+
+six:
+  start_time: 1900-01-01 20:35:00
+  end_time: 1900-01-01 21:25:00
+  id: 6
+
+seven:
+  start_time: 1900-01-01 18:30:00
+  end_time: 1900-01-01 20:00:00
+  id: 7
+
+eight:
+  start_time: 1900-01-01 09:00:00
+  end_time: 1900-01-01 09:50:00
+  id: 8
+
+nine:
+  start_time: 1900-01-01 09:25:00
+  end_time: 1900-01-01 10:15:00
+  id: 9
+
+ten:
+  start_time: 1900-01-01 09:50:00
+  end_time: 1900-01-01 10:40:00
+  id: 10
+
+eleven:
+  start_time: 1900-01-01 10:15:00
+  end_time: 1900-01-01 11:05:00
+  id: 11
+
+twelve:
+  start_time: 1900-01-01 10:40:00
+  end_time: 1900-01-01 11:30:00
+  id: 12
+
+thirteen:
+  start_time: 1900-01-01 11:05:00
+  end_time: 1900-01-01 11:55:00
+  id: 13
+
+fourteen:
+  start_time: 1900-01-01 10:00:00
+  end_time: 1900-01-01 10:50:00
+  id: 14
+
+fifteen:
+  start_time: 1900-01-01 10:25:00
+  end_time: 1900-01-01 11:25:00
+  id: 15
+
+sixteen:
+  start_time: 1900-01-01 10:50:00
+  end_time: 1900-01-01 11:40:00
+  id: 16
+
+seventeen:
+  start_time: 1900-01-01 11:15:00
+  end_time: 1900-01-01 12:05:00
+  id: 17

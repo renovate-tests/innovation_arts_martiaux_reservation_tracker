@@ -69,6 +69,6 @@ class AgeGroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def age_group_params
-      params.require(:age_group).permit(:group)
+      params.require(:age_group).permit(:name, :min_age, :max_age)
     end
 end

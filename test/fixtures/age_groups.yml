@@ -1,33 +1,49 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  group: 7ans et +
+  name: 7ans et +
+  min_age: 7
+  max_age: 99
   id: 1
 
 two:
-  group: 4 à 6 ans
+  name: 4 à 6 ans
+  min_age: 4
+  max_age: 6
   id: 2
 
 three:
-  group: 6 à 9 ans
+  name: 6 à 9 ans
+  min_age: 6
+  max_age: 9
   id: 3
 
 four:
-  group: 8 à 14 ans
+  name: 8 à 14 ans
+  min_age: 8
+  max_age: 14
   id: 4
 
 five:
-  group: 8 à 15 ans
+  name: 8 à 15 ans
+  min_age: 8
+  max_age: 15
   id: 5
 
 six:
-  group: Adultes (15 ans et +)
+  name: Adultes (15 ans et +)
+  min_age: 15
+  max_age: 99
   id: 6
 
 seven:
-  group: 2 à 3 ans
+  name: 2 à 3 ans
+  min_age: 2
+  max_age: 3
   id: 7
 
 eight:
-  group: Tous les niveaux
+  name: Tous les niveaux
+  min_age: 2
+  max_age: 99
   id: 8

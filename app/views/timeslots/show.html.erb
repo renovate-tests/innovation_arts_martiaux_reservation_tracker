@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('start_time') %>:</strong>
+  <%= @timeslot.start_time.strftime('%H:%M') %>
+</p>
+
+<p>
+  <strong><%= t('end_time') %>:</strong>
+  <%= @timeslot.end_time.strftime('%H:%M') %>
+</p>
+
+<%= link_to t('edit'), edit_timeslot_path(@timeslot) %> |
+<%= link_to t('back'), timeslots_path %>

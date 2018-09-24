@@ -6,7 +6,7 @@ fr:
   student: "&Eacute;tudiant"
   student_link: "Étudiants"
   student_label: "Étudiant"
-  new_student: "Ajouter Nouvel Étudiant"
+  new_student: "Nouvel Étudiant"
   date_of_birth: "Date de naissance"
   current_belt: "Ceinture Actuelle"
   trial_class: "Cours d'essai"
@@ -31,6 +31,12 @@ fr:
   age_group: "Groupe d'Âge"
   age_groups: "Groupes d'Âge"
   group: "Groupe"
+  min_age: "Âge minimal"
+  max_age: "Âge maximal"
+  timeslots: "Plage Horaire"
+  timeslot: "Plage Horaire"
+  start_time: "Heure début"
+  end_time: "Heure fin"
 
   # Default library
   activerecord:
@@ -38,7 +44,8 @@ fr:
       belt: "Ceinture"
       student: "Étudiant"
       course_type: "Type de Cours"
-      age_group: "group d'Âge"
+      age_group: "Groupe d'Âge"
+      timeslot: "Plage Horaire"
 
     errors:
       messages:

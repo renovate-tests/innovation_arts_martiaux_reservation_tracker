@@ -42,13 +42,19 @@ course_type
 ----------
 id
 type
-age_group (?)
+
+
+age_group
+---------
+id
+name
+min_age
+max_age
 
 
 timeslot
 -------
 id
-day
 start_time
 end_time
 
@@ -60,6 +66,7 @@ id
 course_type_id
 timeslot_id
 number_of_students_allowed
+day
 
 
 reservation**

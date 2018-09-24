@@ -1,0 +1,6 @@
+<h1><%= t('editing') %> <%= t('timeslot') %></h1>
+
+<%= render 'form', timeslot: @timeslot %>
+
+<%= link_to t('show'), @timeslot %> |
+<%= link_to t('back'), timeslots_path %>

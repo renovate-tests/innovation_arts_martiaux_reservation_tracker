@@ -1,8 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong><%= t('group')%>:</strong>
-  <%= @age_group.group %>
+  <strong><%= t('name')%>:</strong>
+  <%= @age_group.name %>
+</p>
+<p>
+  <strong><%= t('min_age')%>:</strong>
+  <%= @age_group.min_age %>
+</p>
+<p>
+  <strong><%= t('max_age')%>:</strong>
+  <%= @age_group.max_age
+  %>
 </p>
 
 <%= link_to t('edit'), edit_age_group_path(@age_group) %> |

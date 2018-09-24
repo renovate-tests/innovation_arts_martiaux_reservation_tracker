@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_23_195258) do
+ActiveRecord::Schema.define(version: 2018_09_24_125938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "age_groups", force: :cascade do |t|
-    t.string "group", null: false
+    t.string "name", null: false
+    t.integer "min_age"
+    t.integer "max_age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +60,14 @@ ActiveRecord::Schema.define(version: 2018_09_23_195258) do
     t.integer "belt_id", null: false
     t.boolean "trial_class"
     t.boolean "uniform_promotion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "timeslots", force: :cascade do |t|
+    t.integer "day", null: false
+    t.time "start_time", null: false
+    t.time "end_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

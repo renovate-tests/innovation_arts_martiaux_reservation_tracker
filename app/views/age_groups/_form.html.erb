@@ -12,8 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :group %>
-    <%= form.text_field :group %>
+    <%= form.label t('name') %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('min_age') %>
+    <%= form.number_field :min_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('max_age') %>
+    <%= form.number_field :max_age %>
   </div>
 
   <div class="actions">

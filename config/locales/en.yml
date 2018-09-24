@@ -5,6 +5,7 @@ en:
   email: "Email"
   student: "Student"
   student_link: "Students"
+  new_student: "New Student"
   date_of_birth: "Date of Birth"
   current_belt: "Current Belt"
   client_linked: "Linked Client"
@@ -27,3 +28,12 @@ en:
   new_course_type: "New Course Type"
   graduation_date: "Graduation Date"
   new_graduation: "New Graduation"
+  age_group: "Age Group"
+  min_age: "Min Age"
+  max_age: "Max Age"
+  timeslots: "Timeslots"
+  start_time: "Start Time"
+  end_time: "End Time"
+  timeslot: "Timeslot"
+
+

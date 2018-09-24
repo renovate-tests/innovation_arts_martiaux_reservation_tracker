@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :timeslots
   resources :age_groups
   resources :graduations
   resources :course_types
