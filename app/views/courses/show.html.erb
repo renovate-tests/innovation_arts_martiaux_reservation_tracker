@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('course_type') %>:</strong>
+  <%= @course['name'] %>
+</p>
+
+<p>
+  <strong><%= t('timeslot') %>:</strong>
+  <%= @course['start_time'] %> - <%= @course['end_time'] %>
+</p>
+
+<p>
+  <strong><%= t('age_group') %>:</strong>
+  <%= @course['name'] %>
+</p>
+
+<p>
+  <strong><%= t('num_of_students_allowed') %>:</strong>
+  <%= @course['number_of_students_allowed'] %>
+</p>
+
+<p>
+  <strong><%= t('day_of_week') %>:</strong>
+  <%= t(get_week_day(@course['day_of_week']))  %>
+</p>
+
+<%= link_to t('edit'), edit_course_path(@course) %> |
+<%= link_to t('back'), courses_path %>

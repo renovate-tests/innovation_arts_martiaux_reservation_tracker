@@ -1,0 +1,38 @@
+<%= form_with(model: course, local: true) do |form| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+        <% course.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label t('course_type') %>
+    <%= form.select 'course_type_id', options_for_select(CourseType.all.order('name').collect {|course_type| [course_type.name, course_type.id]}, course.course_type_id) %>
+  </div>
+  <div class="field">
+    <%= form.label t('age_group') %>
+    <%= form.select 'age_group_id', options_for_select(AgeGroup.all.order('name').collect {|age_group| [age_group.name, age_group.id]}, course.age_group_id) %>
+  </div>
+  <div class="field">
+    <%= form.label t('day_of_week') %>
+    <%= form.select 'day_of_week', options_for_select(DateTime::DAYNAMES.each_with_index.map {|day, index| [t(day), index]}, course.day_of_week) %>
+  </div>
+  <div class="field">
+    <%= form.label t('timeslot') %>
+    <%= form.select 'timeslot_id', options_for_select(Timeslot.all.order('start_time').collect {|timeslot| ["#{timeslot.start_time.strftime('%H:%M')} - #{timeslot.end_time.strftime('%H:%M')}", timeslot.id]}, course.timeslot_id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('num_of_students_allowed') %>
+    <%= form.number_field :number_of_students_allowed %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

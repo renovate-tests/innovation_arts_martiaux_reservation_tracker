@@ -37,6 +37,17 @@ fr:
   timeslot: "Plage Horaire"
   start_time: "Heure début"
   end_time: "Heure fin"
+  courses: "Cours"
+  course: "Cours"
+  day_of_week: "Journée"
+  Monday: "Lundi"
+  Tuesday: "Mardi"
+  Wednesday: "Mercredi"
+  Thursday: "Jeudi"
+  Friday: "Vendredi"
+  Saturday: "Samedi"
+  Sunday: "Dimanche"
+  num_of_students_allowed: "Nombre de places"
 
   # Default library
   activerecord:
@@ -46,6 +57,7 @@ fr:
       course_type: "Type de Cours"
       age_group: "Groupe d'Âge"
       timeslot: "Plage Horaire"
+      course: "Cours"
 
     errors:
       messages:

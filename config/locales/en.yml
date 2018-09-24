@@ -35,5 +35,15 @@ en:
   start_time: "Start Time"
   end_time: "End Time"
   timeslot: "Timeslot"
-
+  courses: "Courses"
+  course: "Course"
+  num_of_students_allowed: "Number of students allowed"
+  day_of_week: "Week Day"
+  Monday: "Monday"
+  Tuesday: "Tuesday"
+  Wednesday: "Wednesday"
+  Thursday: "Thursday"
+  Friday: "Friday"
+  Saturday: "Saturday"
+  Sunday: "Sunday"
 

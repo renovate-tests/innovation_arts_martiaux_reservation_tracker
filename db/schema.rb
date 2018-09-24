@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_24_125938) do
+ActiveRecord::Schema.define(version: 2018_09_24_135851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,12 +44,28 @@ ActiveRecord::Schema.define(version: 2018_09_24_125938) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "courses", force: :cascade do |t|
+    t.integer "course_type_id", null: false
+    t.integer "timeslot_id", null: false
+    t.integer "age_group_id", null: false
+    t.integer "number_of_students_allowed"
+    t.integer "day_of_week", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["age_group_id"], name: "index_courses_on_age_group_id"
+    t.index ["course_type_id"], name: "index_courses_on_course_type_id"
+    t.index ["day_of_week"], name: "index_courses_on_day_of_week"
+    t.index ["timeslot_id"], name: "index_courses_on_timeslot_id"
+  end
+
   create_table "graduations", force: :cascade do |t|
     t.integer "student_id", null: false
     t.integer "belt_id", null: false
     t.date "graduation_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["belt_id"], name: "index_graduations_on_belt_id"
+    t.index ["student_id"], name: "index_graduations_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -62,10 +78,11 @@ ActiveRecord::Schema.define(version: 2018_09_24_125938) do
     t.boolean "uniform_promotion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["belt_id"], name: "index_students_on_belt_id"
+    t.index ["client_id"], name: "index_students_on_client_id"
   end
 
   create_table "timeslots", force: :cascade do |t|
-    t.integer "day", null: false
     t.time "start_time", null: false
     t.time "end_time", null: false
     t.datetime "created_at", null: false

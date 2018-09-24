@@ -60,13 +60,14 @@ end_time
 
 
 
-cours**
+course**
 -------
 id
 course_type_id
 timeslot_id
 number_of_students_allowed
-day
+day_of_week
+age_group_id
 
 
 reservation**

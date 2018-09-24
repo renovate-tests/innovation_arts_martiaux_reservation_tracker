@@ -1,0 +1,65 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_type_id: 1
+  timeslot_id: 1
+  number_of_students_allowed: 15
+  day_of_week: 1
+  age_group_id: 1
+  id: 1
+
+two:
+  id: 2
+  course_type_id: 2
+  timeslot_id: 3
+  age_group_id: 3
+  number_of_students_allowed: 15
+  day_of_week: 1
+
+three:
+  id: 3
+  course_type_id: 2
+  timeslot_id: 2
+  age_group_id: 2	n
+  number_of_students_allowed: 15
+  day_of_week: 1
+
+four:
+  id: 4
+  course_type_id: 4
+  timeslot_id: 7
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 1
+
+five:
+  id: 5
+  course_type_id: 5
+  timeslot_id: 4
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 1
+
+six:
+  id: 6
+  course_type_id: 6
+  timeslot_id: 18
+  age_group_id: 5
+  number_of_students_allowed: 15
+  day_of_week: 1
+
+seven:
+  id: 7
+  course_type_id: 7
+  timeslot_id: 5
+  age_group_id: 6
+  number_of_students_allowed: 15
+  day_of_week: 1
+
+eight:
+  id: 8
+  course_type_id: 10
+  timeslot_id: 6
+  age_group_id: 6
+  number_of_students_allowed: 15
+  day_of_week: 1
