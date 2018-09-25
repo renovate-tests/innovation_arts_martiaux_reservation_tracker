@@ -4,7 +4,7 @@
   <title>InnovationArtsMartiauxReservationsTracker</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -21,21 +21,23 @@
     <li><%= link_to t('timeslots'), timeslots_path %></li>
     <li><%= link_to t('courses'), courses_path %></li>
     <li><%= link_to t('reservations'), reservations_path %></li>
+    <li><%= link_to t('courses_list'), courses_list_path %></li>
   </ul>
   <div>
-    <% alternate_locales do |l| %>
-      <li class="language <%= l %>"><%= link_to(l, locale: l) %></li>
-    <% end %>
+    <ul class="language_select">
+      <% alternate_locales do |l| %>
+        <li class="language <%= l %>"><%= link_to(l, locale: l) %></li>
+      <% end %>
+    </ul>
   </div>
 </nav>
 
 <%= yield %>
-<br>
-<br>
-<br>
-<br>
-<%=
-  debug(params) if Rails.env.development?
-%>
+<footer class="debug">
+  <%=
+    debug(params) if Rails.env.development?
+  %>
+</footer>
+
 </body>
 </html>

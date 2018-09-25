@@ -31,4 +31,20 @@ module ApplicationHelper
     @results = Date.parse(@results[0]).upto(Date.today).count.fdiv(30).round(2)
   end
 
+
+  def get_places_used(a_course)
+    places_left_sql = "select count(1) from reservations where course_id = #{a_course} and active = true"
+    ActiveRecord::Base.connection.execute(places_left_sql).values[0][0]
+  end
+
+  def get_susbcribed_students(a_course)
+    susbcribed_students_sql = "select s.id, s.name, cl.name as client_name, s.trial_class, s.uniform_promotion from reservations r
+                                        left join students s on r.student_id = s.id
+                                        left join clients cl on s.client_id = cl.id
+                                        where r.course_id = #{a_course} and r.active = true"
+
+    ActiveRecord::Base.connection.execute(susbcribed_students_sql)
+  end
+
+
 end

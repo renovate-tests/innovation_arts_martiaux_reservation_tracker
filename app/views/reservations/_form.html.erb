@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label t('student_label') %>
+    <%= form.label t('student_link') %>
     <%= form.select 'student_id', options_for_select(@students.collect{ |student| ["#{student.name} - (#{student.client.name})", student.id] }, reservation.student_id) %>
   </div>
 

@@ -1,0 +1,20 @@
+<main>
+  <% @courses_list.each do |course| %>
+    <article class="cours">
+      <h2><%= course['name'] %></h2>
+      <h3><%= get_week_day(course['day_of_week']) + ' -  ' + course['start_time'] %> - <%= course['start_time'] %> </h3>
+      <h4><%= course['age_group'] %></h4>
+      <h5><%= get_places_used(course['id']) %> / <%= course['number_of_students_allowed'] %></h5>
+      <p>
+      <ul>
+        <% get_susbcribed_students(course['id']).each do |student| %>
+          <li class="student_cours">
+            <%= "#{student['name']} - (#{student['client_name']})" %> <%= ' - ' + t('trial_class') if student['trial_class'] %>  <%= ' - ' + t('uniform_promotion') if student['uniform_promotion'] %>
+            - <%= get_latest_belt_color(student['id']) %> (<%= get_months_since_last_graduations(student['id']) %> Mois)
+        <% end %>
+        </li>
+      </ul>
+      </p>
+    </article>
+  <% end %>
+</main>

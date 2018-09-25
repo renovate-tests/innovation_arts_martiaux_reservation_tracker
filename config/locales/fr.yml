@@ -69,6 +69,8 @@ fr:
   Noire: "Noire"
   Ans: "Ans"
   Mois: "Mois"
+  Orange: "Orange"
+  courses_list: "Listes pour Cours"
 
   # Default library
   activerecord:

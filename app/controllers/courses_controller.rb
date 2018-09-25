@@ -92,6 +92,19 @@ class CoursesController < ApplicationController
     end
   end
 
+
+  def courses_list
+    courses_list_sql = 'select c.id, c.day_of_week, c.number_of_students_allowed, ct.name, t.start_time, t.end_time, a.name as age_group
+                                  from courses c
+                                       left join course_types ct on c.course_type_id = ct.id
+                                       left join timeslots t on c.timeslot_id = t.id
+                                       left join age_groups a on c.age_group_id = a.id'
+    @courses_list = ActiveRecord::Base.connection.execute(courses_list_sql)
+    respond_to do |format|
+      format.html {render 'courses/course_list'}
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
