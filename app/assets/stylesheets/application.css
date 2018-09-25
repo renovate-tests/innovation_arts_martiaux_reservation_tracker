@@ -98,6 +98,9 @@ body {
 
 }
 
+.debug {
+    padding-top: 2rem;
+}
 
 nav {
     padding-top: 1rem;

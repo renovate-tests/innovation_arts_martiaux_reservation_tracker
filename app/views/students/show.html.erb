@@ -7,7 +7,9 @@
 
 <p>
   <strong><%= t('date_of_birth') %>:</strong>
-  <%= @student['date_of_birth'] %> - (<%= @student['date_of_birth'].upto(Date.today).count.fdiv(365).round(1) %> <%=  t('Ans') %>)
+  <% unless @student['date_of_birth'].nil? %>
+    <%= @student['date_of_birth'] %> - (<%= calculate_age(@student['date_of_birth']) %> <%= t('Ans') %>)
+  <% end %>
 </p>
 
 <p>

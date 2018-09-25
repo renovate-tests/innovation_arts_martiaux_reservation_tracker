@@ -12,7 +12,7 @@ class GraduationsController < ApplicationController
   # GET /graduations/1.json
   def show
     sql = "select g.graduation_date, s.name as name, b.color as color from graduations g left join students s on s.id = g.student_id left join belts b on b.id = g.belt_id where g.id = #{params[:id]}"
-    puts @graduation = ActiveRecord::Base.connection.execute(sql)
+     @graduation = ActiveRecord::Base.connection.execute(sql)
     @graduation = @graduation[0]
   end
 

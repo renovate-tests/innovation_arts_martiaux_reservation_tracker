@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def get_week_day(a_day)
-    puts a_day
+     a_day
     days_list = []
     Date::DAYNAMES.each do |day|
       days_list << day
@@ -46,5 +46,9 @@ module ApplicationHelper
     ActiveRecord::Base.connection.execute(susbcribed_students_sql)
   end
 
+
+  def calculate_age(a_date)
+    a_date.upto(Date.today).count.fdiv(365).round(1) unless a_date.nil?
+  end
 
 end

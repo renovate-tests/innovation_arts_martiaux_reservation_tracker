@@ -14,7 +14,7 @@
 
   <tbody>
   <% @reservations.each do |reservation| %>
-    <% puts reservation %>
+    <%  reservation %>
     <tr>
       <td><%= reservation['student_name'] %></td>
       <td><%= "#{t(get_week_day(reservation['day_of_week']))}: #{reservation['start_time']} - #{reservation['end_time']} - #{reservation['course_type']} - #{reservation['age_group']}" %></td>
