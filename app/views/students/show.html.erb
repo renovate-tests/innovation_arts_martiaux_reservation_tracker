@@ -7,7 +7,7 @@
 
 <p>
   <strong><%= t('date_of_birth') %>:</strong>
-  <%= @student['date_of_birth'] %>
+  <%= @student['date_of_birth'] %> - (<%= @student['date_of_birth'].upto(Date.today).count.fdiv(365).round(1) %> <%=  t('Ans') %>)
 </p>
 
 <p>
@@ -16,11 +16,15 @@
 </p>
 <p>
   <strong><%= t('current_belt') %>:</strong>
-  <%= @student['belt_color']%>
+  <%= t(@belt) %>
+</p>
+<p>
+  <strong><%= t('time_since_graduation') %>:</strong>
+  <%= get_months_since_last_graduations(@student['id']) %> <%= t('Mois') %>
 </p>
 <p>
   <strong><%= t('client_linked').html_safe %>:</strong>
-  <%= @student['linked_client'] %>
+  <%= @linked_client %>
 </p>
 <p>
   <strong><%= t('trial_class') %>:</strong>

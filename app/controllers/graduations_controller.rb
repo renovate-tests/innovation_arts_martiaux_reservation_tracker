@@ -29,10 +29,8 @@ class GraduationsController < ApplicationController
   # POST /graduations.json
   def create
     @graduation = Graduation.new(graduation_params)
-    @student = Student.find(graduation_params[:student_id])
-    @student.assign_attributes({id: graduation_params[:student_id], belt_id: graduation_params[:belt_id]})
     respond_to do |format|
-      if @graduation.save && @student.save
+      if @graduation.save
         format.html { redirect_to @graduation, notice: 'Graduation was successfully created.' }
         format.json { render :show, status: :created, location: @graduation }
       else
@@ -45,10 +43,8 @@ class GraduationsController < ApplicationController
   # PATCH/PUT /graduations/1
   # PATCH/PUT /graduations/1.json
   def update
-    @student = Student.find(graduation_params[:student_id])
-    @student.assign_attributes({id: graduation_params[:student_id], belt_id: graduation_params[:belt_id]})
     respond_to do |format|
-      if @graduation.update(graduation_params) && @student.save
+      if @graduation.update(graduation_params)
         format.html { redirect_to @graduation, notice: 'Graduation was successfully updated.' }
         format.json { render :show, status: :ok, location: @graduation }
       else

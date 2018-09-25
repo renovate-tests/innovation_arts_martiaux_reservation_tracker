@@ -14,18 +14,13 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
-    student_query_sql = "select s.id, s.name, s.date_of_birth, s.active, b.color as belt_color, cl.name as linked_client, s.trial_class, s.uniform_promotion
-                         from students s
-                              left join graduations g on g.student_id = s.id
-                              left join belts b on g.belt_id = b.id
-                              left join clients cl on s.client_id = cl.id
-                          where
-                              graduation_date = (select max(graduation_date) from graduations where student_id = #{params[:id]})
-                              and s.id = #{params[:id]}"
-    query_results = ActiveRecord::Base.connection.execute(student_query_sql)
-    query_results.each do |results|
-      @student = results
-    end
+
+    @student = Student.find(params[:id])
+    linked_client_sql = "select cl.name from clients cl left join students s on s.client_id = cl.id where s.id = #{@student[:id]}"
+    @linked_client = ActiveRecord::Base.connection.execute(linked_client_sql).values[0][0]
+    belt_query_sql = "select color from graduations g left join belts b on g.belt_id = b.id where g.student_id = #{params[:id]}"
+    belt_results = ActiveRecord::Base.connection.execute(belt_query_sql).values[0]
+    @belt = belt_results.class == NilClass ? 'White' : belt_results[0]
   end
 
   # GET /students/new

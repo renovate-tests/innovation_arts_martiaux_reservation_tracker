@@ -13,7 +13,7 @@
   <tbody>
     <% @belts.each do |belt| %>
       <tr>
-        <td><%= belt.color %></td>
+        <td><%= t(belt.color) %></td>
         <td><%= link_to t('show'), belt %></td>
         <td><%= link_to t('edit'), edit_belt_path(belt) %></td>
         <td><%= link_to t('destroy'), belt, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -29,6 +29,17 @@ class CoursesController < ApplicationController
     query_results.each do |row|
       @course = row
     end
+
+    places_left_sql = "select count(1) from reservations where course_id = #{params[:id]} and active = true"
+    @places_left = @course['number_of_students_allowed'] - ActiveRecord::Base.connection.execute(places_left_sql).values[0][0]
+
+    susbcribed_students_sql = "select s.id, s.name, cl.name as client_name, s.trial_class, s.uniform_promotion from reservations r
+                                        left join students s on r.student_id = s.id
+                                        left join clients cl on s.client_id = cl.id
+                                        where r.course_id = #{params[:id]} and r.active = true"
+
+    @susbcribed_students = ActiveRecord::Base.connection.execute(susbcribed_students_sql)
+
   end
 
   # GET /courses/new

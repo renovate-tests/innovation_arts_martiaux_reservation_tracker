@@ -6,7 +6,7 @@
 </p>
 <p>
   <strong><%= t('day_of_week') %>:</strong>
-  <%= t(get_week_day(@course['day_of_week']))  %>
+  <%= t(get_week_day(@course['day_of_week'])) %>
 </p>
 <p>
   <strong><%= t('timeslot') %>:</strong>
@@ -23,6 +23,21 @@
   <%= @course['number_of_students_allowed'] %>
 </p>
 
+<p>
+  <strong><%= t('places_left') %>:</strong>
+  <%= @places_left %>
+</p>
+
+<hr>
+
+<p>
+  <strong><%= t('subscribed_students') %>:</strong>
+  <br>
+  <% @susbcribed_students.each do |student| %>
+    <%= "#{student['name']} - (#{student['client_name']})" %> <%= ' - ' + t('trial_class') if student['trial_class'] %>  <%= ' - ' + t('uniform_promotion') if student['uniform_promotion'] %> - <%= get_latest_belt_color(student['id']) %> (<%= get_months_since_last_graduations(student['id']) %> Mois)
+    <br>
+  <% end %>
+</p>
 
 
 <%= link_to t('edit'), edit_course_path(@course) %> |
