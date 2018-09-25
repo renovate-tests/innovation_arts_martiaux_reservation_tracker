@@ -5,10 +5,8 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    sql = 'select s.id, s.name, s.date_of_birth, s.active, s.trial_class, s.uniform_promotion, b.color as belt_color, c.name as linked_client
+    sql = 'select s.id, s.name, s.date_of_birth, s.active, s.trial_class, s.uniform_promotion, c.name as linked_client
                   from students s
-                       left join graduations g on g.student_id = s.id
-                       left join belts b on g.belt_id = b.id
                        left join clients c on c.id = s.client_id'
     @students = ActiveRecord::Base.connection.execute(sql)
   end
@@ -16,7 +14,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
-    student_query_sql = "select s.id, s.name, s.date_of_birth, s.active, b.color as belt_color, cl.name as linked_client
+    student_query_sql = "select s.id, s.name, s.date_of_birth, s.active, b.color as belt_color, cl.name as linked_client, s.trial_class, s.uniform_promotion
                          from students s
                               left join graduations g on g.student_id = s.id
                               left join belts b on g.belt_id = b.id

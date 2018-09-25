@@ -4,8 +4,16 @@ one:
   student_id: 1
   belt_id: 2
   graduation_date: 2018-07-22
+  id: 1
 
 two:
   student_id: 1
   belt_id: 3
   graduation_date: 2018-09-23
+  id: 2
+
+three:
+  student_id: 2
+  belt_id: 2
+  graduation_date: 2018-09-23
+  id: 3

@@ -30,8 +30,13 @@
     <%= form.select 'client_id', options_for_select(@clients.collect{ |client| [client.name, client.id] }) %>
   </div>
   <div class="field">
-    <%= form.label t('current_belt') %>
-    <%= form.select :belt_id, options_for_select(Belt.all.collect{ |belt| [belt.color, belt.id]}, student.belt_id) %>
+    <%= form.label t('trial_class') %>
+    <%= form.check_box :trial_class %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('uniform_promotion') %>
+    <%= form.check_box :uniform_promotion %>
   </div>
   <div class="actions">
     <%= form.submit %>
