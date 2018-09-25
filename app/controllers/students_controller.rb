@@ -1,11 +1,15 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :set_active_clients, only: [:new, :edit, :create, :update]
-  before_action :set_belt, only: [:show, :edit , :update]
+
   # GET /students
   # GET /students.json
   def index
-    sql = 'select s.id, s.name, s.date_of_birth, s.active, b.color as color, c.name as linked_client from students s left join belts b on s.belt_id = b.id left join clients c on c.id = s.client_id'
+    sql = 'select s.id, s.name, s.date_of_birth, s.active, b.color as color, c.name as linked_client
+                  from students s
+                       left join graduations g on g.student_id = s.id
+                       left join belts b on g.belt_id = b.id
+                       left join clients c on c.id = s.client_id'
     @students = ActiveRecord::Base.connection.execute(sql)
   end
 
@@ -70,9 +74,6 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
-  def set_belt
-    @belt = Belt.find(@student.belt_id)
-  end
 
   def set_active_clients
     @clients = Client.where('active = ?', true)
@@ -80,6 +81,6 @@ class StudentsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def student_params
-    params.require(:student).permit(:name, :date_of_birth, :active, :belt_id, :client_id, :trial_class, :uniform_promotion)
+    params.require(:student).permit(:name, :date_of_birth, :active, :client_id, :trial_class, :uniform_promotion)
   end
 end
