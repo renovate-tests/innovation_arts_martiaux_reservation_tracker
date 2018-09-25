@@ -75,3 +75,4 @@ reservation**
 id
 course_id
 student_id
+active

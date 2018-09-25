@@ -24,7 +24,7 @@
       <td><%= course['number_of_students_allowed'] %></td>
       <td><%= link_to t('show'), course_url(course['id']) %></td>
       <td><%= link_to t('edit'), edit_course_path(course['id']) %></td>
-      <td><%= link_to t('destroy'), course, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td><%= link_to t('destroy'), Course.find(course['id']), method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>
   </tbody>

@@ -48,6 +48,9 @@ fr:
   Saturday: "Samedi"
   Sunday: "Dimanche"
   num_of_students_allowed: "Nombre de places"
+  reservations: "Réservations"
+  reservation: "Réservation"
+  nouvelle: "Nouvelle"
 
   # Default library
   activerecord:

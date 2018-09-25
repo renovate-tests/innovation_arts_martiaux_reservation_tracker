@@ -17,12 +17,18 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    sql = "select * from courses c left join course_types ct on c.course_type_id = ct.id left join timeslots t on c.timeslot_id = t.id left join age_groups a on c.age_group_id = a.id where c.id = #{params[:id]}"
+    sql = "select c.id, ct.name as course_type, t.start_time, t.end_time, a.name as age_group, c.day_of_week, c.number_of_students_allowed
+
+             from courses c
+                                   left join course_types ct on c.course_type_id = ct.id
+                                   left join timeslots t on c.timeslot_id = t.id
+                                   left join age_groups a on c.age_group_id = a.id
+            where c.id = #{params[:id]}
+            order by c.day_of_week, t.start_time"
     query_results = ActiveRecord::Base.connection.execute(sql)
     query_results.each do |row|
       @course = row
     end
-    #@course = Course.includes(:course_type, :timeslot, :age_group).where('courses.id = ?', params[:id]).first
   end
 
   # GET /courses/new

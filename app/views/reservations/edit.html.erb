@@ -1,0 +1,6 @@
+<h1><%= t('editing') %> <%= t('reservations') %></h1>
+
+<%= render 'form', reservation: @reservation %>
+
+<%= link_to t('show'), @reservation %> |
+<%= link_to t('back'), reservations_path %>

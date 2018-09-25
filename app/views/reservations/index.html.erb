@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('reservations') %></h1>
+
+<table>
+  <thead>
+  <tr>
+    <th><%= t('student').html_safe %></th>
+    <th><%= t('course') %></th>
+    <th><%= t('active') %></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @reservations.each do |reservation| %>
+    <% puts reservation %>
+    <tr>
+      <td><%= reservation['student_name'] %></td>
+      <td><%= "#{t(get_week_day(reservation['day_of_week']))}: #{reservation['start_time']} - #{reservation['end_time']} - #{reservation['course_type']} - #{reservation['age_group']}" %></td>
+      <td><%= reservation['active'] %></td>
+      <td><%= link_to t('show'), reservation_url(reservation['id']) %></td>
+      <td><%= link_to t('edit'), edit_reservation_path(reservation['id']) %></td>
+      <td><%= link_to t('destroy'), Reservation.find(reservation['id']), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "#{t('nouvelle')} #{t('reservation')}", new_reservation_path %>

@@ -63,3 +63,244 @@ eight:
   age_group_id: 6
   number_of_students_allowed: 15
   day_of_week: 1
+
+nine:
+  id: 9
+  course_type_id: 3
+  timeslot_id: 2
+  age_group_id: 7
+  number_of_students_allowed: 15
+  day_of_week: 2
+
+ten:
+  id: 10
+  course_type_id: 9
+  timeslot_id: 3
+  age_group_id: 8
+  number_of_students_allowed: 15
+  day_of_week: 2
+
+eleven:
+  id: 11
+  course_type_id: 2
+  timeslot_id: 7
+  age_group_id: 3
+  number_of_students_allowed: 15
+  day_of_week: 2
+
+twelve:
+  id: 12
+  course_type_id: 2
+  timeslot_id: 4
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 2
+
+thirteen:
+  id: 13
+  course_type_id: 2
+  timeslot_id: 4
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 2
+
+fourteen:
+  id: 14
+  course_type_id: 5
+  timeslot_id: 18
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 2
+
+fifteen:
+  id: 15
+  course_type_id: 7
+  timeslot_id: 5
+  age_group_id: 6
+  number_of_students_allowed: 15
+  day_of_week: 2
+
+sixteen:
+  id: 16
+  course_type_id: 1
+  timeslot_id: 1
+  age_group_id: 1
+  number_of_students_allowed: 15
+  day_of_week: 3
+
+seventeen:
+  id: 17
+  course_type_id: 2
+  timeslot_id: 2
+  age_group_id: 3
+  number_of_students_allowed: 15
+  day_of_week: 3
+
+eighteen:
+  id: 18
+  course_type_id: 4
+  timeslot_id: 7
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 3
+
+nineteen:
+  id: 19
+  course_type_id: 5
+  timeslot_id: 4
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 3
+
+twenty:
+  id: 20
+  course_type_id: 6
+  timeslot_id: 18
+  age_group_id: 5
+  number_of_students_allowed: 15
+  day_of_week: 3
+
+twentyone:
+  id: 21
+  course_type_id: 7
+  timeslot_id: 5
+  age_group_id: 6
+  number_of_students_allowed: 15
+  day_of_week: 3
+
+twentytwo:
+  id: 22
+  course_type_id: 1
+  timeslot_id: 1
+  age_group_id: 1
+  number_of_students_allowed: 15
+  day_of_week: 4
+
+twentythree:
+  id: 23
+  course_type_id: 9
+  timeslot_id: 2
+  age_group_id: 8
+  number_of_students_allowed: 15
+  day_of_week: 4
+
+twentyfour:
+  id: 24
+  course_type_id: 2
+  timeslot_id: 7
+  age_group_id: 3
+  number_of_students_allowed: 15
+  day_of_week: 4
+
+twentyfive:
+  id: 25
+  course_type_id: 2
+  timeslot_id: 4
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 4
+
+twentysix:
+  id: 26
+  course_type_id: 5
+  timeslot_id: 18
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 4
+
+twentyseven:
+  id: 27
+  course_type_id: 7
+  timeslot_id: 5
+  age_group_id: 6
+  number_of_students_allowed: 15
+  day_of_week: 4
+
+twentyeight:
+  id: 28
+  course_type_id: 8
+  timeslot_id: 6
+  age_group_id: 6
+  number_of_students_allowed: 15
+  day_of_week: 4
+
+twentynine:
+  id: 29
+  course_type_id: 20
+  timeslot_id: 7
+  age_group_id: 8
+  number_of_students_allowed: 15
+  day_of_week: 5
+
+thirty:
+  id: 30
+  course_type_id: 9
+  timeslot_id: 8
+  age_group_id: 8
+  number_of_students_allowed: 15
+  day_of_week: 6
+
+thirtyone:
+  id: 31
+  course_type_id: 21
+  timeslot_id: 9
+  age_group_id: 2
+  number_of_students_allowed: 15
+  day_of_week: 6
+
+thirthytwo:
+  id: 32
+  course_type_id: 2
+  timeslot_id: 10
+  age_group_id: 3
+  number_of_students_allowed: 15
+  day_of_week: 6
+
+thirsthythree:
+  id: 33
+  course_type_id: 5
+  timeslot_id: 12
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 6
+
+thirsthyfour:
+  id: 34
+  course_type_id: 2
+  timeslot_id: 13
+  age_group_id: 2
+  number_of_students_allowed: 15
+  day_of_week: 6
+
+thirthyfive:
+  id: 35
+  course_type_id: 2
+  timeslot_id: 14
+  age_group_id: 2
+  number_of_students_allowed: 15
+  day_of_week: 0
+
+thirthysix:
+  id: 36
+  course_type_id: 9
+  timeslot_id: 15
+  age_group_id: 8
+  number_of_students_allowed: 15
+  day_of_week: 0
+
+thirtyseven:
+  id: 37
+  course_type_id: 2
+  timeslot_id: 16
+  age_group_id: 3
+  number_of_students_allowed: 15
+  day_of_week: 0
+
+thirthyeight:
+  id: 38
+  course_type_id: 2
+  timeslot_id: 17
+  age_group_id: 4
+  number_of_students_allowed: 15
+  day_of_week: 0
+
