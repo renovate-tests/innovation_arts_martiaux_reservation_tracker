@@ -2,33 +2,33 @@
 
 <p>
   <strong><%= t('name') %>:</strong>
-  <%= @student.name %>
+  <%= @student['name'] %>
 </p>
 
 <p>
   <strong><%= t('date_of_birth') %>:</strong>
-  <%= @student.date_of_birth %>
+  <%= @student['date_of_birth'] %>
 </p>
 
 <p>
   <strong><%= t('active') %>:</strong>
-  <%= @student.active %>
+  <%= @student['active'] %>
 </p>
 <p>
   <strong><%= t('current_belt') %>:</strong>
-  <%= @belt.color %>
+  <%= @student['belt_color']%>
 </p>
 <p>
   <strong><%= t('client_linked').html_safe %>:</strong>
-  <%= @student.client.name %>
+  <%= @student['linked_client'] %>
 </p>
 <p>
   <strong><%= t('trial_class') %>:</strong>
-  <%= @student.trial_class %>
+  <%= @student['trial_class'] %>
 </p>
 <p>
   <strong><%= t('uniform_promotion') %>:</strong>
-  <%= @student.uniform_promotion %>
+  <%= @student['uniform_promotion'] %>
 </p>
 
 <%= link_to t('edit'), edit_student_path(@student) %> |

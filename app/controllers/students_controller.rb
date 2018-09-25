@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    sql = 'select s.id, s.name, s.date_of_birth, s.active, b.color as color, c.name as linked_client
+    sql = 'select s.id, s.name, s.date_of_birth, s.active, s.trial_class, s.uniform_promotion, b.color as belt_color, c.name as linked_client
                   from students s
                        left join graduations g on g.student_id = s.id
                        left join belts b on g.belt_id = b.id
@@ -16,7 +16,18 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
-    @student = Student.includes(:client).find(params[:id])
+    student_query_sql = "select s.id, s.name, s.date_of_birth, s.active, b.color as belt_color, cl.name as linked_client
+                         from students s
+                              left join graduations g on g.student_id = s.id
+                              left join belts b on g.belt_id = b.id
+                              left join clients cl on s.client_id = cl.id
+                          where
+                              graduation_date = (select max(graduation_date) from graduations where student_id = #{params[:id]})
+                              and s.id = #{params[:id]}"
+    query_results = ActiveRecord::Base.connection.execute(student_query_sql)
+    query_results.each do |results|
+      @student = results
+    end
   end
 
   # GET /students/new
@@ -83,4 +94,13 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:name, :date_of_birth, :active, :client_id, :trial_class, :uniform_promotion)
   end
+
+  def get_latest_belt_color(a_student)
+    belt_query = "select b.color from graduations g left join belts b on g.belt_id = b.id where graduation_date = (select max(graduation_date) from graduations where student_id = #{a_student})"
+    query_results = ActiveRecord::Base.connection.execute(belt_query)
+    query_results.each do |query_results|
+      query_results['color']
+    end
+  end
+
 end

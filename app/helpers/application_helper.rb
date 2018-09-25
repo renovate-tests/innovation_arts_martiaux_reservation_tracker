@@ -14,5 +14,4 @@ module ApplicationHelper
     days_list[a_day]
   end
 
-
 end
