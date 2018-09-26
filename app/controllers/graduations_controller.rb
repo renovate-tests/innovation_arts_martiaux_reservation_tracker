@@ -4,8 +4,7 @@ class GraduationsController < ApplicationController
   # GET /graduations
   # GET /graduations.json
   def index
-    sql = "select g.id, g.graduation_date, s.name as name, b.color as color from graduations g left join students s on s.id = g.student_id left join belts b on b.id = g.belt_id"
-    @graduations = ActiveRecord::Base.connection.execute(sql)
+    @graduations = Graduation.joins(:student, :belt).select('graduations.id, graduations.graduation_date, students.name as name, belts.color as color').order('students.name, graduations.graduation_date desc').page(params[:page])
   end
 
   # GET /graduations/1

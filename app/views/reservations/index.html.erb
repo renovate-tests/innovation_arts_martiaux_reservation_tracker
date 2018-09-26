@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= t('reservations') %></h1>
-
+<nav class="pagination">
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @reservations %>
+    </div>
+    <%= will_paginate @reservations, :container => false %>
+  </div>
+</nav>
 <table>
   <thead>
   <tr>
@@ -14,10 +21,10 @@
 
   <tbody>
   <% @reservations.each do |reservation| %>
-    <%  reservation %>
+    <% puts reservation.inspect %>
     <tr>
-      <td><%= reservation['student_name'] %></td>
-      <td><%= "#{t(get_week_day(reservation['day_of_week']))}: #{reservation['start_time']} - #{reservation['end_time']} - #{reservation['course_type']} - #{reservation['age_group']}" %></td>
+      <td><%= reservation['student_name'] %> <%= " - (#{reservation['client_name']})" if reservation['client_name'] != reservation['student_name'] %>  </td>
+      <td><%= "#{t(get_week_day(reservation['day_of_week']))}: #{reservation['start_time'].strftime('%H:%M')} - #{reservation['end_time'].strftime('%H:%M')} - #{reservation['course_type']} - #{reservation['age_group']}" %></td>
       <td><%= reservation['active'] %></td>
       <td><%= link_to t('show'), reservation_url(reservation['id']) %></td>
       <td><%= link_to t('edit'), edit_reservation_path(reservation['id']) %></td>

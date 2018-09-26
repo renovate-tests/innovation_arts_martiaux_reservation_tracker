@@ -4,7 +4,7 @@ class CourseTypesController < ApplicationController
   # GET /course_types
   # GET /course_types.json
   def index
-    @course_types = CourseType.all
+    @course_types = CourseType.all.page(params[:page])
   end
 
   # GET /course_types/1

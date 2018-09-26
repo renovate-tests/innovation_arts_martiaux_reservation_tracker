@@ -33,8 +33,7 @@ module ApplicationHelper
 
 
   def get_places_used(a_course)
-    places_left_sql = "select count(1) from reservations where course_id = #{a_course} and active = true"
-    ActiveRecord::Base.connection.execute(places_left_sql).values[0][0]
+    Reservation.where(active: true, course_id: a_course).count
   end
 
   def get_susbcribed_students(a_course)

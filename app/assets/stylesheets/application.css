@@ -83,6 +83,11 @@ html {
 /* end of box model fix */
 
 body {
+    background-attachment: fixed;
+    background-image: url('bg-iam.jpg');
+}
+
+main {
     width: 95%;
     margin: auto;
 }
@@ -96,6 +101,9 @@ body {
         display: none;
     }
 
+    h1, h2, h3, h4, h5, h6 {
+        color: #000000;
+    }
 }
 
 .debug {
@@ -106,18 +114,40 @@ nav {
     padding-top: 1rem;
 }
 
+.pagination {
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
 li {
     display: inline;
     padding: 1rem;
 }
 
+li.course_details{
+    display: block;
+    text-decoration: none;
+    padding: 0.25rem 1rem;
+}
+
 a {
     padding: 0.5rem;
+    color: #ef4036;
+}
+
+a:hover, a:focus {
+    color: white;
+    background: #fca420;
+    border-color: #ff3333;
 }
 
 strong {
     font-weight: bold;
     padding: 0.25rem;
+    color: #ef4036;
+
 }
 
 label {
@@ -130,10 +160,24 @@ p {
 
 th {
     font-weight: bold;
+    color: #ef4036;
+    padding-right: 1rem;
+}
+
+tr:nth-child(even) {
+    background: rgba(195, 195, 195, 0.35)
 }
 
 td {
-    padding: 1rem;
+    padding: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ef4036;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ef4036;
 }
 
 h1 {
@@ -165,3 +209,4 @@ h5 {
     font-weight: bold;
     padding-bottom: 0.5rem;
 }
+

@@ -10,34 +10,36 @@
 </head>
 
 <body>
-<nav>
-  <ul>
-    <li><%= link_to 'Clients', clients_path %></li>
-    <li><%= link_to t('student_link'), students_path %></li>
-    <li><%= link_to t('belts'), belts_path %></li>
-    <li><%= link_to 'Graduations', graduations_path %></li>
-    <li><%= link_to t('course_type'), course_types_path %></li>
-    <li><%= link_to t('age_groups'), age_groups_path %></li>
-    <li><%= link_to t('timeslots'), timeslots_path %></li>
-    <li><%= link_to t('courses'), courses_path %></li>
-    <li><%= link_to t('reservations'), reservations_path %></li>
-    <li><%= link_to t('courses_list'), courses_list_path %></li>
-  </ul>
-  <div>
-    <ul class="language_select">
-      <% alternate_locales do |l| %>
-        <li class="language <%= l %>"><%= link_to(l, locale: l) %></li>
-      <% end %>
+<main>
+  <nav>
+    <ul>
+      <li><%= link_to 'Clients', clients_path %></li>
+      <li><%= link_to t('student_link'), students_path %></li>
+      <li><%= link_to t('belts'), belts_path %></li>
+      <li><%= link_to 'Graduations', graduations_path %></li>
+      <li><%= link_to t('course_type'), course_types_path %></li>
+      <li><%= link_to t('age_groups'), age_groups_path %></li>
+      <li><%= link_to t('timeslots'), timeslots_path %></li>
+      <li><%= link_to t('courses'), courses_path %></li>
+      <li><%= link_to t('reservations'), reservations_path %></li>
+      <li><%= link_to t('courses_list'), courses_list_path %></li>
     </ul>
-  </div>
-</nav>
+    <div>
+      <ul class="language_select">
+        <% alternate_locales do |l| %>
+          <li class="language <%= l %>"><%= link_to(l, locale: l) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
 
-<%= yield %>
-<footer class="debug">
-  <%=
-    debug(params) if Rails.env.development?
-  %>
-</footer>
+  <%= yield %>
 
+  <footer class="debug">
+    <%=
+      debug(params) if Rails.env.development?
+    %>
+  </footer>
+</main>
 </body>
 </html>

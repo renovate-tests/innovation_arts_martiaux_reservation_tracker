@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= t('course_type') %></h1>
-
+<nav class="pagination">
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @course_types %>
+    </div>
+    <%= will_paginate @course_types, :container => false %>
+  </div>
+</nav>
 <table>
   <thead>
     <tr>

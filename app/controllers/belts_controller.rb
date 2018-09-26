@@ -4,7 +4,7 @@ class BeltsController < ApplicationController
   # GET /belts
   # GET /belts.json
   def index
-    @belts = Belt.all
+    @belts = Belt.all.page(params[:page])
   end
 
   # GET /belts/1

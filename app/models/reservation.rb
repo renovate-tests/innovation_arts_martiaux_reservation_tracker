@@ -1,4 +1,4 @@
 class Reservation < ApplicationRecord
-  has_one :course_type, foreign_key: 'id'
-  has_one :student, foreign_key: 'id'
+  belongs_to :student, :foreign_key => 'student_id'
+  belongs_to :course, :foreign_key => 'course_id'
 end

@@ -5,22 +5,21 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    sql = 'select s.id, s.name, s.date_of_birth, s.active, s.trial_class, s.uniform_promotion, c.name as linked_client
-                  from students s
-                       left join clients c on c.id = s.client_id'
-    @students = ActiveRecord::Base.connection.execute(sql)
+    @students = Student.joins('INNER JOIN clients cl on students.client_id = cl.id').select('students.id, students.name,
+                                                                                             students.date_of_birth, students.active,
+                                                                                             students.trial_class, students.uniform_promotion,
+                                                                                             cl.name as linked_client').page(params[:page])
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
 
-    @student = Student.find(params[:id])
-    linked_client_sql = "select cl.name from clients cl left join students s on s.client_id = cl.id where s.id = #{@student[:id]}"
-    @linked_client = ActiveRecord::Base.connection.execute(linked_client_sql).values[0][0]
-    belt_query_sql = "select color from graduations g left join belts b on g.belt_id = b.id where g.student_id = #{params[:id]}"
-    belt_results = ActiveRecord::Base.connection.execute(belt_query_sql).values[0]
-    @belt = belt_results.class == NilClass ? 'White' : belt_results[0]
+    @student = Student.joins('INNER JOIN clients cl on students.client_id = cl.id').select('students.id, students.name, students.date_of_birth, students.active,
+                                                                                            students.client_id, students.trial_class, students.uniform_promotion,
+                                                                                            cl.name as client_name').find(params[:id])
+    @belt = Graduation.joins('INNER JOIN belts b on graduations.belt_id = b.id
+                              INNER JOIN students s on graduations.student_id = s.id').select('b.color').where(student_id: params[:id]).last
   end
 
   # GET /students/new
@@ -80,7 +79,7 @@ class StudentsController < ApplicationController
 
 
   def set_active_clients
-    @clients = Client.where('active = ?', true)
+    @clients = Client.where('active = ?', true).order('name')
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

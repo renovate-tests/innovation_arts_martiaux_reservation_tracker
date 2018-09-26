@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label t('student_link') %>
-    <%= form.select 'student_id', options_for_select(@students.collect{ |student| ["#{student.name} - (#{student.client.name})", student.id] }, reservation.student_id) %>
+    <%= form.select 'student_id', options_for_select(@students.collect{ |student| ["#{student.name} - (#{student.client_name})", student.student_id] }, reservation.student_id) %>
   </div>
 
   <div class="field">
     <%= form.label t('course') %>
-    <%= form.select 'course_id', options_for_select(@courses.collect{ |course| ["#{t(get_week_day(course['day_of_week']))}: #{course['start_time']} - #{course['end_time']} - #{course['course_type']} - #{course['age_group']}", course['id']] }, reservation['course_id']) %>
+    <%= form.select 'course_id', options_for_select(@courses.collect{ |course| ["#{t(get_week_day(course['day_of_week']))}: #{course['start_time'].strftime('%H:%M')} - #{course['end_time'].strftime('%H:%M')} - #{course['course_type']} - #{course['age_group']}", course['id']] }, reservation['course_id']) %>
   </div>
 
   <div class="field">

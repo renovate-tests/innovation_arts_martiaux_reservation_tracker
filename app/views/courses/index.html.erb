@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= t('course') %></h1>
-
+<nav class="pagination">
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @courses %>
+    </div>
+    <%= will_paginate @courses, :container => false %>
+  </div>
+</nav>
 <table>
   <thead>
   <tr>
@@ -9,7 +16,7 @@
     <th><%= t('day_of_week') %></th>
     <th><%= t('timeslot') %></th>
     <th><%= t('age_group') %></th>
-    <th><%= t('num_of_students_allowed') %></th>
+    <th><%= t('places_left') %></th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -19,9 +26,9 @@
     <tr>
       <td><%= course['course_type'] %></td>
       <td><%= t(get_week_day(course['day_of_week'])) %></td>
-      <td><%= course['start_time'] %> - <%= course['end_time'] %></td>
+      <td><%= course['start_time'].strftime('%H:%M') %> - <%= course['end_time'].strftime('%H:%M') %></td>
       <td><%= course['age_group']%></td>
-      <td><%= course['number_of_students_allowed'] %></td>
+      <td><%= course['number_of_students_allowed'] - get_places_used(course['id'])  %></td>
       <td><%= link_to t('show'), course_url(course['id']) %></td>
       <td><%= link_to t('edit'), edit_course_path(course['id']) %></td>
       <td><%= link_to t('destroy'), Course.find(course['id']), method: :delete, data: {confirm: 'Are you sure?'} %></td>

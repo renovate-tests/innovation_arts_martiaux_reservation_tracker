@@ -4,7 +4,7 @@ class TimeslotsController < ApplicationController
   # GET /timeslots
   # GET /timeslots.json
   def index
-    @timeslots = Timeslot.all
+    @timeslots = Timeslot.all.page(params[:page])
   end
 
   # GET /timeslots/1

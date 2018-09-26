@@ -10,7 +10,7 @@
 </p>
 <p>
   <strong><%= t('timeslot') %>:</strong>
-  <%= @course['start_time'] %> - <%= @course['end_time'] %>
+  <%= @course['start_time'].strftime('%H:%M') %> - <%= @course['end_time'].strftime('%H:%M') %>
 </p>
 
 <p>
@@ -32,11 +32,14 @@
 
 <p>
   <strong><%= t('subscribed_students') %>:</strong>
-  <br>
+<ul>
   <% @susbcribed_students.each do |student| %>
-    <%= "#{student['name']} - (#{student['client_name']})" %> <%= ' - ' + t('trial_class') if student['trial_class'] %>  <%= ' - ' + t('uniform_promotion') if student['uniform_promotion'] %> - <%= get_latest_belt_color(student['id']) %> (<%= get_months_since_last_graduations(student['id']) %> Mois)
-    <br>
+    <li class="course_details">
+      <%= "#{student['name']} - (#{student['client_name']})" %> <%= ' - ' + t('trial_class') if student['trial_class'] %>  <%= ' - ' + t('uniform_promotion') if student['uniform_promotion'] %>
+      - <%= get_latest_belt_color(student['id']) %> (<%= get_months_since_last_graduations(student['id']) %> Mois)
+    </li>
   <% end %>
+</ul>
 </p>
 
 

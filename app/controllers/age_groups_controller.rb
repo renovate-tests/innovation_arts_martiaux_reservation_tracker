@@ -4,7 +4,7 @@ class AgeGroupsController < ApplicationController
   # GET /age_groups
   # GET /age_groups.json
   def index
-    @age_groups = AgeGroup.all
+    @age_groups = AgeGroup.all.page(params[:page])
   end
 
   # GET /age_groups/1

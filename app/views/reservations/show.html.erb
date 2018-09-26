@@ -2,12 +2,12 @@
 
 <p>
   <strong><%= t('student').html_safe %>:</strong>
-  <%= "#{@reservation['student_name']} - (#{@reservation['client_name']})" %>
+  <%= "#{@reservation.student_name} - (#{@reservation.client_name})" %>
 </p>
 
 <p>
   <strong><%= t('course') %>:</strong>
-  <%= "#{t(get_week_day(@reservation['day_of_week']))}: #{@reservation['start_time']} - #{@reservation['end_time']} - #{@reservation['course_type']} - #{@reservation['age_group']}" %>
+  <%= "#{t(get_week_day(@reservation.day_of_week))}: #{@reservation['start_time'].strftime('%H:%M')} - #{@reservation['end_time'].strftime('%H:%M')} - #{@reservation['course_type']} - #{@reservation['age_group']}" %>
 </p>
 
 <p>

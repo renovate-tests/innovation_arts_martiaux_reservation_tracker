@@ -4,41 +4,28 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    sql = "select c.id, ct.name as course_type, t.start_time, t.end_time, a.name as age_group, c.day_of_week, c.number_of_students_allowed
+        @courses = Course.joins('left join course_types ct on courses.course_type_id = ct.id
+                                 left join timeslots t on courses.timeslot_id = t.id
+                                 left join age_groups a on courses.age_group_id = a.id').select('courses.id, ct.name as course_type,
+                                                                                                 t.start_time, t.end_time, a.name as age_group,
+                                                                                                 courses.day_of_week,
+                                                                                                 courses.number_of_students_allowed').order('courses.day_of_week, t.start_time').page(params[:page])
 
-             from courses c
-                                   left join course_types ct on c.course_type_id = ct.id
-                                   left join timeslots t on c.timeslot_id = t.id
-                                   left join age_groups a on c.age_group_id = a.id
-             order by c.day_of_week, t.start_time"
-    @courses = ActiveRecord::Base.connection.execute(sql)
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
-    sql = "select c.id, ct.name as course_type, t.start_time, t.end_time, a.name as age_group, c.day_of_week, c.number_of_students_allowed
+    @course = Course.joins('left join course_types ct on courses.course_type_id = ct.id
+                                 left join timeslots t on courses.timeslot_id = t.id
+                                 left join age_groups a on courses.age_group_id = a.id').select('courses.id, ct.name as course_type,
+                                                                                                 t.start_time, t.end_time, a.name as age_group,
+                                                                                                 courses.day_of_week,
+                                                                                                 courses.number_of_students_allowed').find(params[:id])
 
-             from courses c
-                                   left join course_types ct on c.course_type_id = ct.id
-                                   left join timeslots t on c.timeslot_id = t.id
-                                   left join age_groups a on c.age_group_id = a.id
-            where c.id = #{params[:id]}
-            order by c.day_of_week, t.start_time"
-    query_results = ActiveRecord::Base.connection.execute(sql)
-    query_results.each do |row|
-      @course = row
-    end
-
-    places_left_sql = "select count(1) from reservations where course_id = #{params[:id]} and active = true"
-    @places_left = @course['number_of_students_allowed'] - ActiveRecord::Base.connection.execute(places_left_sql).values[0][0]
-
-    susbcribed_students_sql = "select s.id, s.name, cl.name as client_name, s.trial_class, s.uniform_promotion from reservations r
-                                        left join students s on r.student_id = s.id
-                                        left join clients cl on s.client_id = cl.id
-                                        where r.course_id = #{params[:id]} and r.active = true"
-
-    @susbcribed_students = ActiveRecord::Base.connection.execute(susbcribed_students_sql)
+    @places_left = @course['number_of_students_allowed'] - Reservation.where(active: true, course_id: params[:id]).count
+    @susbcribed_students = Reservation.joins('left join students s on reservations.student_id = s.id
+                                              left join clients cl on s.client_id = cl.id').select('s.id, s.name, cl.name as client_name, s.trial_class, s.uniform_promotion').where(course_id: params[:id], active: true)
 
   end
 

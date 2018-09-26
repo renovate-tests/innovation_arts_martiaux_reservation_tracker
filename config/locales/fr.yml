@@ -72,6 +72,7 @@ fr:
   Orange: "Orange"
   courses_list: "Listes pour Cours"
 
+
   # Default library
   activerecord:
     models:

@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
   validates(:name, presence: true)
-  belongs_to :client
-  has_one :belt
-  has_many :graduation, :dependent => :destroy
+  has_one :belt, foreign_key: 'student_id'
+  has_many :graduation, foreign_key: 'student_id', :dependent => :destroy
+  has_many :reservation, foreign_key: 'student_id', :dependent => :destroy
 end
