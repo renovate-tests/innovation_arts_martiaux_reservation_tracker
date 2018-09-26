@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
     @students = Student.joins('INNER JOIN clients cl on students.client_id = cl.id').select('students.id, students.name,
                                                                                              students.date_of_birth, students.active,
                                                                                              students.trial_class, students.uniform_promotion,
-                                                                                             cl.name as linked_client').page(params[:page])
+                                                                                             cl.name as linked_client').order('students.active desc, linked_client, students.name').page(params[:page])
   end
 
   # GET /students/1
@@ -79,7 +79,7 @@ class StudentsController < ApplicationController
 
 
   def set_active_clients
-    @clients = Client.where('active = ?', true).order('name')
+    @clients = Client.where('active = ?', true).order('active desc, name')
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

@@ -92,8 +92,22 @@ main {
     margin: auto;
 }
 
+.language {
+    padding: 0;
+}
+
 .language_select {
-    padding: 1rem 0;
+    padding: 1rem;
+    font-size: x-small;
+}
+
+.language_select li:nth-child(2):before {
+    content: '/';
+}
+
+.will_paginate {
+    text-transform: none;
+    margin-bottom: 1rem;
 }
 
 @media print {
@@ -111,7 +125,17 @@ main {
 }
 
 nav {
-    padding-top: 1rem;
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    font-family: 'Arimo', 'Helvetica', 'Arial', 'Lucida Grande', 'Sans-Serif';
+    line-height: 1.8rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
 }
 
 .pagination {
@@ -123,10 +147,10 @@ nav {
 
 li {
     display: inline;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
-li.course_details{
+li.course_details {
     display: block;
     text-decoration: none;
     padding: 0.25rem 1rem;

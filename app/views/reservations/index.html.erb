@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= t('reservations') %></h1>
-<nav class="pagination">
+<nav class="will_paginate">
   <div class="digg_pagination">
     <div class="page_info">
       <%= page_entries_info @reservations %>
@@ -21,7 +21,6 @@
 
   <tbody>
   <% @reservations.each do |reservation| %>
-    <% puts reservation.inspect %>
     <tr>
       <td><%= reservation['student_name'] %> <%= " - (#{reservation['client_name']})" if reservation['client_name'] != reservation['student_name'] %>  </td>
       <td><%= "#{t(get_week_day(reservation['day_of_week']))}: #{reservation['start_time'].strftime('%H:%M')} - #{reservation['end_time'].strftime('%H:%M')} - #{reservation['course_type']} - #{reservation['age_group']}" %></td>

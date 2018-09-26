@@ -69,4 +69,8 @@ en:
   Ans: "Years Old"
   Mois: "Months"
   courses_list: "Lists for Courses"
+  true: "Yes"
+  false: "No"
+  True: "Yes"
+  False: "No"
 
