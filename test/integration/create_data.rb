@@ -81,11 +81,33 @@ def create_reservations
 end
 
 
+def create_graduations
+  create_browser
+  flash_and_ensure_click(@browser.a(text: 'Graduations'))
+  350.times do |iteration|
+    flash_and_ensure_click(@browser.a(text: 'Ajouter Graduation'))
+    seed = Random.new
+    student_count = @browser.select_list(:id => 'graduation_student_id').options.count
+    @browser.select(id: 'graduation_student_id').options[seed.rand(student_count)].click
+    course_count = @browser.select_list(:id => 'graduation_belt_id').options.count
+    @browser.select(id: 'graduation_belt_id').options[seed.rand(course_count)].click
+    @browser.select(id: 'graduation_graduation_date_3i').options[seed.rand(30)].click
+    @browser.select(id: 'graduation_graduation_date_2i').options[seed.rand(12)].click
+
+
+    @browser.button(type: 'submit').click
+    @browser.p(id: 'notice').flash
+    flash_and_ensure_click(@browser.a(text: 'Retour'))
+  end
+end
+
+
 def get_action
   puts "Enter action:"
   puts "1- Create Clients"
   puts "2- Create Students"
   puts "3- Create Reservations"
+  puts "4- Create Graduations"
   gets.strip
 end
 
@@ -107,6 +129,12 @@ when "2"
 when "3"
   begin
     create_reservations
+  rescue
+    retry
+  end
+when "4"
+  begin
+    create_graduations
   rescue
     retry
   end

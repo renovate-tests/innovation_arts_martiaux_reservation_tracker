@@ -90,6 +90,7 @@ body {
 main {
     width: 95%;
     margin: auto;
+    font-family: 'Arimo', 'Helvetica', 'Arial', 'Lucida Grande', 'Sans-Serif';
 }
 
 .language {
@@ -138,7 +139,12 @@ nav a {
     width: 100%;
     margin: auto;
     padding: 1rem;
-    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+}
+
+
+form, table {
+    padding-bottom: 1rem;
 }
 
 footer.credits {
@@ -204,43 +210,32 @@ td {
     padding: 0.5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, label {
     color: #ef4036;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #ef4036;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
 }
 
 h1 {
-    font-weight: bold;
     font-size: xx-large;
-    padding-bottom: 0.5rem;
 }
 
 h2 {
-    font-weight: bold;
     font-size: x-large;
-    padding-bottom: 0.5rem;
 }
 
 h3 {
-    font-weight: bold;
     font-size: large;
-    padding-bottom: 0.5rem;
 }
 
 h4 {
     font-size: 0.9rem;
-    font-weight: bold;
-    padding-bottom: 0.5rem;
 }
 
 h5 {
     font-size: 0.8rem;
-    font-weight: bold;
-    padding-bottom: 0.5rem;
 }
+
 
 /* Course_list section */
 

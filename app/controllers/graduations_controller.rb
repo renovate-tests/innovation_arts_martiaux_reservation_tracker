@@ -4,15 +4,22 @@ class GraduationsController < ApplicationController
   # GET /graduations
   # GET /graduations.json
   def index
-    @graduations = Graduation.joins(:student, :belt).select('graduations.id, graduations.graduation_date, students.name as name, belts.color as color').order('students.name, graduations.graduation_date desc').page(params[:page])
+    @graduations = Graduation.joins('INNER JOIN students s on graduations.student_id = s.id
+                                   INNER JOIN belts b on graduations.belt_id = b.id
+                                   INNER JOIN clients cl on s.client_id = cl.id
+                                  ').select('graduations.id, graduations.graduation_date, s.name as name,
+                                             b.color as color, cl.name as client_name').order('cl.name, s.name, graduations.graduation_date desc').page(params[:page])
   end
 
   # GET /graduations/1
   # GET /graduations/1.json
   def show
-    sql = "select g.graduation_date, s.name as name, b.color as color from graduations g left join students s on s.id = g.student_id left join belts b on b.id = g.belt_id where g.id = #{params[:id]}"
-     @graduation = ActiveRecord::Base.connection.execute(sql)
-    @graduation = @graduation[0]
+   @graduation = Graduation.joins('INNER JOIN students s on graduations.student_id = s.id
+                                   INNER JOIN belts b on graduations.belt_id = b.id
+                                   INNER JOIN clients cl on s.client_id = cl.id
+                                  ').select('graduations.id, graduations.graduation_date, s.name as name,
+                                             b.color as color, cl.name as client_name').find(params[:id])
+
   end
 
   # GET /graduations/new
@@ -30,11 +37,11 @@ class GraduationsController < ApplicationController
     @graduation = Graduation.new(graduation_params)
     respond_to do |format|
       if @graduation.save
-        format.html { redirect_to @graduation, notice: 'Graduation was successfully created.' }
-        format.json { render :show, status: :created, location: @graduation }
+        format.html {redirect_to @graduation, notice: 'Graduation was successfully created.'}
+        format.json {render :show, status: :created, location: @graduation}
       else
-        format.html { render :new }
-        format.json { render json: @graduation.errors, status: :unprocessable_entity }
+        format.html {render :new}
+        format.json {render json: @graduation.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -44,11 +51,11 @@ class GraduationsController < ApplicationController
   def update
     respond_to do |format|
       if @graduation.update(graduation_params)
-        format.html { redirect_to @graduation, notice: 'Graduation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @graduation }
+        format.html {redirect_to @graduation, notice: 'Graduation was successfully updated.'}
+        format.json {render :show, status: :ok, location: @graduation}
       else
-        format.html { render :edit }
-        format.json { render json: @graduation.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @graduation.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -58,19 +65,20 @@ class GraduationsController < ApplicationController
   def destroy
     @graduation.destroy
     respond_to do |format|
-      format.html { redirect_to graduations_url, notice: 'Graduation was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to graduations_url, notice: 'Graduation was successfully destroyed.'}
+      format.json {head :no_content}
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_graduation
-      @graduation = Graduation.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def graduation_params
-      params.require(:graduation).permit(:student_id, :belt_id, :graduation_date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_graduation
+    @graduation = Graduation.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def graduation_params
+    params.require(:graduation).permit(:student_id, :belt_id, :graduation_date)
+  end
 end
