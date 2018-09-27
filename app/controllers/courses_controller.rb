@@ -88,7 +88,7 @@ class CoursesController < ApplicationController
                                        left join course_types ct on c.course_type_id = ct.id
                                        left join timeslots t on c.timeslot_id = t.id
                                        left join reservations r on r.course_id = c.id
-                                       left join age_groups a on c.age_group_id = a.id where r.active= true'
+                                       left join age_groups a on c.age_group_id = a.id where r.active= true order by c.day_of_week, t.start_time, ct.name'
     @courses_list = ActiveRecord::Base.connection.execute(courses_list_sql)
     respond_to do |format|
       format.html {render 'courses/course_list'}
