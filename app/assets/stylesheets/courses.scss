@@ -9,6 +9,6 @@
 }
 
 .student_cours {
-  display: inline-grid;
-  column-count: 2;
+  display: block;
+  overflow: auto;
 }

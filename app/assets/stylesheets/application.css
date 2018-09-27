@@ -111,7 +111,7 @@ main {
 }
 
 @media print {
-    nav, .debug {
+    nav, .debug, .credits {
         display: none;
     }
 
@@ -145,6 +145,14 @@ nav a {
     margin-bottom: 1rem;
 }
 
+footer.credits {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background: rgba(255,255,255,0);
+    padding-top: 1rem 0;
+}
+
 li {
     display: inline;
     padding: 0.5rem;
@@ -154,6 +162,16 @@ li.course_details {
     display: block;
     text-decoration: none;
     padding: 0.25rem 1rem;
+}
+
+li.student_cours {
+    wrap-option: none;
+}
+
+li.icon {
+    padding-right: 1rem;
+    wrap-option: none;
+    font-size: 40px;
 }
 
 a {

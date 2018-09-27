@@ -34,7 +34,10 @@
   </nav>
 
   <%= yield %>
-
+  <footer class="credits">
+    credits:
+    <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a>
+  </footer>
   <footer class="debug">
     <%=
       debug(params) if Rails.env.development?

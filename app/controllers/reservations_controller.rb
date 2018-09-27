@@ -15,7 +15,7 @@ class ReservationsController < ApplicationController
                                        INNER JOIN age_groups a on a.id = c.age_group_id
                                        ').select('s.name as student_name, cl.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
-                                                  a.name as age_group, reservations.active, reservations.id').order('reservations.active desc, c.day_of_week, t.start_time').page(params[:page])
+                                                  a.name as age_group, reservations.active, reservations.id').order('reservations.active desc, c.day_of_week, t.start_time, cl.name, ct.name').page(params[:page])
   end
 
   # GET /reservations/1
@@ -31,7 +31,6 @@ class ReservationsController < ApplicationController
                                        ').select('s.name as student_name, cl.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id').find(params[:id])
-  puts @reservation.inspect
   end
 
   # GET /reservations/new
