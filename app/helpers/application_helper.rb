@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def get_week_day(a_day)
-     a_day
+    a_day
     days_list = []
     Date::DAYNAMES.each do |day|
       days_list << day
@@ -15,20 +15,20 @@ module ApplicationHelper
   end
 
   def get_latest_belt_color(a_student)
-    belt_query_sql = "select b.color from graduations g left join belts b on g.belt_id = b.id where g.student_id = #{a_student} order by graduation_date desc limit 1"
-    query_results = ActiveRecord::Base.connection.execute(belt_query_sql).values[0]
-    query_results.nil? ? t('Blanche') : t(query_results[0])
+    result = Graduation.where(student_id: a_student).joins('INNER JOIN belts b on graduations.belt_id = b.id').order('graduation_date desc').limit(1).to_a
+    result.empty? ? 'White' : Belt.joins('INNER JOIN graduations g on g.belt_id = belts.id').find(result[0].belt_id).color
   end
 
 
   def get_months_since_last_graduations(a_student)
-    last_promotion_sql = "select graduation_date from graduations where student_id = #{a_student} order by graduation_date desc limit 1"
-    @results = ActiveRecord::Base.connection.execute(last_promotion_sql).values[0]
-    if @results.nil?
-      student_creation_sql = "select created_at from students where id = #{a_student}"
-      @results = ActiveRecord::Base.connection.execute(student_creation_sql).values[0]
+    last_graduation_date = Graduation.where(student_id: a_student).order('graduation_date desc').limit(1).to_a
+    if last_graduation_date.empty?
+      student_creation_date = Student.where(id: a_student).to_a.first
+      Date.parse(student_creation_date.created_at.to_s).upto(Date.today).count.fdiv(30).round(2)
+    else
+      last_graduation_date[0].graduation_date.upto(Date.today).count.fdiv(30).round(2)
     end
-    @results = Date.parse(@results[0]).upto(Date.today).count.fdiv(30).round(2)
+
   end
 
 
@@ -37,12 +37,13 @@ module ApplicationHelper
   end
 
   def get_susbcribed_students(a_course)
-    susbcribed_students_sql = "select s.id, s.name, cl.name as client_name, s.trial_class, s.uniform_promotion from reservations r
-                                        left join students s on r.student_id = s.id
-                                        left join clients cl on s.client_id = cl.id
-                                        where r.course_id = #{a_course} and r.active = true"
+    Reservation.joins('left join students s on reservations.student_id = s.id
+                       left join clients cl on s.client_id = cl.id').where('reservations.course_id =?
+                                                                            and reservations.active = true', a_course).select('s.id, s.name,
+                                                                            cl.name as client_name,
+                                                                            s.trial_class,
+                                                                            s.uniform_promotion').to_a
 
-    ActiveRecord::Base.connection.execute(susbcribed_students_sql)
   end
 
 

@@ -88,11 +88,8 @@ class StudentsController < ApplicationController
   end
 
   def get_latest_belt_color(a_student)
-    belt_query = "select b.color from graduations g left join belts b on g.belt_id = b.id where graduation_date = (select max(graduation_date) from graduations where student_id = #{a_student})"
-    query_results = ActiveRecord::Base.connection.execute(belt_query)
-    query_results.each do |query_results|
-      query_results['color']
-    end
+    result = Graduation.where(student_id: a_student).joins('INNER JOIN belts b on graduations.belt_id = b.id').order('graduation_date desc').limit(1).to_a
+    result.empty? ? 'White' : Belt.joins('INNER JOIN graduations g on g.belt_id = belts.id').find(result[0].belt_id).color
   end
 
 end
