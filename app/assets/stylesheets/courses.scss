@@ -1,26 +1,4 @@
 // Place all the styles related to the courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.cours {
-  border: 1px solid black;
-  padding: 1rem;
-  margin: 1rem;
-  page-break-inside:avoid;
-  display: grid;
-}
 
-.cours_wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-}
-.student_cours {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  page-break-inside:avoid;
-  vertical-align: top;
-}
-
-.student_detail{
-  display: block;
-}

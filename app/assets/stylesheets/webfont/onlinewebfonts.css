@@ -35,3 +35,16 @@
 	content: "\e011";
 }
 
+@media print {
+    [class^="i_"]:before, [class*=" i_"]:before{
+        font-family: "onlinewebfonts";
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        font-size: 1rem;
+        -webkit-font-smoothing: antialiased;
+    }
+}

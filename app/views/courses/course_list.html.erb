@@ -1,7 +1,7 @@
-<main>
-  <section class="cours_wrapper">
-    <% @courses_list.each do |course| %>
-      <article class="cours">
+<main class="container">
+  <% @courses_list.each do |course| %>
+    <article class="cours">
+      <div class="student_detail">
         <h2><%= course['name'] %></h2>
         <h3><%= t(get_week_day(course['day_of_week'])) + ' -  ' + course['start_time'] %>
           - <%= course['end_time'] %> </h3>
@@ -11,20 +11,20 @@
         <ul>
           <% get_susbcribed_students(course['id']).each do |student| %>
             <li class="student_cours">
-              <div class="student_detail">
-                <%= student['name'] %><%= " - (#{student['client_name']})" unless student['name'] == student['client_name'] %>
-                - <%= get_latest_belt_color(student['id']) %> (<%= get_months_since_last_graduations(student['id']) %>
-                Mois)
-                <% if student['trial_class'] %> - <i class="i_on_trial"></i>
-                <% end %>
-                <% if student['uniform_promotion'] %> - <i class="i_karate_robe icon"></i>
-                <% end %>
-              </div>
+
+              <%= student['name'] %><%= " - (#{student['client_name']})" unless student['name'] == student['client_name'] %>
+              - <%= get_latest_belt_color(student['id']) %> (<%= get_months_since_last_graduations(student['id']) %>
+              Mois)
+              <% if student['trial_class'] %> - <i class="i_on_trial"></i>
+              <% end %>
+              <% if student['uniform_promotion'] %> - <i class="i_karate_robe"></i>
+              <% end %>
+
             </li>
           <% end %>
         </ul>
         </p>
-      </article>
-    <% end %>
-  </section>
+      </div>
+    </article>
+  <% end %>
 </main>

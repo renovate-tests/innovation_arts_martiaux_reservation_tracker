@@ -114,10 +114,6 @@ main {
     nav, .debug, .credits {
         display: none;
     }
-
-    h1, h2, h3, h4, h5, h6 {
-        color: #000000;
-    }
 }
 
 .debug {
@@ -166,12 +162,6 @@ li.course_details {
 
 li.student_cours {
     wrap-option: none;
-}
-
-li.icon {
-    padding-right: 1rem;
-    wrap-option: none;
-    font-size: 40px;
 }
 
 a {
@@ -252,3 +242,65 @@ h5 {
     padding-bottom: 0.5rem;
 }
 
+/* Course_list section */
+
+.container {
+    display: block;
+    width:95%
+}
+
+.cours {
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 1rem;
+    display: block;
+    color: black;
+    page-break-inside: avoid;
+}
+
+@media print {
+    article {
+        page-break-inside: avoid;
+        color: black;
+        font-size: 0.5em;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        padding-bottom: 0.2rem;
+        color: black;
+        font-weight: bold;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    h4 {
+        font-size: 0.5rem;
+    }
+
+    h5 {
+        font-size: 0.4rem;
+    }
+}
+
+.student_cours {
+    vertical-align: top;
+    diplay: block;
+    page-break-inside: avoid;
+}
+
+li.student_cours {
+    display: block;
+}
+
+.student_detail {
+    display: block;
+    vertical-align: top;
+}
