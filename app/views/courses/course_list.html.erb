@@ -3,8 +3,8 @@
     <article class="cours">
       <div class="student_detail">
         <h2><%= course['name'] %></h2>
-        <h3><%= t(get_week_day(course['day_of_week'])) + ' -  ' + course['start_time'] %>
-          - <%= course['end_time'] %> </h3>
+        <h3><%= t(get_week_day(course['day_of_week'])) + ' -  ' + course['start_time'].strftime('%H:%M') %>
+          - <%= course['end_time'].strftime('%H:%M') %> </h3>
         <h4><%= course['age_group'] %></h4>
         <h5><%= get_places_used(course['id']) %> / <%= course['number_of_students_allowed'] %></h5>
         <p>

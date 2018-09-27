@@ -81,15 +81,14 @@ class CoursesController < ApplicationController
 
 
   def courses_list
-    #TODO
-    # OPTIMIZE THAT QUERY
-    courses_list_sql = 'select c.id, c.day_of_week, c.number_of_students_allowed, ct.name, t.start_time, t.end_time, a.name as age_group
-	                             from courses c
-		                                left join course_types ct on c.course_type_id = ct.id
-		                                left join timeslots t on c.timeslot_id = t.id
-		                                left join age_groups a on c.age_group_id = a.id
-                               order by c.day_of_week, t.start_time'
-    @courses_list = ActiveRecord::Base.connection.execute(courses_list_sql)
+    @courses_list = Course.joins('left join course_types ct on courses.course_type_id = ct.id
+		                              left join timeslots t on courses.timeslot_id = t.id
+		                              left join age_groups a on courses.age_group_id = a.id').select('courses.id, courses.day_of_week,
+                                                                                                  courses.number_of_students_allowed,
+                                                                                                  ct.name, t.start_time,
+                                                                                                  t.end_time,
+                                                                                                  a.name as age_group').order('courses.day_of_week,
+                                                                                                                               t.start_time')
     respond_to do |format|
       format.html {render 'courses/course_list'}
     end
