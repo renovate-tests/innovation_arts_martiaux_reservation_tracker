@@ -4,17 +4,21 @@ class GraduationsController < ApplicationController
   # GET /graduations
   # GET /graduations.json
   def index
-    @graduations = Graduation.joins('INNER JOIN students s on graduations.student_id = s.id
+    if params[:search].nil?
+      @graduations = Graduation.joins('INNER JOIN students s on graduations.student_id = s.id
                                    INNER JOIN belts b on graduations.belt_id = b.id
                                    INNER JOIN clients cl on s.client_id = cl.id
                                   ').select('graduations.id, graduations.graduation_date, s.name as name,
                                              b.color as color, cl.name as client_name').order('cl.name, s.name, graduations.graduation_date desc').page(params[:page])
+    else
+      @graduations = Graduation.search(params[:search], params[:page])
+    end
   end
 
   # GET /graduations/1
   # GET /graduations/1.json
   def show
-   @graduation = Graduation.joins('INNER JOIN students s on graduations.student_id = s.id
+    @graduation = Graduation.joins('INNER JOIN students s on graduations.student_id = s.id
                                    INNER JOIN belts b on graduations.belt_id = b.id
                                    INNER JOIN clients cl on s.client_id = cl.id
                                   ').select('graduations.id, graduations.graduation_date, s.name as name,

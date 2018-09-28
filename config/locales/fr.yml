@@ -71,6 +71,7 @@ fr:
   Mois: "Mois"
   Orange: "Orange"
   courses_list: "Listes pour Cours"
+  Search term: "Recherche"
 
   # Default library
   activerecord:

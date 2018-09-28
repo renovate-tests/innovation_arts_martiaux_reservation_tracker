@@ -4,7 +4,7 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.page(params[:page]).order('active desc, name')
+    params[:search].nil? ? @clients = Client.page(params[:page]).order('active desc, name') : @clients = Client.search(params[:search], params[:page])
   end
 
   # GET /clients/1

@@ -4,13 +4,16 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-        @courses = Course.joins('left join course_types ct on courses.course_type_id = ct.id
+    if params[:search].nil?
+      @courses = Course.joins('left join course_types ct on courses.course_type_id = ct.id
                                  left join timeslots t on courses.timeslot_id = t.id
                                  left join age_groups a on courses.age_group_id = a.id').select('courses.id, ct.name as course_type,
                                                                                                  t.start_time, t.end_time, a.name as age_group,
                                                                                                  courses.day_of_week,
                                                                                                  courses.number_of_students_allowed').order('courses.day_of_week, t.start_time').page(params[:page])
-
+    else
+      @courses = Course.search(params[:search], params[:page])
+    end
   end
 
   # GET /courses/1

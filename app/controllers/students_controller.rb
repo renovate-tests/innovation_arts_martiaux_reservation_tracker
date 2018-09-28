@@ -5,10 +5,16 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.joins('INNER JOIN clients cl on students.client_id = cl.id').select('students.id, students.name,
+
+    if params[:search].nil?
+
+      @students = Student.joins('INNER JOIN clients cl on students.client_id = cl.id').select('students.id, students.name,
                                                                                              students.date_of_birth, students.active,
                                                                                              students.trial_class, students.uniform_promotion,
                                                                                              cl.name as linked_client').order('students.active desc, linked_client, students.name').page(params[:page])
+    else
+      @students = Student.search(params[:search], params[:page])
+    end
   end
 
   # GET /students/1

@@ -1,0 +1,7 @@
+<section>
+  <%= form_tag request.path, :method => 'get' do %>
+    <% content_tag :label do %>
+      <%= t('Search term') %>: <%= text_field_tag :search, params[:search] %>
+    <% end %>
+  <% end %>
+</section>

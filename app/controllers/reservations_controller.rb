@@ -7,7 +7,10 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = Reservation.joins('INNER JOIN students s ON s .id = reservations.student_id
+
+    if params[:search].nil?
+
+      @reservations = Reservation.joins('INNER JOIN students s ON s .id = reservations.student_id
                                        INNER JOIN courses c ON c.id = reservations.course_id
                                        INNER JOIN clients cl ON cl.id = s.client_id
                                        INNER JOIN timeslots t on t.id = c.timeslot_id
@@ -16,6 +19,10 @@ class ReservationsController < ApplicationController
                                        ').select('s.name as student_name, cl.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id').order('reservations.active desc, c.day_of_week, t.start_time, cl.name, ct.name').page(params[:page])
+
+    else
+      @reservations = Reservation.search(params[:search], params[:page])
+    end
   end
 
   # GET /reservations/1
