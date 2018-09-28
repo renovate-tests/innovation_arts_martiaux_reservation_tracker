@@ -2,7 +2,7 @@ require 'test_helper'
 
 class BeltsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @belt = belts(:one)
+    @belt = belts(:white)
   end
 
   test "should get index" do

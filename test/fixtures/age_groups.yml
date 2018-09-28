@@ -47,3 +47,8 @@ eight:
   min_age: 2
   max_age: 99
   id: 8
+test_case:
+  name: Tous les niveaux
+  min_age: 2
+  max_age: 99
+  id: 9

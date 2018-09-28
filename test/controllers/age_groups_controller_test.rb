@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AgeGroupsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @age_group = age_groups(:one)
+    @age_group = age_groups(:test_case)
   end
 
   test "should get index" do
@@ -17,7 +17,7 @@ class AgeGroupsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create age_group" do
     assert_difference('AgeGroup.count') do
-      post age_groups_url, params: { age_group: { group: @age_group.group } }
+      post age_groups_url, params: { age_group: { id: @age_group.id , name: @age_group, min_age: @age_group.min_age , max_age: @age_group.max_age } }
     end
 
     assert_redirected_to age_group_url(AgeGroup.last)
@@ -34,7 +34,7 @@ class AgeGroupsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update age_group" do
-    patch age_group_url(@age_group), params: { age_group: { group: @age_group.group } }
+    patch age_group_url(@age_group), params: { age_group: { id: @age_group.id ,name: @age_group.name, min_age: @age_group.min_age , max_age: @age_group.max_age } }
     assert_redirected_to age_group_url(@age_group)
   end
 
