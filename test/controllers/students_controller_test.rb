@@ -17,11 +17,19 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create student" do
     assert_difference('Student.count') do
-      post students_url, params: { student: { actif: @student.actif, date_naissance: @student.date_naissance, nom: @student.nom } }
+      post students_url, params: { student: { id: @student.id, client_id: 100,  active: @student.active, date_of_birth: @student.date_of_birth, name: @student.name } }
     end
 
     assert_redirected_to student_url(Student.last)
   end
+
+  test "should not create a student if it already exists" do
+    assert_difference('Student.count', 0) do
+      post students_url, params: { student: { id: @student.id, client_id: @student.client_id,  active: @student.active, date_of_birth: @student.date_of_birth, name: @student.name } }
+    end
+    assert_response :success
+  end
+
 
   test "should show student" do
     get student_url(@student)
@@ -34,7 +42,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update student" do
-    patch student_url(@student), params: { student: { actif: @student.actif, date_naissance: @student.date_naissance, nom: @student.nom } }
+    patch student_url(@student), params: { student: { client_id: @student.client_id, active: @student.active, date_of_birth: @student.date_of_birth, name: @student.name } }
     assert_redirected_to student_url(@student)
   end
 

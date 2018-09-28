@@ -17,11 +17,21 @@ class GraduationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create graduation" do
     assert_difference('Graduation.count') do
-      post graduations_url, params: { graduation: { belt_id: @graduation.belt_id, graduation_date: @graduation.graduation_date, student_id: @graduation.student_id } }
+      post graduations_url, params: { graduation: { belt_id: 6, graduation_date: @graduation.graduation_date, student_id: @graduation.student_id } }
     end
 
     assert_redirected_to graduation_url(Graduation.last)
   end
+
+
+  test "should not create a duplicate graduation" do
+    assert_difference('Graduation.count', 0) do
+      post graduations_url, params: { graduation: { belt_id: @graduation.belt_id, graduation_date: @graduation.graduation_date, student_id: @graduation.student_id } }
+    end
+
+    assert_response :success
+  end
+
 
   test "should show graduation" do
     get graduation_url(@graduation)

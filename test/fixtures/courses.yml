@@ -1,12 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   course_type_id: 1
   timeslot_id: 1
   number_of_students_allowed: 15
   day_of_week: 1
   age_group_id: 1
-  id: 1
+
 
 two:
   id: 2

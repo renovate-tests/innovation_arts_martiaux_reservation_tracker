@@ -17,11 +17,19 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create reservation" do
     assert_difference('Reservation.count') do
-      post reservations_url, params: { reservation: { active: @reservation.active, course_id: @reservation.course_id, student_id: @reservation.student_id } }
+      post reservations_url, params: {reservation: {id: @reservation.id, active: @reservation.active, course_id: 1, student_id: @reservation.student_id}}
     end
 
     assert_redirected_to reservation_url(Reservation.last)
   end
+
+  test "should not create reservation if it already exists" do
+    assert_difference('Reservation.count', 0) do
+      post reservations_url, params: {reservation: {id: Reservation.last.id, active: Reservation.last.active, course_id: Reservation.last.course_id, student_id: Reservation.last.id}}
+    end
+    assert_response :success
+  end
+
 
   test "should show reservation" do
     get reservation_url(@reservation)
@@ -34,7 +42,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update reservation" do
-    patch reservation_url(@reservation), params: { reservation: { active: @reservation.active, course_id: @reservation.course_id, student_id: @reservation.student_id } }
+    patch reservation_url(@reservation), params: {reservation: {active: @reservation.active, course_id: @reservation.course_id, student_id: @reservation.student_id}}
     assert_redirected_to reservation_url(@reservation)
   end
 

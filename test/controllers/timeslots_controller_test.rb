@@ -17,11 +17,20 @@ class TimeslotsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create timeslot" do
     assert_difference('Timeslot.count') do
-      post timeslots_url, params: { timeslot: { day: @timeslot.day, end_time: @timeslot.end_time, start_time: @timeslot.start_time } }
+      post timeslots_url, params: { timeslot: { id: @timeslot.id, end_time: @timeslot.end_time, start_time: '23:59'} }
     end
 
     assert_redirected_to timeslot_url(Timeslot.last)
   end
+
+  test "should not create a timeslot if it already exists" do
+    assert_difference('Timeslot.count', 0) do
+      post timeslots_url, params: { timeslot: { id: @timeslot.id, end_time: @timeslot.end_time, start_time: @timeslot.start_time } }
+    end
+
+    assert_response :success
+  end
+
 
   test "should show timeslot" do
     get timeslot_url(@timeslot)
@@ -34,7 +43,7 @@ class TimeslotsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update timeslot" do
-    patch timeslot_url(@timeslot), params: { timeslot: { day: @timeslot.day, end_time: @timeslot.end_time, start_time: @timeslot.start_time } }
+    patch timeslot_url(@timeslot), params: { timeslot: { id: @timeslot.id, end_time: @timeslot.end_time, start_time: @timeslot.start_time } }
     assert_redirected_to timeslot_url(@timeslot)
   end
 

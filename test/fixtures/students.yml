@@ -1,11 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-ne:
+one:
   name: David Cloutier
   date_of_birth: 1978-04-11
   active: true
   client_id: 1
-  belt_id: 5
   trial_class: false
   uniform_promotion: false
   id: 1
@@ -15,7 +14,6 @@ two:
   date_of_birth: 1981-07-17
   active: false
   client_id: 2
-  belt_id: 13
   trial_class: false
   uniform_promotion: false
   id: 2
@@ -25,7 +23,6 @@ three:
   date_of_birth: 2011-05-09
   active: true
   client_id: 1
-  belt_id: 3
   trial_class: false
   uniform_promotion: true
   id: 3
@@ -35,7 +32,6 @@ four:
   date_of_birth: 2009-05-18
   active: true
   client_id: 1
-  belt_id: 3
   trial_class: true
   uniform_promotion: false
   id: 4

@@ -22,6 +22,7 @@ test:
   <<: *default
   database: innovation_arts_martiaux_reservations_tracker_tests
   password: '@llo123!'
+  adapter: postgresql
 
 
 production:
