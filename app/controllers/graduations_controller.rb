@@ -1,5 +1,7 @@
 class GraduationsController < ApplicationController
   before_action :set_graduation, only: [:show, :edit, :update, :destroy]
+  before_action :get_student_list, only: [:new, :edit, :create, :update]
+
 
   # GET /graduations
   # GET /graduations.json
@@ -81,8 +83,14 @@ class GraduationsController < ApplicationController
     @graduation = Graduation.find(params[:id])
   end
 
+
+  def get_student_list
+    @students = Student.joins('INNER JOIN clients cl on students.client_id = cl.id').select('students.id, students.name, cl.name as client_name').order('cl.name, students.name')
+  end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def graduation_params
     params.require(:graduation).permit(:student_id, :belt_id, :graduation_date)
   end
+
 end

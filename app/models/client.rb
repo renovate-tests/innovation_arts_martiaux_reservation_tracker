@@ -4,7 +4,7 @@ class Client < ApplicationRecord
   has_many :reservation, through: :student
 
   def self.search(search, page)
-    self.where("lower(s.name) LIKE :query", query: "%#{search.downcase}%")
+    self.where("lower(name) LIKE :query", query: "%#{search.downcase}%")
         .paginate(:page => page, :per_page => 10).order('name ASC')
   end
 

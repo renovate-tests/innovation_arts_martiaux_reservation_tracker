@@ -4,26 +4,27 @@
       <h2><%= pluralize(graduation.errors.count, "error") %> prohibited this graduation from being saved:</h2>
 
       <ul>
-      <% graduation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% graduation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
     <%= form.label t('student_link') %>
-    <%= form.select :student_id, options_for_select(Student.where(['active = ?', true]).collect {|student| [student.name, student.id]}, graduation.student_id) %>
+    <%= form.select :student_id, options_for_select(@students.collect {|student| ["#{student.name} - (#{student.client_name})", student.id]}, graduation.student_id) %>
+
   </div>
 
   <div class="field">
     <%= form.label t('belt') %>
-    <%= form.select :belt_id, options_for_select(Belt.all.collect{ |belt| [belt.color, belt.id]}, graduation.belt_id) %>
+    <%= form.select :belt_id, options_for_select(Belt.all.collect {|belt| [belt.color, belt.id]}, graduation.belt_id) %>
   </div>
 
   <div class="field">
     <%= form.label t('graduation_date') %>
-    <%= form.date_select :graduation_date, start_year: (1.year.ago).year, end_year: Time.now.year   %>
+    <%= form.date_select :graduation_date, start_year: (1.year.ago).year, end_year: Time.now.year %>
   </div>
 
   <div class="actions">
