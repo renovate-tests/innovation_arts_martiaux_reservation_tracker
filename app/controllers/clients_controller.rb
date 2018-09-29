@@ -4,7 +4,13 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    params[:search].nil? ? @clients = Client.page(params[:page]).order('active desc, name') : @clients = Client.search(params[:search], params[:page])
+
+    if params[:search].nil?
+      @clients = Client.all.page(params[:page])
+      #@clients = Client.all.page(params[:page]) if @clients.empty?
+    else
+      @clients = Client.search(params[:search], params[:page])
+    end
   end
 
   # GET /clients/1
@@ -28,11 +34,11 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.save
-        format.html { redirect_to @client, notice: 'Client was successfully created.' }
-        format.json { render :show, status: :created, location: @client }
+        format.html {redirect_to @client, notice: 'Client was successfully created.'}
+        format.json {render :show, status: :created, location: @client}
       else
-        format.html { render :new }
-        format.json { render json: @client.errors, status: :unprocessable_entity }
+        format.html {render :new}
+        format.json {render json: @client.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -42,11 +48,11 @@ class ClientsController < ApplicationController
   def update
     respond_to do |format|
       if @client.update(client_params)
-        format.html { redirect_to @client, notice: 'Client was successfully updated.' }
-        format.json { render :show, status: :ok, location: @client }
+        format.html {redirect_to @client, notice: 'Client was successfully updated.'}
+        format.json {render :show, status: :ok, location: @client}
       else
-        format.html { render :edit }
-        format.json { render json: @client.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @client.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -56,19 +62,20 @@ class ClientsController < ApplicationController
   def destroy
     @client.destroy
     respond_to do |format|
-      format.html { redirect_to clients_url, notice: 'Client was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to clients_url, notice: 'Client was successfully destroyed.'}
+      format.json {head :no_content}
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_client
-      @client = Client.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def client_params
-      params.require(:client).permit(:name, :telephone, :email, :active)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_client
+    @client = Client.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def client_params
+    params.require(:client).permit(:name, :telephone, :email, :active)
+  end
 end

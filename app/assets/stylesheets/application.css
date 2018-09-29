@@ -134,6 +134,19 @@ nav a {
     color: black;
     white-space: nowrap;
 }
+.actions{
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin:0;
+}
+.search_form {
+    display: inline-block;
+}
+
+.new_record{
+    display: inline-block;
+}
 
 .pagination {
     width: 100%;
@@ -141,7 +154,6 @@ nav a {
     padding: 1rem;
     padding-bottom: 2rem;
 }
-
 
 form, table {
     padding-bottom: 1rem;
@@ -151,8 +163,13 @@ footer.credits {
     width: 100%;
     margin: auto;
     text-align: center;
-    background: rgba(255,255,255,0);
-    padding-top: 1rem 0;
+    background: rgba(255, 255, 255, 0);
+    padding-top: 2rem;
+    font-size: xx-small;
+}
+footer.credits a:hover{
+    background: rgba(255, 255, 255, 0);
+    color:black;
 }
 
 li {
@@ -236,12 +253,11 @@ h5 {
     font-size: 0.8rem;
 }
 
-
 /* Course_list section */
 
 .container {
     display: block;
-    width:95%
+    width: 95%
 }
 
 .cours {
@@ -259,11 +275,13 @@ h5 {
         color: black;
         font-size: 0.5em;
     }
+
     h1, h2, h3, h4, h5, h6 {
         padding-bottom: 0.2rem;
         color: black;
         font-weight: bold;
     }
+
     h1 {
         font-size: 1.2rem;
     }

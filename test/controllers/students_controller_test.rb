@@ -31,6 +31,13 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
   end
 
 
+  test "should not create a student if it has no name" do
+    assert_difference('Student.count', 0) do
+      post students_url, params: { student: { id: @student.id, client_id: @student.client_id,  active: @student.active, date_of_birth: @student.date_of_birth} }
+    end
+    assert_response :success
+  end
+
   test "should show student" do
     get student_url(@student)
     assert_response :success

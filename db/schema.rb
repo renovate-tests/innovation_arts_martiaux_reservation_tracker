@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2018_09_24_194534) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name", null: false
-    t.string "telephone"
-    t.string "email"
+    t.string "telephone", null: false
+    t.string "email", null: false
     t.boolean "active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,12 +83,10 @@ ActiveRecord::Schema.define(version: 2018_09_24_194534) do
     t.date "date_of_birth"
     t.boolean "active", default: true
     t.integer "client_id", null: false
-    t.integer "belt_id", null: false
     t.boolean "trial_class"
     t.boolean "uniform_promotion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["belt_id"], name: "index_students_on_belt_id"
     t.index ["client_id"], name: "index_students_on_client_id"
   end
 
