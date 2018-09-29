@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<% unless @clients.empty? %>
   <nav class="will_paginate">
     <div class="digg_pagination">
       <div class="page_info">
@@ -7,9 +6,7 @@
       </div>
       <%= will_paginate @clients, :container => false %>
     </div>
-
   </nav>
-<% end %>
 <section class="actions">
   <%= render 'shared/search' %>
   <section class="new_record">
