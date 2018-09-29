@@ -4,10 +4,8 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-
     if params[:search].nil?
       @clients = Client.all.page(params[:page])
-      #@clients = Client.all.page(params[:page]) if @clients.empty?
     else
       @clients = Client.search(params[:search], params[:page])
     end
