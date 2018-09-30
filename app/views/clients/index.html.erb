@@ -1,16 +1,21 @@
 <p id="notice"><%= notice %></p>
-  <nav class="will_paginate">
-    <div class="digg_pagination">
-      <div class="page_info">
-        <%= page_entries_info @clients %>
-      </div>
-      <%= will_paginate @clients, :container => false %>
+<nav class="will_paginate">
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @clients %>
     </div>
-  </nav>
+    <%= will_paginate @clients, :container => false %>
+  </div>
+</nav>
 <section class="actions">
   <%= render 'shared/search' %>
   <section class="new_record">
     <%= link_to t('new_client'), new_client_path %>
+  </section>
+  <section class="download">
+    <label>Download:
+      <%= link_to "CSV", clients_path(format: "csv"), class: 'download_link' %>
+    </label>
   </section>
 </section>
 <h1>Clients</h1>

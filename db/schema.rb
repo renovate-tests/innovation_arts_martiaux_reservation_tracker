@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2018_09_24_194534) do
 
   create_table "age_groups", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "min_age"
-    t.integer "max_age"
+    t.integer "min_age", null: false
+    t.integer "max_age", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_09_24_194534) do
     t.string "name", null: false
     t.string "telephone", null: false
     t.string "email", null: false
-    t.boolean "active", default: true, null: false
+    t.boolean "active", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

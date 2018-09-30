@@ -140,12 +140,12 @@ nav a {
     padding: 0;
     margin:0;
 }
-.search_form {
+.search_form, .new_record, .download {
     display: inline-block;
 }
 
-.new_record{
-    display: inline-block;
+.download_link{
+    font-weight: normal;
 }
 
 .pagination {

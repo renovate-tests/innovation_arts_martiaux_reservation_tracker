@@ -15,9 +15,9 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create client" do
+  test "should create client if it has unique data" do
     assert_difference('Client.count') do
-      post clients_url, params: {client: {id: @client.id, email: @client.email, name: 'some unique name', telephone: @client.telephone}}
+      post clients_url, params: {client: {id: 9999, email: 'some_unique_email@invalidemail.com', name: 'some unique name', telephone: '555-555-9999'}}
     end
 
     assert_redirected_to client_url(Client.last)
@@ -25,11 +25,46 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
 
   test "should not create client if name exists" do
     assert_difference 'Client.count', 0 do
-      post clients_url, params: {client: {id: @client.id, email: @client.email, name: @client.name, telephone: @client.telephone}}
+      post clients_url, params: {client: {id: 9998, email: 'some_unique_email2@invalidemail.com', name: @client.name, telephone: '555-555-9998'}}
     end
     assert_response :success
   end
 
+
+  test "should not create client if name is empty" do
+    assert_difference 'Client.count', 0 do
+      post clients_url, params: {client: {id: 9998, email: 'some_unique_email2@invalidemail.com', telephone: '555-555-9998'}}
+    end
+    assert_response :success
+  end
+
+  test "should not create client if telephone exists" do
+    assert_difference 'Client.count', 0 do
+      post clients_url, params: {client: {id: 9998, email: 'some_unique_email2@invalidemail.com', name: 'some_unique_name2', telephone: @client.telephone}}
+    end
+    assert_response :success
+  end
+
+  test "should not create client if telephone is empty" do
+    assert_difference 'Client.count', 0 do
+      post clients_url, params: {client: {id: 9998, email: 'some_unique_email2@invalidemail.com', name: 'some_unique_name2'}}
+    end
+    assert_response :success
+  end
+
+  test "should not create client if email exists" do
+    assert_difference 'Client.count', 0 do
+      post clients_url, params: {client: {id: 9998, email: @client.email, name: 'some_unique_name2', telephone: '555-555-9997'}}
+    end
+    assert_response :success
+  end
+
+  test "should not create client if email is empty" do
+    assert_difference 'Client.count', 0 do
+      post clients_url, params: {client: {id: 9998, name: 'some_unique_name2', telephone: '555-555-9997'}}
+    end
+    assert_response :success
+  end
 
   test "should show client" do
     get client_url(@client)

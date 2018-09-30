@@ -5,9 +5,13 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     if params[:search].nil?
-      @clients = Client.all.page(params[:page])
+      @clients = Client.all.page(params[:page]).order('active desc, name')
     else
-      @clients = Client.search(params[:search], params[:page])
+      @clients = Client.search(params[:search], params[:page]).order('active desc, name')
+    end
+    respond_to do |format|
+      format.html
+      format.csv { send_data Client.all.to_csv }
     end
   end
 

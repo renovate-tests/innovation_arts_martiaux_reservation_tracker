@@ -15,12 +15,20 @@ class BeltsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create belt" do
+  test "should create belt if its a new color" do
     assert_difference('Belt.count') do
-      post belts_url, params: { belt: { color: @belt.color } }
+      post belts_url, params: { belt: { color: 'new color' } }
     end
 
     assert_redirected_to belt_url(Belt.last)
+  end
+
+  test "should not create belt if its not a new color" do
+    assert_difference('Belt.count', 0) do
+      post belts_url, params: { belt: { color: @belt.color } }
+    end
+
+    assert_response :success
   end
 
   test "should show belt" do

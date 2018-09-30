@@ -1,3 +1,3 @@
 class Belt < ApplicationRecord
-  validates(:color, presence: true)
+  validates(:color, presence: true, uniqueness: true)
 end

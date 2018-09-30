@@ -9,7 +9,17 @@
     <%= will_paginate @students, :container => false %>
   </div>
 </nav>
-<%= render 'shared/search' %>
+<section class="actions">
+  <%= render 'shared/search' %>
+  <section class="new_record">
+    <%= link_to t('new_student'), new_student_path %>
+  </section>
+  <section class="download">
+    <label>Download:
+      <%= link_to "CSV", students_path(format: "csv"), class: 'download_link' %>
+    </label>
+  </section>
+</section>
 <table>
   <thead>
   <tr>

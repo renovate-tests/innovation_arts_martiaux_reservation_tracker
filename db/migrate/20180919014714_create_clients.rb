@@ -4,7 +4,7 @@ class CreateClients < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.string :telephone, null: false
       t.string :email, null: false
-      t.boolean :active, null: false, default: true
+      t.boolean :active, null: false, default: false
       t.timestamps
     end
   end
