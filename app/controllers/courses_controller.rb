@@ -28,8 +28,18 @@ class CoursesController < ApplicationController
 
     @places_left = @course['number_of_students_allowed'] - Reservation.where(active: true, course_id: params[:id]).count
     @susbcribed_students = Reservation.joins('left join students s on reservations.student_id = s.id
-                                              left join clients cl on s.client_id = cl.id').select('s.id, s.name, cl.name as client_name, s.trial_class, s.uniform_promotion').where(course_id: params[:id], active: true)
+                                              left join clients cl on s.client_id = cl.id').select('s.id as id, s.name as name, cl.name as linked_client, cl.telephone, cl.email, s.trial_class, s.uniform_promotion').where(course_id: params[:id], active: true)
 
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        json = @susbcribed_students.all.as_json
+        @header = json.first.collect {|k,v| k}.join(',')
+        @output = json.collect {|node| "#{node.collect{|k,v| v}.join(',')}\n"}.join
+        send_data "#{@header}\n#{@output}"
+      end
+    end
   end
 
   # GET /courses/new

@@ -13,7 +13,7 @@
     <%= link_to t('new_client'), new_client_path %>
   </section>
   <section class="download">
-    <label>Download:
+    <label><%= t('Download') %>:
       <%= link_to "CSV", clients_path(format: "csv"), class: 'download_link' %>
     </label>
   </section>

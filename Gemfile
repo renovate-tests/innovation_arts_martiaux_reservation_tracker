@@ -70,3 +70,4 @@ gem 'rails-i18n', '~> 5.1'
 # pagination
 gem 'will_paginate'
 gem 'will-paginate-i18n'
+
