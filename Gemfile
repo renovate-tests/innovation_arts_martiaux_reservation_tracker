@@ -65,9 +65,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #translation
 gem 'rails-i18n', '~> 5.1'
+gem 'devise-i18n'
 
 
 # pagination
 gem 'will_paginate'
 gem 'will-paginate-i18n'
 
+# User management
+gem 'devise'
