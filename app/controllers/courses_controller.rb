@@ -33,12 +33,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.csv do
-        json = @susbcribed_students.all.as_json
-        @header = json.first.collect {|k,v| k}.join(',')
-        @output = json.collect {|node| "#{node.collect{|k,v| v}.join(',')}\n"}.join
-        send_data "#{@header}\n#{@output}"
-      end
+      format.csv {export_as_csv(@susbcribed_students)}
     end
   end
 
