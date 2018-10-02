@@ -1,5 +1,6 @@
 class TimeslotsController < ApplicationController
   before_action :set_timeslot, only: [:show, :edit, :update, :destroy]
+  before_action :user_is_admin
 
   # GET /timeslots
   # GET /timeslots.json

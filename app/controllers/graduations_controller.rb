@@ -1,7 +1,7 @@
 class GraduationsController < ApplicationController
   before_action :set_graduation, only: [:show, :edit, :update, :destroy]
   before_action :get_student_list, only: [:new, :edit, :create, :update]
-
+  before_action :user_is_admin
 
   # GET /graduations
   # GET /graduations.json

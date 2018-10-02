@@ -102,6 +102,13 @@ main {
     font-size: x-small;
 }
 
+.sessions{
+    display: inline-block;
+}
+.sessions a{
+    font-size: x-small;
+}
+
 .language_select li:nth-child(2):before {
     content: '/';
 }
@@ -123,7 +130,7 @@ main {
 
 nav {
     margin-top: 1rem;
-    background: rgba(255, 255, 255, 0.3);
+    /*background: rgba(255, 255, 255, 0.1);*/
     text-transform: uppercase;
     font-family: 'Arimo', 'Helvetica', 'Arial', 'Lucida Grande', 'Sans-Serif';
     line-height: 1.8rem;

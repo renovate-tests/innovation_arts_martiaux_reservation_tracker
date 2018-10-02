@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :get_students_list, only: [:new, :create, :edit, :update]
   before_action :get_courses_list, only: [:new, :create, :edit, :update]
-
+  before_action :user_is_admin_or_logged_in
 
   # GET /reservations
   # GET /reservations.json

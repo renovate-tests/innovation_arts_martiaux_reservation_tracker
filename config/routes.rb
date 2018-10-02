@@ -16,6 +16,10 @@ Rails.application.routes.draw do
       unlocks: 'users/unlocks'
   }
 
+ get '/clients' => "clients#index", :as => :authenticated_user_root
+ get '/clients' => "clients#index", :as => :authenticated_admin_root
+
+
   resources :reservations
   resources :courses
   get '/courses_list' => 'courses#courses_list'

@@ -1,5 +1,6 @@
 class CourseTypesController < ApplicationController
   before_action :set_course_type, only: [:show, :edit, :update, :destroy]
+  before_action :user_is_admin
 
   # GET /course_types
   # GET /course_types.json

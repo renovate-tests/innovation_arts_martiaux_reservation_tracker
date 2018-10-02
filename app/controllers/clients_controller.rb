@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :user_is_admin_or_logged_in
 
   # GET /clients
   # GET /clients.json
@@ -11,7 +12,7 @@ class ClientsController < ApplicationController
     end
     respond_to do |format|
       format.html
-      format.csv { send_data Client.all.to_csv }
+      format.csv {send_data Client.all.to_csv}
     end
   end
 
@@ -80,4 +81,8 @@ class ClientsController < ApplicationController
   def client_params
     params.require(:client).permit(:name, :telephone, :email, :active)
   end
+
+
+
+
 end

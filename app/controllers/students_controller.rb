@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :set_active_clients, only: [:new, :edit, :create, :update]
+  before_action :user_is_admin_or_logged_in
+
 
   # GET /students
   # GET /students.json

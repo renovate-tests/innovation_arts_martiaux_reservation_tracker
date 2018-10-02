@@ -1,5 +1,6 @@
 class BeltsController < ApplicationController
   before_action :set_belt, only: [:show, :edit, :update, :destroy]
+  before_action :user_is_admin
 
   # GET /belts
   # GET /belts.json

@@ -1,5 +1,6 @@
 class AgeGroupsController < ApplicationController
   before_action :set_age_group, only: [:show, :edit, :update, :destroy]
+  before_action :user_is_admin
 
   # GET /age_groups
   # GET /age_groups.json
