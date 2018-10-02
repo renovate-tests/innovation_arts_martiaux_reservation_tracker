@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class TimeslotsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    sign_in admins(:one)
     @timeslot = timeslots(:one)
   end
 

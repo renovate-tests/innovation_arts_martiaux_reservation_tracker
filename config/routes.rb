@@ -11,13 +11,15 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
       confirmations: 'users/confirmations',
       passwords: 'users/passwords',
-      registrations: 'users/registrations',
+      registrations: 'registrations',
       sessions: 'users/sessions',
-      unlocks: 'users/unlocks'
+      unlocks: 'users/unlocks',
+      index: 'users/index'
   }
 
- get '/clients' => "clients#index", :as => :authenticated_user_root
- get '/clients' => "clients#index", :as => :authenticated_admin_root
+  get '/students' => "students#index", :as => :authenticated_user_root
+  get '/users' => "users#index", :as => :authenticated_admin_root
+  resources :users
 
 
   resources :reservations
@@ -32,5 +34,5 @@ Rails.application.routes.draw do
   resources :clients
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'clients#index'
+  root 'students#index'
 end

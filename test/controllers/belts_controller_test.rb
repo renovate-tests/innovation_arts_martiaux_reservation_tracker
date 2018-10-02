@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class BeltsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @belt = belts(:white)
+    sign_in admins(:one)
   end
 
   test "should get index" do

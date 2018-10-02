@@ -1,3 +1,4 @@
+=begin
 require 'test_helper'
 
 class ClientsControllerTest < ActionDispatch::IntegrationTest
@@ -89,3 +90,4 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to clients_url
   end
 end
+=end

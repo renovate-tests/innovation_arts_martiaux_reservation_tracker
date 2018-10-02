@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_131506) do
+ActiveRecord::Schema.define(version: 2018_10_02_153516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,15 +42,6 @@ ActiveRecord::Schema.define(version: 2018_10_02_131506) do
 
   create_table "belts", force: :cascade do |t|
     t.string "color", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "clients", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "telephone", null: false
-    t.string "email", null: false
-    t.boolean "active", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -127,6 +118,9 @@ ActiveRecord::Schema.define(version: 2018_10_02_131506) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "telephone"
+    t.boolean "active"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= t('student').html_safe %>s</h1>
 <nav class="will_paginate">
   <div class="digg_pagination">
@@ -14,11 +12,13 @@
   <section class="new_record">
     <%= link_to t('new_student'), new_student_path %>
   </section>
+  <% if current_admin %>
   <section class="download">
     <label><%= t('Download') %>:
       <%= link_to "CSV", students_path(format: "csv"), class: 'download_link' %>
     </label>
   </section>
+    <% end %>
 </section>
 <table>
   <thead>

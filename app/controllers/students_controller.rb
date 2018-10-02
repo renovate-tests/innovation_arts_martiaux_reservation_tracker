@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :set_active_clients, only: [:new, :edit, :create, :update]
   before_action :user_is_admin_or_logged_in
+  before_action :user_is_owner_or_admin, only: [:show, :edit, :update, :destroy]
 
 
   # GET /students
@@ -9,21 +10,31 @@ class StudentsController < ApplicationController
   def index
 
     if params[:search].nil?
-
-      @students = Student.joins('INNER JOIN clients cl on students.client_id = cl.id').select('students.id, students.name,
-                                                                                             students.date_of_birth, students.active,
-                                                                                             students.trial_class, students.uniform_promotion,
-                                                                                             cl.name as linked_client').order('students.active desc, linked_client, students.name').page(params[:page])
+      if current_admin
+        @students = Student.joins('INNER JOIN users u on students.client_id = u.id').select('students.id, students.name,
+                                students.date_of_birth, students.active, students.trial_class, students.uniform_promotion,
+                                u.name as linked_client').order('students.active desc, linked_client, students.name').page(params[:page])
+      else
+        @students = Student.joins('INNER JOIN users u on students.client_id = u.id').select('students.id, students.name,
+                                students.date_of_birth, students.active, students.trial_class, students.uniform_promotion,
+                                u.name as linked_client').where(['students.client_id = ?', current_user.id]).order('students.active desc, linked_client, students.name').page(params[:page])
+      end
     else
-      @students = Student.search(params[:search], params[:page])
+      if current_admin
+        @students = Student.search(params[:search], params[:page])
+      else
+        @students = Student.where(['students.client_id = ?', current_user.id]).search(params[:search], params[:page])
+      end
     end
 
     respond_to do |format|
       format.html
-      format.csv { send_data Student.joins('INNER JOIN clients cl on students.client_id = cl.id').select('students.id, students.name,
+      if current_admin
+        format.csv {send_data Student.joins('INNER JOIN users u on students.client_id = u.id').select('students.id, students.name,
                                                                                              students.date_of_birth, students.active,
                                                                                              students.trial_class, students.uniform_promotion,
-                                                                                             cl.name as linked_client, cl.email, cl.telephone').order('students.active desc, linked_client, students.name').to_csv }
+                                                                                             u.name as linked_client, u.email, u.telephone').order('students.active desc, linked_client, students.name').to_csv}
+      end
     end
 
   end
@@ -32,9 +43,9 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
 
-    @student = Student.joins('INNER JOIN clients cl on students.client_id = cl.id').select('students.id, students.name, students.date_of_birth, students.active,
+    @student = Student.joins('INNER JOIN users u on students.client_id = u.id').select('students.id, students.name, students.date_of_birth, students.active,
                                                                                             students.client_id, students.trial_class, students.uniform_promotion,
-                                                                                            cl.name as client_name').find(params[:id])
+                                                                                            u.name as client_name').find(params[:id])
     @belt = Graduation.joins('INNER JOIN belts b on graduations.belt_id = b.id
                               INNER JOIN students s on graduations.student_id = s.id').select('b.color').where(student_id: params[:id]).last
   end
@@ -94,9 +105,12 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  def user_is_owner_or_admin
+    redirect_to students_path, notice: 'You do not own this resource' unless Student.find(params[:id]).client_id == current_user.id || current_admin
+  end
 
   def set_active_clients
-    @clients = Client.where('active = ?', true).order('active desc, name')
+    @users = User.where('active = ?', true).order('active desc, name')
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

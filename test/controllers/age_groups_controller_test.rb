@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class AgeGroupsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @age_group = age_groups(:test_case)
+    sign_in admins(:one)
   end
 
   test "should get index" do

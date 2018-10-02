@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong><%= t('name') %>:</strong>
   <%= @student['name'] %>
@@ -12,10 +10,7 @@
   <% end %>
 </p>
 
-<p>
-  <strong><%= t('active') %>:</strong>
-  <%= @student['active'] %>
-</p>
+
 <p>
   <strong><%= t('current_belt') %>:</strong>
   <%= @belt.nil? ? 'White' : t(@belt.color) %>
@@ -28,14 +23,20 @@
   <strong><%= t('client_linked').html_safe %>:</strong>
   <%= @student.client_name %>
 </p>
-<p>
-  <strong><%= t('trial_class') %>:</strong>
-  <%= @student['trial_class'] %>
-</p>
-<p>
-  <strong><%= t('uniform_promotion') %>:</strong>
-  <%= @student['uniform_promotion'] %>
-</p>
+<% if current_admin %>
+  <p>
+    <strong><%= t('trial_class') %>:</strong>
+    <%= @student['trial_class'] %>
+  </p>
+  <p>
+    <strong><%= t('uniform_promotion') %>:</strong>
+    <%= @student['uniform_promotion'] %>
+  </p>
+  <p>
+    <strong><%= t('active') %>:</strong>
+    <%= @student['active'] %>
+  </p>
+<% end %>
 
 <%= link_to t('edit'), edit_student_path(@student) %> |
 <%= link_to t('back'), students_path %>
