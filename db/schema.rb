@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_014844) do
+ActiveRecord::Schema.define(version: 2018_10_03_184542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(version: 2018_10_03_014844) do
     t.string "color", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cash_payments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.date "due_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "paid", default: false
   end
 
   create_table "course_types", force: :cascade do |t|
@@ -91,8 +99,8 @@ ActiveRecord::Schema.define(version: 2018_10_03_014844) do
     t.date "date_of_birth"
     t.boolean "active", default: true
     t.integer "user_id", null: false
-    t.boolean "trial_class"
-    t.boolean "uniform_promotion"
+    t.boolean "trial_class", default: false
+    t.boolean "uniform_promotion", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_students_on_user_id"
@@ -120,7 +128,7 @@ ActiveRecord::Schema.define(version: 2018_10_03_014844) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "telephone"
-    t.boolean "active"
+    t.boolean "active", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

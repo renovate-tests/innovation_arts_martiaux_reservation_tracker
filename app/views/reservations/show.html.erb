@@ -13,7 +13,8 @@
     <strong><%= t('active') %>:</strong>
     <%= @reservation['active'] %>
   </p>
-<% end %>
 
-<%= link_to t('edit'), edit_reservation_path(@reservation) %> |
+
+  <%= link_to t('edit'), edit_reservation_path(@reservation) %> |
+<% end %>
 <%= link_to t('back'), reservations_path %>

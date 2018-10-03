@@ -323,3 +323,7 @@ li.student_cours {
     display: block;
     vertical-align: top;
 }
+
+.reservations{
+    font-style: italic;
+}

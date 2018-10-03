@@ -74,8 +74,12 @@ fr:
   Search term: "Recherche"
   Download: "Exporter"
   Users: "Clients"
+  User: "Client"
   client_linked: "Client Associé"
-
+  Due date: "Date échéance"
+  Paid: "Payé"
+  Cash Payments: "Paiments Comptant"
+  new_cash_payment: "Nouveau Paiement Comptant"
   # Default library
   activerecord:
     models:

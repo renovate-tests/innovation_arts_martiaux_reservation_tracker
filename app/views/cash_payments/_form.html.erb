@@ -1,0 +1,31 @@
+<%= form_with(model: cash_payment, local: true) do |form| %>
+  <% if cash_payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cash_payment.errors.count, "error") %> prohibited this cash_payment from being saved:</h2>
+
+      <ul>
+        <% cash_payment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.select 'user_id', options_for_select(@users.collect {|user| [user.name, user.id]}, cash_payment.user_id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :due_date %>
+    <%= form.date_select :due_date, start_year: Time.now.year, end_year: Time.now.year + 1 %>
+  </div>
+  <div class="field">
+    <%= form.label :paid %>
+    <%= form.check_box :paid%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

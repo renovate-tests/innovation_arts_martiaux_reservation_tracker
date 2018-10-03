@@ -37,6 +37,7 @@ end
 def create_students(iterations = 325)
   flash_and_ensure_click(@browser.a(text: 'Étudiants'))
   iterations.times do |iteration|
+    flash_and_ensure_click(@browser.a(text: 'Étudiants'))
     flash_and_ensure_click(@browser.a(text: 'Nouvel Étudiant'))
     seed = Random.new
     student_is_also_a_client = seed.rand(100) < 30
@@ -53,14 +54,15 @@ def create_students(iterations = 325)
     @browser.button(type: 'submit').click
     @browser.div(id: 'notice').flash
     flash_and_ensure_click(@browser.a(text: 'Retour'))
+    reservations_count = seed.rand(4) + 1
+    create_reservations(reservations_count)
   end
 end
 
 
-def create_reservations
-  create_browser
+def create_reservations(iterations = 5)
   flash_and_ensure_click(@browser.a(text: 'Réservations'))
-  350.times do |iteration|
+  iterations.times do |iteration|
     flash_and_ensure_click(@browser.a(text: 'Nouvelle Réservation'))
     seed = Random.new
     student_count = @browser.select_list(:id => 'reservation_student_id').options.count
@@ -68,10 +70,8 @@ def create_reservations
     course_count = @browser.select_list(:id => 'reservation_course_id').options.count
     @browser.select(id: 'reservation_course_id').options[seed.rand(course_count)].click
 
-    @browser.checkbox(id: 'reservation_active').clear if iteration % 11 == 0
-
     @browser.button(type: 'submit').click
-    @browser.p(id: 'notice').flash
+    @browser.div(id: 'notice').flash
     flash_and_ensure_click(@browser.a(text: 'Retour'))
   end
 end
@@ -92,7 +92,7 @@ def create_graduations
 
 
     @browser.button(type: 'submit').click
-    @browser.p(id: 'notice').flash
+    @browser.div(id: 'notice').flash
     flash_and_ensure_click(@browser.a(text: 'Retour'))
   end
 end

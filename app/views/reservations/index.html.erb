@@ -8,6 +8,7 @@
   </div>
 </nav>
 <%= render 'shared/search' %>
+<p class="reservations">Vos réservations seront activées une fois le paiement effectué.</p>
 <table>
   <thead>
   <tr>
@@ -25,8 +26,16 @@
       <td><%= "#{t(get_week_day(reservation['day_of_week']))}: #{reservation['start_time'].strftime('%H:%M')} - #{reservation['end_time'].strftime('%H:%M')} - #{reservation['course_type']} - #{reservation['age_group']}" %></td>
       <td><%= reservation['active'] %></td>
       <td><%= link_to t('show'), reservation_url(reservation['id']) %></td>
-      <td><%= link_to t('edit'), edit_reservation_path(reservation['id']) %></td>
-      <td><%= link_to t('destroy'), Reservation.find(reservation['id']), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td>
+        <% if current_admin %>
+          <%= link_to t('edit'), edit_reservation_path(reservation['id']) %>
+        <% end %>
+      </td>
+      <td>
+        <% if current_admin %>
+          <%= link_to t('destroy'), Reservation.find(reservation['id']), method: :delete, data: {confirm: 'Are you sure?'} %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
   </tbody>

@@ -1,0 +1,17 @@
+<h1><%= t('Cash Payments') %></h1>
+<p>
+  <strong><%= t('User') %>:</strong>
+  <%= @cash_payment.user.name %>
+</p>
+
+<p>
+  <strong><%= t('Due date') %>:</strong>
+  <%= @cash_payment.due_date %>
+</p>
+<p>
+  <strong><%= t('Paid') %>:</strong>
+  <%= @cash_payment.paid %>
+</p>
+
+<%= link_to t('edit'), edit_cash_payment_path(@cash_payment) %> |
+<%= link_to t('back'), cash_payments_path %>

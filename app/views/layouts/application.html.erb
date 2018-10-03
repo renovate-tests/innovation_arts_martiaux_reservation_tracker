@@ -15,6 +15,7 @@
     <ul>
       <% if current_admin %> <!-- Only display link is user is admin -->
         <li><%= link_to t('Users'), users_path %></li>
+        <li><%= link_to t('Cash Payments'), cash_payments_path %></li>
       <% end %>
       <li><%= link_to t('student_link'), students_path %></li>
       <li><%= link_to t('reservations'), reservations_path %></li>

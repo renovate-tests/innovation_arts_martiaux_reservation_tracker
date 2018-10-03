@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :cash_payments
   devise_for :admins, controllers: {
       confirmations: 'admins/confirmations',
       passwords: 'admins/passwords',
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
       confirmations: 'users/confirmations',
       passwords: 'users/passwords',
-      registrations: 'registrations',
+      registrations: 'users/registrations',
       sessions: 'users/sessions',
       unlocks: 'users/unlocks',
       index: 'users/index'

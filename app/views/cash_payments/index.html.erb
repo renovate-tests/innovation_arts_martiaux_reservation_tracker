@@ -1,0 +1,46 @@
+<h1><%= t('Cash Payments') %></h1>
+<nav class="will_paginate">
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @cash_payments %>
+    </div>
+    <%= will_paginate @cash_payments, :container => false %>
+  </div>
+</nav>
+<section class="actions">
+  <%= render 'shared/search' %>
+  <section class="new_record">
+    <%= link_to t('new_cash_payment'), new_cash_payment_path %>
+  </section>
+  <% if current_admin %>
+    <section class="download">
+      <label><%= t('Download') %>:
+        <%= link_to "CSV", cash_payments_path(format: "csv"), class: 'download_link' %>
+      </label>
+    </section>
+  <% end %>
+</section>
+<table>
+  <thead>
+  <tr>
+    <th><%= t('User') %></th>
+    <th><%= t('Due date') %></th>
+    <th><%= t('Paid') %></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @cash_payments.each do |cash_payment| %>
+    <tr>
+      <td><%= cash_payment.user.name %></td>
+      <td><%= cash_payment.due_date %></td>
+      <td><%= cash_payment.paid %></td>
+      <td><%= link_to t('show'), cash_payment %></td>
+      <td><%= link_to t('edit'), edit_cash_payment_path(cash_payment) %></td>
+      <td><%= link_to t('destroy'), cash_payment, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
