@@ -13,37 +13,40 @@ def create_browser
   @browser = Watir::Browser.start('http://localhost:3000/')
 end
 
-def create_clients
+def create_users
   create_browser
-  flash_and_ensure_click(@browser.a(text: 'Clients'))
 
   325.times do |iteration|
 
-    flash_and_ensure_click(@browser.a(text: 'Nouveau Client'))
-    @browser.text_field(id: 'client_name').set Faker::Name.name
-    @browser.text_field(id: 'client_telephone').set Faker::PhoneNumber.phone_number
-    @browser.text_field(id: 'client_email').set Faker::Internet.email
-    @browser.checkbox(id: 'client_active').clear if iteration % 11 == 0
+    flash_and_ensure_click(@browser.a(text: 'Sign up'))
+    @browser.text_field(id: 'user_name').set Faker::Name.name
+    @browser.text_field(id: 'user_telephone').set Faker::PhoneNumber.phone_number
+    @browser.text_field(id: 'user_email').set Faker::Internet.email
+    @browser.text_field(id: 'user_password').set 'rsft789p'
+    @browser.text_field(id: 'user_password_confirmation').set 'rsft789p'
     @browser.button(type: 'submit').click
-    @browser.p(id: 'notice').flash
-    flash_and_ensure_click(@browser.a(text: 'Retour'))
+    @browser.div(id: 'notice').flash
+    seed = Random.new
+    student_count = seed.rand(3) + 1
+    create_students(student_count)
+    flash_and_ensure_click(@browser.a(text: 'Deconnecter'))
   end
 end
 
 
-def create_students
-  create_browser
+def create_students(iterations = 325)
   flash_and_ensure_click(@browser.a(text: 'Étudiants'))
-  350.times do |iteration|
+  iterations.times do |iteration|
     flash_and_ensure_click(@browser.a(text: 'Nouvel Étudiant'))
     seed = Random.new
     student_is_also_a_client = seed.rand(100) < 30
-
-    client_count = @browser.select_list(:id => 'student_client_id').options.count
-    @browser.select(id: 'student_client_id').options[seed.rand(client_count)].click
-
+    flash_and_ensure_click(@browser.text_field(id: 'student_name'))
     if student_is_also_a_client
-      @browser.text_field(id: 'student_name').set @browser.select(id: 'student_client_id').selected_options.map(&:text)
+      begin
+        @browser.text_field(id: 'student_name').set @browser.hidden_field(id: 'student_client_id').value
+      rescue
+        rety
+      end
     else
       @browser.text_field(id: 'student_name').set Faker::Name.name
     end
@@ -51,11 +54,8 @@ def create_students
     @browser.select(id: 'student_date_of_birth_3i').options[seed.rand(31)].click
     @browser.select(id: 'student_date_of_birth_2i').options[seed.rand(12)].click
     @browser.select(id: 'student_date_of_birth_1i').options[seed.rand(70)].click
-    @browser.checkbox(id: 'student_active').clear if iteration % 11 == 0
-    @browser.checkbox(id: 'student_trial_class').set if iteration % 5 == 0
-    @browser.checkbox(id: 'student_uniform_promotion').set if iteration % 8 == 0
     @browser.button(type: 'submit').click
-    @browser.p(id: 'notice').flash
+    @browser.div(id: 'notice').flash
     flash_and_ensure_click(@browser.a(text: 'Retour'))
   end
 end
@@ -104,7 +104,7 @@ end
 
 def get_action
   puts "Enter action:"
-  puts "1- Create Clients"
+  puts "1- Create Users"
   puts "2- Create Students"
   puts "3- Create Reservations"
   puts "4- Create Graduations"
@@ -116,26 +116,30 @@ action_to_run = get_action
 case action_to_run
 when "1"
   begin
-    create_clients
-  rescue
+    create_users
+  rescue => exception
+    puts exception
     retry
   end
 when "2"
   begin
     create_students
-  rescue
+  rescue => exception
+    puts exception
     retry
   end
 when "3"
   begin
     create_reservations
-  rescue
+  rescue => exception
+    puts exception
     retry
   end
 when "4"
   begin
     create_graduations
-  rescue
+  rescue => exception
+    puts exception
     retry
   end
 else

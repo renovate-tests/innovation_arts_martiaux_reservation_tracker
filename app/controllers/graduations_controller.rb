@@ -9,9 +9,9 @@ class GraduationsController < ApplicationController
     if params[:search].nil?
       @graduations = Graduation.joins('INNER JOIN students s on graduations.student_id = s.id
                                    INNER JOIN belts b on graduations.belt_id = b.id
-                                   INNER JOIN clients cl on s.client_id = cl.id
+                                   INNER JOIN users u on s.user_id = u.id
                                   ').select('graduations.id, graduations.graduation_date, s.name as name,
-                                             b.color as color, cl.name as client_name').order('cl.name, s.name, graduations.graduation_date desc').page(params[:page])
+                                             b.color as color, u.name as client_name').order('u.name, s.name, graduations.graduation_date desc').page(params[:page])
     else
       @graduations = Graduation.search(params[:search], params[:page])
     end
@@ -22,9 +22,9 @@ class GraduationsController < ApplicationController
   def show
     @graduation = Graduation.joins('INNER JOIN students s on graduations.student_id = s.id
                                    INNER JOIN belts b on graduations.belt_id = b.id
-                                   INNER JOIN clients cl on s.client_id = cl.id
+                                   INNER JOIN users u on s.user_id = u.id
                                   ').select('graduations.id, graduations.graduation_date, s.name as name,
-                                             b.color as color, cl.name as client_name').find(params[:id])
+                                             b.color as color, u.name as client_name').find(params[:id])
 
   end
 
@@ -85,7 +85,7 @@ class GraduationsController < ApplicationController
 
 
   def get_student_list
-    @students = Student.joins('INNER JOIN clients cl on students.client_id = cl.id').select('students.id, students.name, cl.name as client_name').order('cl.name, students.name')
+    @students = Student.joins('INNER JOIN users u on students.user_id = u.id').select('students.id, students.name, u.name as client_name').order('u.name, students.name')
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

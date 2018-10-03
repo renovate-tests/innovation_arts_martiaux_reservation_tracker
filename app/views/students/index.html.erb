@@ -13,12 +13,12 @@
     <%= link_to t('new_student'), new_student_path %>
   </section>
   <% if current_admin %>
-  <section class="download">
-    <label><%= t('Download') %>:
-      <%= link_to "CSV", students_path(format: "csv"), class: 'download_link' %>
-    </label>
-  </section>
-    <% end %>
+    <section class="download">
+      <label><%= t('Download') %>:
+        <%= link_to "CSV", students_path(format: "csv"), class: 'download_link' %>
+      </label>
+    </section>
+  <% end %>
 </section>
 <table>
   <thead>
@@ -42,7 +42,11 @@
       <td><%= get_latest_belt_color(student['id']) %></td>
       <td><%= link_to t('show'), student_url(student['id']) %></td>
       <td><%= link_to t('edit'), edit_student_path(student['id']) %></td>
-      <td><%= link_to t('destroy'), Student.find(student['id']), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td>
+        <% if current_admin %>
+          <%= link_to t('destroy'), student_path(student), method: :delete, data: {confirm: 'Are you sure?'} %>
+      <% end %>
+      </td>
     </tr>
   <% end %>
   </tbody>

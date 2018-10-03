@@ -29,7 +29,7 @@ class CoursesController < ApplicationController
 
     @places_left = @course['number_of_students_allowed'] - Reservation.where(active: true, course_id: params[:id]).count
     @susbcribed_students = Reservation.joins('left join students s on reservations.student_id = s.id
-                                              left join clients cl on s.client_id = cl.id').select('s.id as id, s.name as name, cl.name as linked_client, cl.telephone, cl.email, s.trial_class, s.uniform_promotion').where(course_id: params[:id], active: true)
+                                              left join users u on s.user_id = u.id').select('s.id as id, s.name as name, u.name as linked_client, u.telephone, u.email, s.trial_class, s.uniform_promotion').where(course_id: params[:id], active: true)
 
 
     respond_to do |format|

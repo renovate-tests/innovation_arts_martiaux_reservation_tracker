@@ -12,13 +12,13 @@ class ReservationsController < ApplicationController
 
       @reservations = Reservation.joins('INNER JOIN students s ON s .id = reservations.student_id
                                        INNER JOIN courses c ON c.id = reservations.course_id
-                                       INNER JOIN clients cl ON cl.id = s.client_id
+                                       INNER JOIN users u ON u.id = s.user_id
                                        INNER JOIN timeslots t on t.id = c.timeslot_id
                                        INNER JOIN course_types ct on ct.id = c.course_type_id
                                        INNER JOIN age_groups a on a.id = c.age_group_id
-                                       ').select('s.name as student_name, cl.name as client_name,
+                                       ').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
-                                                  a.name as age_group, reservations.active, reservations.id').order('reservations.active desc, c.day_of_week, t.start_time, cl.name, ct.name').page(params[:page])
+                                                  a.name as age_group, reservations.active, reservations.id').order('reservations.active desc, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
 
     else
       @reservations = Reservation.search(params[:search], params[:page])
@@ -31,11 +31,11 @@ class ReservationsController < ApplicationController
 
     @reservation = Reservation.joins('INNER JOIN students s ON s .id = reservations.student_id
                                        INNER JOIN courses c ON c.id = reservations.course_id
-                                       INNER JOIN clients cl ON cl.id = s.client_id
+                                       INNER JOIN users u ON u.id = s.user_id
                                        INNER JOIN timeslots t on t.id = c.timeslot_id
                                        INNER JOIN course_types ct on ct.id = c.course_type_id
                                        INNER JOIN age_groups a on a.id = c.age_group_id
-                                       ').select('s.name as student_name, cl.name as client_name,
+                                       ').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id').find(params[:id])
   end
@@ -100,7 +100,7 @@ class ReservationsController < ApplicationController
   end
 
   def get_students_list
-    @students = Student.joins('INNER JOIN clients cl on cl.id = students.client_id').select('students.id as student_id, students.name, cl.id, cl.name as client_name').where('students.active = true').order('cl.name, students.name')
+    @students = Student.joins('INNER JOIN users u on u.id = students.user_id').select('students.id as student_id, students.name, u.id, u.name as client_name').where('students.active = true').order('u.name, students.name')
   end
 
   def get_courses_list

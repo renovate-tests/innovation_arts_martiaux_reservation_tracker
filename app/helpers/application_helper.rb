@@ -38,9 +38,9 @@ module ApplicationHelper
 
   def get_susbcribed_students(a_course)
     Reservation.joins('left join students s on reservations.student_id = s.id
-                       left join clients cl on s.client_id = cl.id').where('reservations.course_id =?
+                       left join users u on s.user_id = u.id').where('reservations.course_id =?
                                                                             and reservations.active = true', a_course).select('s.id, s.name,
-                                                                            cl.name as client_name,
+                                                                            u.name as client_name,
                                                                             s.trial_class,
                                                                             s.uniform_promotion').to_a
 

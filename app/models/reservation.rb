@@ -6,13 +6,13 @@ class Reservation < ApplicationRecord
   def self.search(search, page)
     self.joins('INNER JOIN students s ON s .id = reservations.student_id
                 INNER JOIN courses c ON c.id = reservations.course_id
-                INNER JOIN clients cl ON cl.id = s.client_id
+                INNER JOIN users u ON u.id = s.user_id
                 INNER JOIN timeslots t on t.id = c.timeslot_id
                 INNER JOIN course_types ct on ct.id = c.course_type_id
-                INNER JOIN age_groups a on a.id = c.age_group_id').select('s.name as student_name, cl.name as client_name,
+                INNER JOIN age_groups a on a.id = c.age_group_id').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id').order('reservations.active desc,
-                c.day_of_week, t.start_time, cl.name, ct.name').where("lower(s.name) LIKE :query", query: "%#{search.downcase}%")
-        .paginate(:page => page, :per_page => 10).order('cl.name, s.name')
+                c.day_of_week, t.start_time, u.name, ct.name').where("lower(s.name) LIKE :query", query: "%#{search.downcase}%")
+        .paginate(:page => page, :per_page => 10).order('u.name, s.name')
   end
 end

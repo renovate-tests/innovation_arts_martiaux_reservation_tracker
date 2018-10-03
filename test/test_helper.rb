@@ -18,3 +18,8 @@ class ActiveSupport::TestCase
 
 end
 
+class ActionView::TestCase::TestController
+  def default_url_options options={}
+    subject.default_url_options options
+  end
+end
