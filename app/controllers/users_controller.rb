@@ -3,7 +3,12 @@ class UsersController < ApplicationController
   before_action :user_is_admin
 
   def index
-    @users = User.all.page(params[:page])
+
+    if params[:search].nil?
+      @users = User.all.page(params[:page])
+    else
+      @users = User.search(params[:search], params[:page]).order('active desc, name')
+    end
     respond_to do |format|
       format.html
       format.csv {send_data User.all.to_csv}

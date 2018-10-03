@@ -42,11 +42,7 @@ def create_students(iterations = 325)
     student_is_also_a_client = seed.rand(100) < 30
     flash_and_ensure_click(@browser.text_field(id: 'student_name'))
     if student_is_also_a_client
-      begin
-        @browser.text_field(id: 'student_name').set @browser.hidden_field(id: 'student_client_id').value
-      rescue
-        rety
-      end
+       @browser.text_field(id: 'student_name').set @browser.hidden_field(id: 'student_client_id').value
     else
       @browser.text_field(id: 'student_name').set Faker::Name.name
     end

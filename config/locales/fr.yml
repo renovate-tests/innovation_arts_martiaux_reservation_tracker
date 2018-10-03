@@ -11,7 +11,7 @@ fr:
   current_belt: "Ceinture Actuelle"
   trial_class: "Cours d'essai"
   uniform_promotion: "Promotion Uniforme"
-  client_linked: "Client Associé"
+  user_linked: "Client Associé"
   show: "Consulter"
   edit: "Modifier"
   back: "Retour"
@@ -24,7 +24,7 @@ fr:
   color: "Couleur"
   new_belt: "Ajouter Nouvelle Ceinture"
   course_type: "Types de Cours"
-  new_client: "Nouveau Client"
+  new_user: "Nouveau Client"
   new_course_type: "Nouveau type de Cours"
   graduation_date: "Date de graduation"
   new_graduation: "Ajouter Graduation"
@@ -73,6 +73,7 @@ fr:
   courses_list: "Listes pour Cours"
   Search term: "Recherche"
   Download: "Exporter"
+  Users: "Clients"
 
   # Default library
   activerecord:
