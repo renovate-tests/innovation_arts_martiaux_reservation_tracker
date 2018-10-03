@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong><%= t('student').html_safe %>:</strong>
   <%= "#{@reservation.student_name} - (#{@reservation.client_name})" %>
@@ -10,10 +8,12 @@
   <%= "#{t(get_week_day(@reservation.day_of_week))}: #{@reservation['start_time'].strftime('%H:%M')} - #{@reservation['end_time'].strftime('%H:%M')} - #{@reservation['course_type']} - #{@reservation['age_group']}" %>
 </p>
 
-<p>
-  <strong><%= t('active') %>:</strong>
-  <%= @reservation['active'] %>
-</p>
+<% if current_admin %>
+  <p>
+    <strong><%= t('active') %>:</strong>
+    <%= @reservation['active'] %>
+  </p>
+<% end %>
 
 <%= link_to t('edit'), edit_reservation_path(@reservation) %> |
 <%= link_to t('back'), reservations_path %>

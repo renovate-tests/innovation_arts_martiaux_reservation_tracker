@@ -22,7 +22,9 @@ class StudentsController < ApplicationController
       end
     else
       if current_admin
-        @students = Student.search(params[:search], params[:page])
+        @students = Student.joins('INNER JOIN users u on students.user_id = u.id').select('students.id, students.name,
+                                students.date_of_birth, students.active, students.trial_class, students.uniform_promotion,
+                                u.name as linked_client').search(params[:search], params[:page])
       else
         @students = Student.where(['students.user_id = ?', current_user.id]).search(params[:search], params[:page])
       end

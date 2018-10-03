@@ -9,7 +9,7 @@
         <h5><%= get_places_used(course['id']) %> / <%= course['number_of_students_allowed'] %></h5>
         <p>
         <ul>
-          <% get_susbcribed_students(course['id']).each do |student| %>
+          <% get_susbcribed_students_active(course['id']).each do |student| %>
             <li class="student_cours">
 
               <%= student['name'] %><%= " - (#{student['client_name']})" unless student['name'] == student['client_name'] %>

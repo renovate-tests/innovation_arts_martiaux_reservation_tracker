@@ -74,6 +74,7 @@ fr:
   Search term: "Recherche"
   Download: "Exporter"
   Users: "Clients"
+  client_linked: "Client Associé"
 
   # Default library
   activerecord:

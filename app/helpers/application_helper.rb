@@ -33,13 +33,30 @@ module ApplicationHelper
 
 
   def get_places_used(a_course)
-    Reservation.where(active: true, course_id: a_course).count
+    Reservation.joins('left join students s on reservations.student_id = s.id
+                       left join users u on s.user_id = u.id').where(['reservations.course_id =?
+                                                                       and reservations.active = true
+                                                                       and u.active = true
+                                                                       and s.active', a_course]).count
   end
 
   def get_susbcribed_students(a_course)
     Reservation.joins('left join students s on reservations.student_id = s.id
                        left join users u on s.user_id = u.id').where('reservations.course_id =?
                                                                             and reservations.active = true', a_course).select('s.id, s.name,
+                                                                            u.name as client_name,
+                                                                            s.trial_class,
+                                                                            s.uniform_promotion').to_a
+
+  end
+
+
+  def get_susbcribed_students_active(a_course)
+    Reservation.joins('left join students s on reservations.student_id = s.id
+                       left join users u on s.user_id = u.id').where(['reservations.course_id =?
+                                                                       and reservations.active = true
+                                                                       and u.active = true
+                                                                       and s.active', a_course]).select('s.id, s.name,
                                                                             u.name as client_name,
                                                                             s.trial_class,
                                                                             s.uniform_promotion').to_a

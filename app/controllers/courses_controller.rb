@@ -27,9 +27,15 @@ class CoursesController < ApplicationController
                                                                                                  courses.day_of_week,
                                                                                                  courses.number_of_students_allowed').find(params[:id])
 
-    @places_left = @course['number_of_students_allowed'] - Reservation.where(active: true, course_id: params[:id]).count
+    #@places_left = @course['number_of_students_allowed'] - Reservation.joins('left join students s on reservations.student_id = s.id
+    #                                          left join users u on s.user_id = u.id').where('reservations.active = true, course_id = ?, s.active = true, u.active = true', params[:id]).count
+
+    @places_left = @course['number_of_students_allowed'] - Reservation.joins('left join students s on reservations.student_id = s.id
+                                              left join users u on s.user_id = u.id').where(student_id: Student.where(active: true), course_id: params[:id]).count
+
     @susbcribed_students = Reservation.joins('left join students s on reservations.student_id = s.id
-                                              left join users u on s.user_id = u.id').select('s.id as id, s.name as name, u.name as linked_client, u.telephone, u.email, s.trial_class, s.uniform_promotion').where(course_id: params[:id], active: true)
+                                              left join users u on s.user_id = u.id').select('s.id as id, s.name as name, s.active as student_active, u.active as user_active, u.name as linked_client, u.telephone, u.email, s.trial_class, s.uniform_promotion').where('reservations.course_id = ?', params[:id])
+
 
 
     respond_to do |format|

@@ -4,7 +4,7 @@ class Student < ApplicationRecord
   has_many :reservation, foreign_key: 'student_id', :dependent => :destroy
 
   def self.search(search, page)
-    self.where("lower(name) LIKE :query", query: "%#{search.downcase}%").paginate(:page => page, :per_page => 10).order('name ASC')
+    self.where("lower(students.name) LIKE :query", query: "%#{search.downcase}%").paginate(:page => page, :per_page => 10).order('name ASC')
   end
 
   def self.to_csv(options = {})

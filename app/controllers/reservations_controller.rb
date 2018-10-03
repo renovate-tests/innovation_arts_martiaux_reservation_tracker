@@ -100,7 +100,12 @@ class ReservationsController < ApplicationController
   end
 
   def get_students_list
-    @students = Student.joins('INNER JOIN users u on u.id = students.user_id').select('students.id as student_id, students.name, u.id, u.name as client_name').where('students.active = true').order('u.name, students.name')
+    if current_admin
+      @students = Student.joins('INNER JOIN users u on u.id = students.user_id').select('students.id as student_id, students.name, u.id, u.name as client_name').where(['students.active = true']).order('u.name, students.name')
+    else
+      @students = Student.joins('INNER JOIN users u on u.id = students.user_id').select('students.id as student_id, students.name, u.id, u.name as client_name').where(['students.active = true and students.user_id = ?', current_user.id]).order('u.name, students.name')
+    end
+
   end
 
   def get_courses_list
