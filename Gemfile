@@ -49,6 +49,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'brakeman'
+
+
 end
 
 group :test do
@@ -74,3 +76,10 @@ gem 'will-paginate-i18n'
 
 # User management
 gem 'devise'
+
+# should allow stripe to load .ENV variables
+gem 'dotenv-rails', groups: [:development, :test]
+
+# credit cards system
+gem 'stripe'
+
