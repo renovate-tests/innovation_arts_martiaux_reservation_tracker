@@ -7,14 +7,18 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: <%= @course_price.to_f / 100 %> $</span>
-      <%= hidden_field_tag :amount, @course_price %>
+      <span>Amount: <%= @reservation_details[:course_price].to_f / 100 %> $</span>
+      <%= hidden_field_tag :amount, @reservation_details[:course_price] %>
+      <%= hidden_field_tag :reservation, @reservation_details[:reservation] %>
     </label>
   </article>
+
+  <%=  %>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="<%= @course_price %>"
+          data-amount="<%= @reservation_details[:course_price] %>"
+          data-currency="CAD"
           data-locale="auto"></script>
 <% end %>

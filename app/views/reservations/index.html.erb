@@ -7,7 +7,7 @@
     <%= will_paginate @reservations, :container => false %>
   </div>
 </nav>
-<%= render 'shared/search' %>
+<%= render 'shared/search' if current_admin %>
 <p class="reservations">Vos réservations seront activées une fois le paiement effectué.</p>
 <table>
   <thead>

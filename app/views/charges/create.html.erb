@@ -1,2 +1,8 @@
-<h2>Thanks, you paid <strong><%= @amount.to_f / 100  %> $</strong>!</h2>
-<%= link_to t('back'), students_path %>
+<h2>Thanks, you paid <strong><%= @charge.amount.to_f / 100  %> $ <%= @charge.currency %></strong>!</h2>
+<p>Charge ID: <%= @charge.id %></p>
+<p>Charge Description: <%= @charge.description %></p>
+<p>Charge Paid: <%= @charge.paid %></p>
+
+
+<p><%= @reservation_details_after_processing.inspect %></p>
+<%= link_to t('back'), charges_path %>
