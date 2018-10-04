@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
 
-  resources :cash_payments
+
   devise_for :admins, controllers: {
       confirmations: 'admins/confirmations',
       passwords: 'admins/passwords',
       registrations: 'admins/registrations',
       sessions: 'admins/sessions',
       unlocks: 'admins/unlocks'
+
   }
+
+  devise_scope :admins do
+
+  end
 
   devise_for :users, controllers: {
       confirmations: 'users/confirmations',
@@ -17,11 +22,13 @@ Rails.application.routes.draw do
       unlocks: 'users/unlocks',
       index: 'users/index'
   }
+  get 'admins/aditionnal_admins', to: 'admins#aditionnal_admins'
+  get '/students' => 'students#index', :as => :authenticated_user_root
+  get '/users' => 'users#index', :as => :authenticated_admin_root
 
-  get '/students' => "students#index", :as => :authenticated_user_root
-  get '/users' => "users#index", :as => :authenticated_admin_root
   resources :users
-
+  resources :admins
+  resources :cash_payments
 
   resources :reservations
   resources :courses

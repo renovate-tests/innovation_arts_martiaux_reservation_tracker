@@ -2,7 +2,7 @@ class CashPayment < ApplicationRecord
   belongs_to :user
 
   def self.to_csv(options = {})
-    desired_columns = ["id", "name", "email", "telephone", "due_date"]
+    desired_columns = ["id", "name", "email", "telephone", "due_date", "paid"]
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |cash_payment|

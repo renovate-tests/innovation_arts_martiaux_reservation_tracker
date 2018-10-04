@@ -3,14 +3,16 @@
 class Admins::RegistrationsController < Devise::RegistrationsController
   include Accessible
   skip_before_action :check_user, except: [:new, :create]
+  before_action :there_can_be_only_one_admin
+  prepend_before_action :require_no_authentication, only: :cancel
 
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  #def new
+  #  super
+  #end
 
   # POST /resource
   # def create
@@ -62,4 +64,14 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+
+  def there_can_be_only_one_admin
+    if Admin.count > 1
+      redirect_to root_path unless current_admin
+    end
+  end
+
+
 end

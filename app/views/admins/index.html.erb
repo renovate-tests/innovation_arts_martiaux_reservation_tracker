@@ -1,0 +1,34 @@
+<nav class="will_paginate">
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @admins %>
+    </div>
+    <%= will_paginate @admins, :container => false %>
+  </div>
+</nav>
+<section class="actions">
+  <section class="new_record">
+    <%= link_to t('new_admin'), admins_aditionnal_admins_path %>
+  </section>
+</section>
+<h1><%= t('admin').html_safe %>s</h1>
+<table>
+  <thead>
+  <tr>
+    <th><%= t('email') %></th>
+    <th><%= t('last_sign_in_at') %></th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @admins.each do |admin| %>
+    <tr>
+      <td><%= admin.email %></td>
+      <td><%= admin.last_sign_in_at %></td>
+      <td><%= link_to t('show'), admin_url(admin) %></td>
+      <td><%= link_to t('destroy'), admin_path(admin), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

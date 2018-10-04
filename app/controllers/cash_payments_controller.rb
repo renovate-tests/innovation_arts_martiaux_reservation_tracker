@@ -13,7 +13,7 @@ class CashPaymentsController < ApplicationController
     end
     respond_to do |format|
       format.html
-      format.csv {send_data CashPayment.joins(:user).select('users.id, users.name, users.email, users.telephone, cash_payments.due_date').all.to_csv}
+      format.csv {send_data CashPayment.joins(:user).select('users.id, users.name, users.email, users.telephone, cash_payments.due_date, cash_payments.paid').where('paid = false').order('paid, due_date').to_csv}
     end
   end
 

@@ -1,0 +1,11 @@
+<p>
+  <strong>Email:</strong>
+  <%= @admin.email %>
+</p>
+
+<p>
+  <strong><%= t('last_sign_in_at') %>:</strong>
+  <%= @admin.last_sign_in_at %>
+</p>
+
+<%= link_to t('back'), admins_path %>
