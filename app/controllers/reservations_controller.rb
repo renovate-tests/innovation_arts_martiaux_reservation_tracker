@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
                                        ').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id').order('reservations.active desc, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
-      else
+        else
         @reservations = Reservation.search(params[:search], params[:page])
       end
     else

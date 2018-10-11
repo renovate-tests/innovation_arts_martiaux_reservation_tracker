@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_04_140117) do
+ActiveRecord::Schema.define(version: 2018_10_11_152027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,17 +84,10 @@ ActiveRecord::Schema.define(version: 2018_10_04_140117) do
     t.index ["student_id"], name: "index_graduations_on_student_id"
   end
 
-  create_table "reservation_charges_tracking", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "reservation_id", null: false
-    t.string "charge_id", null: false
-    t.boolean "paid", default: false, null: false
-  end
-
   create_table "reservations", force: :cascade do |t|
     t.integer "student_id", null: false
     t.integer "course_id", null: false
-    t.boolean "active", default: true
+    t.boolean "active", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_reservations_on_course_id"
