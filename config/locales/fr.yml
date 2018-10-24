@@ -1,4 +1,6 @@
 fr:
+  inactive: "Inactif"
+  active: "Actif"
   name: "Nom"
   telephone: "T&eacute;l&eacute;phone"
   active: "Actif"

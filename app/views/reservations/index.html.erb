@@ -1,4 +1,24 @@
 <h1><%= t('reservations') %></h1>
+<%= render 'shared/search' if current_admin %>
+<aside>
+  <table>
+    <tr>
+      <th>Tarifs</th>
+    </tr>
+    <tr>
+      <td>1 Cours semaine - 24 $ / 2 Semaines</td>
+    </tr>
+    <tr>
+      <td>2 Cours semaine - 38 $ / 2 Semaines</td>
+    </tr>
+    <tr>
+      <td>illimité - 44 $ / 2 Semaines</td>
+    </tr>
+  </table>
+  <p class="reservations">Vos réservations seront activées une fois le paiement effectué.</p>
+  <p class="reservations">Notez qu'il est obligatoire de s'inscrire à un minimum de deux fois par semaine une fois rendu au niveau intermédiaire, avancé et centure noire (Ceinture Rouge et +)</p>
+</aside>
+
 <nav class="will_paginate">
   <div class="digg_pagination">
     <div class="page_info">
@@ -7,8 +27,6 @@
     <%= will_paginate @reservations, :container => false %>
   </div>
 </nav>
-<%= render 'shared/search' if current_admin %>
-<p class="reservations">Vos réservations seront activées une fois le paiement effectué.</p>
 <table>
   <thead>
   <tr>
@@ -24,7 +42,7 @@
     <tr>
       <td><%= reservation.student_name %> <%= " - (#{reservation.client_name})" if reservation['client_name'] != reservation['student_name'] %>  </td>
       <td><%= "#{t(get_week_day(reservation['day_of_week']))}: #{reservation['start_time'].strftime('%H:%M')} - #{reservation['end_time'].strftime('%H:%M')} - #{reservation['course_type']} - #{reservation['age_group']}" %></td>
-      <td><%= reservation['active'] %></td>
+      <td><%= reservation['active'] ? t('active') : t('inactive') %></td>
       <td><%= link_to t('show'), reservation_url(reservation['id']) %></td>
       <td>
         <% if current_admin %>

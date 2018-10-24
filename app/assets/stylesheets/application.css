@@ -327,3 +327,10 @@ li.student_cours {
 .reservations{
     font-style: italic;
 }
+.tarifs{
+    display: inline;
+}
+.tarif_table .tarif_details {
+    width: 50%;
+    display: inline;
+}

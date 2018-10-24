@@ -15,6 +15,12 @@ class User < ApplicationRecord
   has_many :student, :dependent => :destroy
   has_many :reservation, through: :student
 
+
+  after_create :send_admin_mail
+  def send_admin_mail
+    UserMailer.send_new_user_message(self).deliver
+  end
+
   def self.search(search, page)
     self.where("lower(name) LIKE :query", query: "%#{search.downcase}%")
         .paginate(:page => page, :per_page => 10).order('active desc, name ASC')
