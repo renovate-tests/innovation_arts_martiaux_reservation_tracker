@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :client %>
     <%= form.select 'user_id', options_for_select(@users.collect {|user| [user.name, user.id]}, cash_payment.user_id) %>
   </div>
 
   <div class="field">
-    <%= form.label :due_date %>
+    <%= form.label t('Due date') %>
     <%= form.date_select :due_date, start_year: Time.now.year, end_year: Time.now.year + 1 %>
   </div>
   <div class="field">
-    <%= form.label :paid %>
+    <%= form.label t('Paid') %>
     <%= form.check_box :paid%>
   </div>
 

@@ -82,6 +82,8 @@ fr:
   Paid: "Payé"
   Cash Payments: "Paiments Comptant"
   new_cash_payment: "Nouveau Paiement Comptant"
+  search: "Rechercher"
+  to_pay: "À Payer"
   # Default library
   activerecord:
     models:
@@ -91,6 +93,7 @@ fr:
       age_group: "Groupe d'Âge"
       timeslot: "Plage Horaire"
       course: "Cours"
+      cash_payments: "Paiments Comptant"
 
     errors:
       messages:

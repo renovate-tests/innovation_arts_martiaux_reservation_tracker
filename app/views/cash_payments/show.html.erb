@@ -10,7 +10,7 @@
 </p>
 <p>
   <strong><%= t('Paid') %>:</strong>
-  <%= @cash_payment.paid %>
+  <%= @cash_payment.paid ? t('Paid') : t('to_pay') %>
 </p>
 
 <%= link_to t('edit'), edit_cash_payment_path(@cash_payment) %> |
