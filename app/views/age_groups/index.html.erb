@@ -9,6 +9,9 @@
     <%= will_paginate @age_groups, :container => false %>
   </div>
 </nav>
+<section class="new_record">
+  <%= link_to "#{t('new')} #{t('age_group')}", new_age_group_path %>
+</section>
 <table>
   <thead>
   <tr>
@@ -32,7 +35,3 @@
   <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to "#{t('new')} #{t('age_group')}", new_age_group_path %>

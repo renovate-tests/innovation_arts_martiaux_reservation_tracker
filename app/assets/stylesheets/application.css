@@ -148,6 +148,7 @@ nav a {
 }
 .search_form, .new_record, .download {
     display: inline-block;
+    padding-bottom: 1rem;
 }
 
 .download_link{

@@ -14,6 +14,12 @@ module ApplicationHelper
     days_list[a_day]
   end
 
+  def format_time(timestamp)
+    unless timestamp.nil?
+      timestamp.strftime('%H:%M')
+    end
+  end
+
   def get_latest_belt_color(a_student)
     result = Graduation.where(student_id: a_student).joins('INNER JOIN belts b on graduations.belt_id = b.id').order('graduation_date desc').limit(1).to_a
     result.empty? ? 'White' : Belt.joins('INNER JOIN graduations g on g.belt_id = belts.id').find(result[0].belt_id).color

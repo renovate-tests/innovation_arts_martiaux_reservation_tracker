@@ -10,30 +10,31 @@
   </div>
 </nav>
 <%= render 'shared/search' %>
+<section class="new_record">
+  <%= link_to t('new_graduation'), new_graduation_path %>
+</section>
 <table>
   <thead>
-    <tr>
-      <th><%= t('student').html_safe %></th>
-      <th><%= t('belt') %></th>
-      <th><%= t('graduation_date') %></th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th><%= t('student').html_safe %></th>
+    <th><%= t('belt') %></th>
+    <th><%= t('graduation_date') %></th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @graduations.each do |graduation| %>
-      <tr>
-        <td><%= graduation['name']%> <% unless graduation.client_name == graduation['name'] %> - (<%= graduation.client_name %>) <% end %></td>
-        <td><%= graduation['color'] %></td>
-        <td><%= graduation['graduation_date'] %></td>
-        <td><%= link_to t('show'), graduation_path(graduation['id']) %></td>
-        <td><%= link_to t('edit'), edit_graduation_path(graduation['id']) %></td>
-        <td><%= link_to t('destroy'), Graduation.find(graduation['id']), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @graduations.each do |graduation| %>
+    <tr>
+      <td><%= graduation['name'] %>
+        <% unless graduation.client_name == graduation['name'] %> - (<%= graduation.client_name %>)
+        <% end %></td>
+      <td><%= graduation['color'] %></td>
+      <td><%= graduation['graduation_date'] %></td>
+      <td><%= link_to t('show'), graduation_path(graduation['id']) %></td>
+      <td><%= link_to t('edit'), edit_graduation_path(graduation['id']) %></td>
+      <td><%= link_to t('destroy'), Graduation.find(graduation['id']), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to t('new_graduation'), new_graduation_path %>

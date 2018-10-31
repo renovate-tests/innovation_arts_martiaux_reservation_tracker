@@ -7,14 +7,12 @@
   <strong><%= t('course') %>:</strong>
   <%= "#{t(get_week_day(@reservation.day_of_week))}: #{@reservation['start_time'].strftime('%H:%M')} - #{@reservation['end_time'].strftime('%H:%M')} - #{@reservation['course_type']} - #{@reservation['age_group']}" %>
 </p>
+<p>
+  <strong><%= t('active') %>:</strong>
+  <%= @reservation['active'] ? t('active') : t('inactive') %>
+</p>
 
 <% if current_admin %>
-  <p>
-    <strong><%= t('active') %>:</strong>
-    <%= @reservation['active'] %>
-  </p>
-
-
   <%= link_to t('edit'), edit_reservation_path(@reservation) %> |
 <% end %>
 <%= link_to t('back'), reservations_path %>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+</head>
+<body>
+<h1>R&eacute;servation confirm&eacute;e chez <em>Innovation Arts Martiaux</em></h1>
+<p>Votre réservation a &eacute;t&eacute; confirm&eacute;e</p>
+<p>D&eacute;tails de la r&eacute;servation:<br>
+  <strong><%= "#{@reservation['student_name']} - (#{@reservation['client_name']})" %></strong><br>
+  <strong><%= "#{t(get_week_day(@reservation.day_of_week))}: #{@reservation['start_time'].strftime('%H:%M')} - #{@reservation['end_time'].strftime('%H:%M')} - #{@reservation['course_type']} - #{@reservation['age_group']}" %></strong>
+</p>
+<p>
+  Pour vous connecter &agrave; votre compte, rendez-vous au http://innovationartsmartiaux.com et cliquer sur l'onglet
+  "mon compte"
+</p>
+
+<p>L'&eacute;quipe d'INNOVATION ARTS MARTIAUX!</p>
+</body>
+</html>

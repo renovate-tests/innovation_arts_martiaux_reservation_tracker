@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
+  add_template_helper(ApplicationHelper)
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
   default from: 'no-reply@invalidmail.com'

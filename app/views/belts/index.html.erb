@@ -9,26 +9,25 @@
     <%= will_paginate @belts, :container => false %>
   </div>
 </nav>
+<section class="new_record">
+  <%= link_to t('new_belt'), new_belt_path %>
+</section>
 <table>
   <thead>
-    <tr>
-      <th><%= t('color') %></th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th><%= t('color') %></th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @belts.each do |belt| %>
-      <tr>
-        <td><%= t(belt.color) %></td>
-        <td><%= link_to t('show'), belt %></td>
-        <td><%= link_to t('edit'), edit_belt_path(belt) %></td>
-        <td><%= link_to t('destroy'), belt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @belts.each do |belt| %>
+    <tr>
+      <td><%= t(belt.color) %></td>
+      <td><%= link_to t('show'), belt %></td>
+      <td><%= link_to t('edit'), edit_belt_path(belt) %></td>
+      <td><%= link_to t('destroy'), belt, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to t('new_belt'), new_belt_path %>

@@ -10,6 +10,9 @@
   </div>
 </nav>
 <%= render 'shared/search' %>
+<section class="new_record">
+  <%= link_to "#{t('new')} #{t('course')}", new_course_path %>
+</section>
 <table>
   <thead>
   <tr>
@@ -27,7 +30,7 @@
     <tr>
       <td><%= course['course_type'] %></td>
       <td><%= t(get_week_day(course['day_of_week'])) %></td>
-      <td><%= course['start_time'].strftime('%H:%M') %> - <%= course['end_time'].strftime('%H:%M') %></td>
+      <td><%= format_time(course['start_time']) %> - <%= format_time(course['end_time']) %></td>
       <td><%= course['age_group']%></td>
       <td><%= course['number_of_students_allowed'] - get_places_used(course['id'])  %></td>
       <td><%= link_to t('show'), course_url(course['id']) %></td>
@@ -37,7 +40,3 @@
   <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to "#{t('new')} #{t('course')}", new_course_path %>

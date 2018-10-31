@@ -10,6 +10,9 @@
   </div>
 </nav>
 <%= render 'shared/search' %>
+<section class="new_record">
+  <%= link_to t('new_course_type'), new_course_type_path %>
+</section>
 <table>
   <thead>
     <tr>
@@ -29,7 +32,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to t('new_course_type'), new_course_type_path %>
