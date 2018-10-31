@@ -1,27 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: David Cloutier
-  telephone: 418-998-3798
-  email: sheldreyn@gmail.com
-  active: true
-  id: 1
-
-two:
-  name: Yan Carrier
-  telephone: 581-977-0086
-  email: innovationartsmartiaux@hotmail.com
-  active: false
-  id: 2
-three:
-  name: bob gratton
-  telephone: 555-555-5555
-  email: bob@invalidemail.com
-  active: true
-  id: 3
-four:
-  name: Rene Deschamps
-  telephone: 819-755-4503
-  email: fred_marjo@hotmail.com
-  active: true
-  id: 4
+#
+#one:
+#  name: David Cloutier
+#  telephone: 418-998-3798
+#  email: sheldreyn@gmail.com
+#  active: true
+#  id: 1
+#
+#two:
+#  name: Yan Carrier
+#  telephone: 581-977-0086
+#  email: innovationartsmartiaux@hotmail.com
+#  active: false
+#  id: 2
+#three:
+#  name: bob gratton
+#  telephone: 555-555-5555
+#  email: bob@invalidemail.com
+#  active: true
+#  id: 3
+#four:
+#  name: Rene Deschamps
+#  telephone: 819-755-4503
+#  email: fred_marjo@hotmail.com
+#  active: true
+#  id: 4

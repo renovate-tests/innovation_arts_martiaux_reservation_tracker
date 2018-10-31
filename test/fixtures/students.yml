@@ -1,37 +1,37 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html#
 
-one:
-  name: David Cloutier
-  date_of_birth: 1978-04-11
-  active: true
-  user_id: 4
-  trial_class: false
-  uniform_promotion: false
-  id: 1
+#one:
+#  name: David Cloutier
+#  date_of_birth: 1978-04-11
+#  active: true
+#  user_id: 4
+#  trial_class: false
+#  uniform_promotion: false
+#  id: 1
 
-two:
-  name: Yan Carrier
-  date_of_birth: 1981-07-17
-  active: false
-  user_id: 4
-  trial_class: false
-  uniform_promotion: false
-  id: 2
+#two:
+#  name: Yan Carrier
+#  date_of_birth: 1981-07-17
+#  active: false
+#  user_id: 4
+#  trial_class: false
+#  uniform_promotion: false
+#  id: 2
 
-three:
-  name: Yorrick Cloutier
-  date_of_birth: 2011-05-09
-  active: true
-  user_id: 4
-  trial_class: false
-  uniform_promotion: true
-  id: 3
+#three:
+#  name: Yorrick Cloutier
+#  date_of_birth: 2011-05-09
+#  active: true
+#  user_id: 4
+#  trial_class: false
+#  uniform_promotion: true
+#  id: 3
 
-four:
-  name: Amy-Lee Cloutier
-  date_of_birth: 2009-05-18
-  active: true
-  user_id: 4
-  trial_class: true
-  uniform_promotion: false
-  id: 4
+#four:
+#  name: Amy-Lee Cloutier
+#  date_of_birth: 2009-05-18
+#  active: true
+#  user_id: 4
+#  trial_class: true
+#  uniform_promotion: false
+#  id: 4

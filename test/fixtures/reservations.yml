@@ -1,31 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  student_id: 4
-  course_id: 14
-  active: true
-  id: 1
-
-two:
-  student_id: 4
-  course_id: 33
-  active: true
-  id: 2
-
-three:
-  student_id: 1
-  course_id: 27
-  active: true
-  id: 3
-
-four:
-  student_id: 4
-  course_id: 28
-  active: true
-  id: 4
-
-five:
-  student_id: 3
-  course_id: 34
-  active: true
-  id: 5
+#
+#one:
+#  student_id: 4
+#  course_id: 14
+#  active: true
+#  id: 1
+#
+#two:
+#  student_id: 4
+#  course_id: 33
+#  active: true
+#  id: 2
+#
+#three:
+#  student_id: 1
+#  course_id: 27
+#  active: true
+#  id: 3
+#
+#four:
+#  student_id: 4
+#  course_id: 28
+#  active: true
+#  id: 4
+#
+#five:
+#  student_id: 3
+#  course_id: 34
+#  active: true
+#  id: 5
