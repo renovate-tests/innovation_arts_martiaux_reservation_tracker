@@ -84,7 +84,7 @@ html {
 
 body {
     background-attachment: fixed;
-    background-image: asset-data-url('bg-iam.jpg');
+    background-image: url('/assets/bg-iam.jpg');
 }
 
 main {
@@ -102,10 +102,11 @@ main {
     font-size: x-small;
 }
 
-.sessions{
+.sessions {
     display: inline-block;
 }
-.sessions a{
+
+.sessions a {
     font-size: x-small;
 }
 
@@ -140,18 +141,20 @@ nav a {
     color: black;
     white-space: nowrap;
 }
-.actions{
+
+.actions {
     display: inline-block;
     width: 100%;
     padding: 0;
-    margin:0;
+    margin: 0;
 }
+
 .search_form, .new_record, .download {
     display: inline-block;
     padding-bottom: 1rem;
 }
 
-.download_link{
+.download_link {
     font-weight: normal;
 }
 
@@ -174,9 +177,10 @@ footer.credits {
     padding-top: 2rem;
     font-size: xx-small;
 }
-footer.credits a:hover{
+
+footer.credits a:hover {
     background: rgba(255, 255, 255, 0);
-    color:black;
+    color: black;
 }
 
 li {
@@ -325,12 +329,14 @@ li.student_cours {
     vertical-align: top;
 }
 
-.reservations{
+.reservations {
     font-style: italic;
 }
-.tarifs{
+
+.tarifs {
     display: inline;
 }
+
 .tarif_table .tarif_details {
     width: 50%;
     display: inline;
