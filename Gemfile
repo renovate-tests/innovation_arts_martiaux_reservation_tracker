@@ -75,9 +75,10 @@ gem 'will-paginate-i18n'
 # User management
 gem 'devise'
 
-# should allow stripe to load .ENV variables
+# should allow to load .ENV variables
 gem 'dotenv-rails', groups: [:development, :test]
 
-# credit cards system
-gem 'stripe'
+gem 'newrelic_rpm'
 
+# app server
+gem 'puma'
