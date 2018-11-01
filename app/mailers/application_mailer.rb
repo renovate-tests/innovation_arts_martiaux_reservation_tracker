@@ -3,6 +3,7 @@ class ApplicationMailer < ActionMailer::Base
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
   ActionMailer::Base.raise_delivery_errors = true
+  default from: 'innovationsartsmartiaux@hotmail.ca'
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
       address:              'smtp.sendgrid.net',
@@ -11,8 +12,7 @@ class ApplicationMailer < ActionMailer::Base
       user_name:            InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_USERNAME,
       password:             InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_PASSWORD,
       authentication:       'plain',
-      enable_starttls_auto: true,
-      default from: 'innovationsartsmartiaux@hotmail.ca'
+      enable_starttls_auto: true
   }
   layout 'mailer'
 end
