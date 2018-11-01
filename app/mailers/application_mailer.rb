@@ -12,7 +12,7 @@ class ApplicationMailer < ActionMailer::Base
       password:             InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_PASSWORD,
       authentication:       'plain',
       enable_starttls_auto: true,
-      from: 'innovationsartsmartiaux@hotmail.ca'
+      default from: 'innovationsartsmartiaux@hotmail.ca'
   }
   layout 'mailer'
 end

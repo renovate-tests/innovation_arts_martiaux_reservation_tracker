@@ -11,5 +11,6 @@ ActionMailer::Base.smtp_settings = {
     user_name:            InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_USERNAME,
     password:             InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_PASSWORD,
     authentication:       'plain',
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    default from: 'innovationartsmartiaux@hotmail.ca'
 }
