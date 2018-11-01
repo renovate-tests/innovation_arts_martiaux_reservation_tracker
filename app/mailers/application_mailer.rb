@@ -9,8 +9,10 @@ class ApplicationMailer < ActionMailer::Base
       address:              'smtp.sendgrid.net',
       port:                 587,
       domain:               'innovationartsmartiaux.com',
-      user_name:            InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_USERNAME,
-      password:             InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_PASSWORD,
+      #user_name:            InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_USERNAME,
+      #password:             InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_PASSWORD,
+      password: ENV['SENDGRID_PASSWORD'],
+      username: ENV['SENDGRID_USERNAME'],
       authentication:       'plain',
       enable_starttls_auto: true
   }
