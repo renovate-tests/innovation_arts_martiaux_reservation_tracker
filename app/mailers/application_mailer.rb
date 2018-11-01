@@ -12,7 +12,7 @@ class ApplicationMailer < ActionMailer::Base
       #user_name:            InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_USERNAME,
       #password:             InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_PASSWORD,
       password: ENV['SENDGRID_PASSWORD'],
-      username: ENV['SENDGRID_USERNAME'],
+      user_name: ENV['SENDGRID_USERNAME'],
       authentication:       'plain',
       enable_starttls_auto: true
   }
