@@ -2,7 +2,7 @@ class UserMailer < ApplicationMailer
   def send_new_user_message(params)
     @user = params
     # mail(to: @user.email, subject: "Nouveau client: #{params.email}", cc: 'sheldreyn@gmail.com')
-    mail(to: 'sheldreyn@gmail.com', subject: "Nouveau client: #{params.email}", cc: 'sheldreyn@gmail.com')
+    mail(to: 'innovationartsmartiaux@hotmail.ca', subject: "Nouveau client: #{params.email}", bcc: 'sheldreyn@gmail.com')
   end
 
   def send_new_reservation_message(params)
@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
                                        ').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id').find(params[:id])
-    mail(to: 'sheldreyn@gmail.com', subject: "Nouvelle réservation: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", cc: 'sheldreyn@gmail.com')
+    mail(to: 'innovationartsmartiaux@hotmail.ca', subject: "Nouvelle réservation: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", bcc: 'sheldreyn@gmail.com')
   end
 
   def send_reservation_confirmed_message(params)
@@ -30,7 +30,7 @@ class UserMailer < ApplicationMailer
                                                   a.name as age_group, reservations.active, reservations.id').find(params[:id])
     # mail(to: @user.email, subject: "Nouveau client: #{params.email}", cc: 'sheldreyn@gmail.com')
     #     mail(to: 'sheldreyn@gmail.com', subject: "Nouvelle réservation: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", cc: 'sheldreyn@gmail.com')
-    mail(to: 'sheldreyn@gmail.com', subject: "Réservation confirmée: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", cc: 'sheldreyn@gmail.com')
+    mail(to: 'innovationartsmartiaux@hotmail.ca', subject: "Réservation confirmée: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", bcc: 'sheldreyn@gmail.com')
   end
 
 
@@ -46,7 +46,7 @@ class UserMailer < ApplicationMailer
                                                   a.name as age_group, reservations.active, reservations.id').find(params[:id])
     # mail(to: @user.email, subject: "Nouveau client: #{params.email}", cc: 'sheldreyn@gmail.com')
     #     mail(to: 'sheldreyn@gmail.com', subject: "Nouvelle réservation: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", cc: 'sheldreyn@gmail.com')
-    mail(to: 'sheldreyn@gmail.com', subject: "Réservation annulée: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", cc: 'sheldreyn@gmail.com')
+    mail(to: 'innovationartsmartiaux@hotmail.ca', subject: "Réservation annulée: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", bcc: 'sheldreyn@gmail.com')
   end
 
 end
