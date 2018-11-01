@@ -11,7 +11,8 @@ class ApplicationMailer < ActionMailer::Base
       user_name:            InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_USERNAME,
       password:             InnovationArtsMartiauxReservationsTracker::Application.credentials.SENDGRID_PASSWORD,
       authentication:       'plain',
-      enable_starttls_auto: true
+      enable_starttls_auto: true,
+      from: 'innovationsartsmartiaux@hotmail.ca'
   }
   layout 'mailer'
 end
