@@ -3,7 +3,7 @@ class ApplicationMailer < ActionMailer::Base
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
   ActionMailer::Base.raise_delivery_errors = true
-  default from: 'sheldreyn@gmail.com'
+  default from: 'innovationartsmartiaux@hotmail.ca'
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
       address:              'smtp.sendgrid.net',
