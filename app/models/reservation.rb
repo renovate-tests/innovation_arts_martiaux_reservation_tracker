@@ -21,4 +21,5 @@ class Reservation < ApplicationRecord
     UserMailer.send_reservation_confirmed_message(self).deliver if self.active
   end
 
+
 end
