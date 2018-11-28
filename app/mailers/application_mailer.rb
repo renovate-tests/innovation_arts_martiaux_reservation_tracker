@@ -2,15 +2,15 @@ class ApplicationMailer < ActionMailer::Base
   add_template_helper(ApplicationHelper)
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
-  default from: 'no-reply@invalidmail.com'
   ActionMailer::Base.raise_delivery_errors = true
+  default from: 'innovationartsmartiaux@hotmail.ca'
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-      address:              'smtp.gmail.com',
+      address:              'smtp.sendgrid.net',
       port:                 587,
-      domain:               'example.com',
-      user_name:            InnovationArtsMartiauxReservationsTracker::Application.credentials.EMAIL_USER,
-      password:             InnovationArtsMartiauxReservationsTracker::Application.credentials.EMAIL_PASS,
+      domain:               'innovationartsmartiaux.com',
+      password: ENV['SENDGRID_PASSWORD'],
+      user_name: ENV['SENDGRID_USERNAME'],
       authentication:       'plain',
       enable_starttls_auto: true
   }
