@@ -104,7 +104,7 @@ class ReservationsController < ApplicationController
   end
 
   def submit_reservations
-    @reservations = Reservation.joins('INNER JOIN students on students.id = reservations.student_id INNER JOIN users on users.id = students.user_id').where('users.id = ? and active = false', current_user[:id])
+    @reservations = Reservation.joins('INNER JOIN students on students.id = reservations.student_id INNER JOIN users on users.id = students.user_id').where('users.id = ? and reservations.active = false', current_user[:id])
     @reservations.each do |reservation|
       send_new_reservation_message(reservation)
     end
