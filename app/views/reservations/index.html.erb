@@ -30,7 +30,14 @@
 <%= render 'shared/search' if current_admin %>
 <section class="new_record">
   <%= link_to "#{t('nouvelle')} #{t('reservation')}", new_reservation_path %>
+
+  <% if @reservations.where('reservations.active = false').count > 0 %>
+    -
+    <%= link_to "#{t('soumettre')} #{t('reservations')}", submit_reservations_path %>
+
+  <% end %>
 </section>
+
 <table>
   <thead>
   <tr>
