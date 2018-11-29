@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id').find(params[:id])
     #mail(to: 'sheldreyn@gmail.com', subject: "Nouvelle réservation: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", bcc: 'sheldreyn@gmail.com')
-    mail(to: @reservation['email'], cc: 'innovationartsmatiaux@hotmail.ca', bcc: 'sheldreyn@gmail.com', subject: "Nouvelle réservation: #{@reservation['student_name']} - (#{@reservation['client_name']})")
+    mail(to: @reservation['email'], cc: 'innovationartsmartiaux@hotmail.ca', bcc: 'sheldreyn@gmail.com', subject: "Nouvelle réservation: #{@reservation['student_name']} - (#{@reservation['client_name']})")
   end
 
   def send_reservation_confirmed_message(params)
@@ -28,7 +28,7 @@ class UserMailer < ApplicationMailer
                                        ').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id').find(params[:id])
-    mail(to: @reservation['email'], cc: 'innovationartsmatiaux@hotmail.ca', bcc: 'sheldreyn@gmail.com', subject: "Réservation confirmée: #{@reservation['student_name']} - (#{@reservation['client_name']})")
+    mail(to: @reservation['email'], cc: 'innovationartsmartiaux@hotmail.ca', bcc: 'sheldreyn@gmail.com', subject: "Réservation confirmée: #{@reservation['student_name']} - (#{@reservation['client_name']})")
     #mail(to: 'sheldreyn@gmail.com', subject: "Réservation confirmée: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", cc: 'sheldreyn@gmail.com')
   end
 
@@ -44,7 +44,7 @@ class UserMailer < ApplicationMailer
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id').find(params[:id])
     #mail(to: 'sheldreyn@gmail.com', subject: "Réservation annulée: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", cc: 'sheldreyn@gmail.com')
-    mail(to: @reservation['email'], cc: 'innovationartsmatiaux@hotmail.ca', bcc: 'sheldreyn@gmail.com', subject: "Réservation annulée: #{@reservation['student_name']} - (#{@reservation['client_name']})")
+    mail(to: @reservation['email'], cc: 'innovationartsmartiaux@hotmail.ca', bcc: 'sheldreyn@gmail.com', subject: "Réservation annulée: #{@reservation['student_name']} - (#{@reservation['client_name']})")
   end
 
 end
