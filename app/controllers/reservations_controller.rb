@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
                                        ').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id').order('reservations.active desc, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
-        else
+      else
         @reservations = Reservation.search(params[:search], params[:page])
       end
     else
@@ -103,6 +103,16 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def submit_reservations
+    @reservations = Reservation.joins('INNER JOIN students on students.id = reservations.student_id INNER JOIN users on users.id = students.user_id').where('users.id = ? and reservations.active = false', current_user[:id])
+    @reservations.each do |reservation|
+      send_new_reservation_message(reservation)
+    end
+    respond_to do |format|
+      format.html {redirect_to reservations_url, notice: 'Reservation was successfully submitted.'}
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -127,6 +137,21 @@ class ReservationsController < ApplicationController
                                                                                              t.end_time, courses.day_of_week,
                                                                                              a.name as age_group').order('courses.day_of_week, t.start_time')
   end
+
+
+  def send_new_reservation_message(a_reservation)
+    UserMailer.send_new_reservation_message(a_reservation).deliver
+  end
+
+
+  def send_reservation_confirmed_message
+    if self.active
+      UserMailer.send_reservation_confirmed_message(self).deliver
+    else
+      UserMailer.send_reservation_unconfirmed_message(self).deliver
+    end
+  end
+
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def reservation_params

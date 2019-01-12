@@ -84,6 +84,7 @@ fr:
   new_cash_payment: "Nouveau Paiement Comptant"
   search: "Rechercher"
   to_pay: "À Payer"
+  soumettre: "Soumettre"
   # Default library
   activerecord:
     models:

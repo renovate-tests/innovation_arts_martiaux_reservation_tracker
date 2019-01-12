@@ -2,7 +2,6 @@ class Reservation < ApplicationRecord
   belongs_to :student, :foreign_key => 'student_id'
   belongs_to :course, :foreign_key => 'course_id'
   validates :student_id, uniqueness: {scope: :course_id}
-  after_create :send_new_reservation_message
   after_update :send_reservation_confirmed_message
 
   def self.search(search, page)
@@ -18,18 +17,9 @@ class Reservation < ApplicationRecord
         .paginate(:page => page, :per_page => 10).order('u.name, s.name')
   end
 
-
-  def send_new_reservation_message
-     UserMailer.send_new_reservation_message(self).deliver
-  end
-
-
   def send_reservation_confirmed_message
-    if self.active
-      UserMailer.send_reservation_confirmed_message(self).deliver
-    else
-      UserMailer.send_reservation_unconfirmed_message(self).deliver
-    end
+    UserMailer.send_reservation_confirmed_message(self).deliver if self.active
   end
+
 
 end
