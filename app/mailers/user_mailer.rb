@@ -29,7 +29,7 @@ class UserMailer < ApplicationMailer
                                        INNER JOIN age_groups a on a.id = c.age_group_id
                                        ').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
-                                                  a.name as age_group, reservations.active, reservations.id').find(params[:id])
+                                                  a.name as age_group, reservations.active, reservations.id, u.email').find(params[:id])
     mail(to: @reservation['email'], cc: 'Innovation Arts Martiaux<innovationartsmartiaux@hotmail.ca>', bcc: 'sheldreyn@gmail.com', subject: "Réservation confirmée: #{@reservation['student_name']} - (#{@reservation['client_name']})")
     #mail(to: 'sheldreyn@gmail.com', subject: "Réservation confirmée: #{@reservation['student_name']} - (#{@reservation['client_name']}) ", cc: 'sheldreyn@gmail.com')
   end
