@@ -4,11 +4,11 @@
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 </head>
 <body>
-<h1>Bienvenue chez <em>Innovation Arts Martiaux</em> <%= @user.name %></h1>
+<h1>Bienvenue chez <em>Innovation Arts Martiaux</em> <%= @user[:name] %></h1>
 <p>
   Votre compte a &eacute;t&eacute; cr&eacute;&eacute;,<br>
-  votre nom d'usager est: <%= @user.email %><br>
-  votre mot de passe est: <%= @user.password %><br>
+  votre nom d'usager est: <%= @user[:email] %><br>
+  votre mot de passe est: <%= @user[:password] %><br>
 </p>
 <p>
   Pour vous connecter &agrave; votre compte, rendez-vous au http://innovationartsmartiaux.com et cliquer sur l'onglet "mon compte"
