@@ -2,7 +2,7 @@ class UserMailer < ApplicationMailer
   def send_new_user_message(params)
     @user = User.where("email = ?", params.email).first
     @user.password = params.password
-    mail(to: params.email, subject: "Nouveau client: #{params.email}", cc: 'innovationartsmartiaux.ca', bcc: 'sheldreyn@gmail.com')
+    mail(to: params.email, subject: "Nouveau client: #{params.name}", cc: 'Innovation Arts Martiaux<innovationartsmartiaux@hotmail.ca>', bcc: 'sheldreyn@gmail.com')
     # mail(to: 'sheldreyn@gmail.com', subject: "Nouveau client: #{params.email}", cc: 'sheldreyn@gmail.com')
   end
 
