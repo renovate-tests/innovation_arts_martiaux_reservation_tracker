@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_11_152027) do
+ActiveRecord::Schema.define(version: 2019_01_26_140752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,7 +90,9 @@ ActiveRecord::Schema.define(version: 2018_10_11_152027) do
     t.boolean "active", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "mail_sent", default: false
     t.index ["course_id"], name: "index_reservations_on_course_id"
+    t.index ["mail_sent"], name: "index_reservations_on_mail_sent"
     t.index ["student_id"], name: "index_reservations_on_student_id"
   end
 

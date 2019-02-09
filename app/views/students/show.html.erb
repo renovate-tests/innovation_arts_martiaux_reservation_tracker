@@ -13,7 +13,7 @@
 
 <p>
   <strong><%= t('current_belt') %>:</strong>
-  <%= @belt.nil? ? 'White' : t(@belt.color) %>
+  <%= @belt.nil? ? t('White') : t(@belt.color) %>
 </p>
 <p>
   <strong><%= t('time_since_graduation') %>:</strong>

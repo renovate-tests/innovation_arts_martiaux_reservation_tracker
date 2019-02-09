@@ -1,11 +1,12 @@
 fr:
+  Non: "Non"
+  Oui: "Oui"
   inactive: "Inactif"
   active: "Actif"
   name: "Nom"
-  telephone: "T&eacute;l&eacute;phone"
-  active: "Actif"
+  telephone: "Téléphone"
   email: "Courriel"
-  student: "&Eacute;tudiant"
+  student: "Étudiant"
   student_link: "Étudiants"
   student_label: "Étudiant"
   new_student: "Nouvel Étudiant"
@@ -85,6 +86,11 @@ fr:
   search: "Rechercher"
   to_pay: "À Payer"
   soumettre: "Soumettre"
+  Confirmation requested: "Confirmation demandée"
+  Log in: "Connection"
+  Sign up: "Nouveau Client"
+  Forgot your password?: "Mot de passe oublié?"
+  Soumettre: "Soumettre"
   # Default library
   activerecord:
     models:

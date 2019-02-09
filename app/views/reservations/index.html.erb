@@ -31,7 +31,7 @@
 <section class="new_record">
   <%= link_to "#{t('nouvelle')} #{t('reservation')}", new_reservation_path %>
 
-  <% if @reservations.where('reservations.active = false').count > 0 && !current_admin%>
+  <% if @reservations.where('reservations.active = false and reservations.mail_sent = false').count > 0 && !current_admin%>
     -
     <%= link_to "#{t('soumettre')} #{t('reservations')}", submit_reservations_path %>
 
@@ -44,6 +44,7 @@
     <th><%= t('student').html_safe %></th>
     <th><%= t('course') %></th>
     <th><%= t('active') %></th>
+    <th><%= t('Confirmation requested') %>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -54,6 +55,7 @@
       <td><%= reservation.student_name %> <%= " - (#{reservation.client_name})" if reservation['client_name'] != reservation['student_name'] %>  </td>
       <td><%= "#{t(get_week_day(reservation['day_of_week']))}: #{reservation['start_time'].strftime('%H:%M')} - #{reservation['end_time'].strftime('%H:%M')} - #{reservation['course_type']} - #{reservation['age_group']}" %></td>
       <td><%= reservation['active'] ? t('active') : t('inactive') %></td>
+      <td><%= reservation['mail_sent'] ? t('Oui') : t('Non') %></td>
       <td><%= link_to t('show'), reservation_url(reservation['id']) %></td>
       <td>
         <% if current_admin %>

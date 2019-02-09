@@ -30,7 +30,7 @@ module ApplicationHelper
     last_graduation_date = Graduation.where(student_id: a_student).order('graduation_date desc').limit(1).to_a
     if last_graduation_date.empty?
       student_creation_date = Student.where(id: a_student).to_a.first
-      Date.parse(student_creation_date.created_at.to_s).upto(Date.today).count.fdiv(30).round(2)
+      Date.parse(student_creation_date.created_at.to_s).upto(Date.today).count.fdiv(30).to_i
     else
       last_graduation_date[0].graduation_date.upto(Date.today).count.fdiv(30).round(2)
     end

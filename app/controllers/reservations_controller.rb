@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
                                        INNER JOIN age_groups a on a.id = c.age_group_id
                                        ').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
-                                                  a.name as age_group, reservations.active, reservations.id').order('reservations.active desc, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
+                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent').order('reservations.active desc, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
       else
         @reservations = Reservation.search(params[:search], params[:page])
       end
@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
                                        INNER JOIN age_groups a on a.id = c.age_group_id
                                        ').where('u.id = ?', current_user).select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
-                                                  a.name as age_group, reservations.active, reservations.id').order('reservations.active desc, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
+                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent').order('reservations.active desc, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
     end
   end
 
@@ -104,9 +104,11 @@ class ReservationsController < ApplicationController
   end
 
   def submit_reservations
-    @reservations = Reservation.joins('INNER JOIN students on students.id = reservations.student_id INNER JOIN users on users.id = students.user_id').where('users.id = ? and reservations.active = false', current_user[:id])
+    @reservations = Reservation.joins('INNER JOIN students on students.id = reservations.student_id INNER JOIN users on users.id = students.user_id').where('users.id = ? and reservations.active = false and reservations.mail_sent = false', current_user[:id])
     @reservations.each do |reservation|
       send_new_reservation_message(reservation)
+      ActiveRecord::Base.connection.exec_query("update reservations set mail_sent = true where reservations.id = #{reservation.id}")
+      reservation.save
     end
     respond_to do |format|
       format.html {redirect_to reservations_url, notice: 'Reservation was successfully submitted.'}
@@ -155,6 +157,6 @@ class ReservationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def reservation_params
-    params.require(:reservation).permit(:student_id, :course_id, :active)
+    params.require(:reservation).permit(:student_id, :course_id, :active, :mail_sent)
   end
 end

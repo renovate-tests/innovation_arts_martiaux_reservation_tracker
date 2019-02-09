@@ -11,14 +11,14 @@
 
   <% if resource.class == User %>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label t(:name) %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
 
 
   <div class="field">
-    <%= f.label :telephone %><br />
+    <%= f.label t(:telephone) %><br />
     <%= f.telephone_field :telephone %>
   </div>
   <% end  %>
@@ -37,7 +37,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit t("Soumettre") %>
   </div>
 <% end %>
 
