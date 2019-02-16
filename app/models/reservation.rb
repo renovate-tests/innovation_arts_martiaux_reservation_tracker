@@ -12,7 +12,7 @@ class Reservation < ApplicationRecord
                 INNER JOIN course_types ct on ct.id = c.course_type_id
                 INNER JOIN age_groups a on a.id = c.age_group_id').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
-                                                  a.name as age_group, reservations.active, reservations.id').order('reservations.active desc,
+                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent').order('reservations.active desc,
                 c.day_of_week, t.start_time, u.name, ct.name').where("lower(s.name) LIKE :query", query: "%#{search.downcase}%")
         .paginate(:page => page, :per_page => 10).order('u.name, s.name')
   end
