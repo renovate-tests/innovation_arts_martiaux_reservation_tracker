@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_26_140752) do
+ActiveRecord::Schema.define(version: 2019_02_10_204359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,13 @@ ActiveRecord::Schema.define(version: 2019_01_26_140752) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_students_on_user_id"
+  end
+
+  create_table "tarifs", force: :cascade do |t|
+    t.integer "class_per_week", null: false
+    t.float "price", default: 0.0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "timeslots", force: :cascade do |t|

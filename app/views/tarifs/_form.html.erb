@@ -1,0 +1,27 @@
+<%= form_with(model: tarif, local: true) do |form| %>
+  <% if tarif.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tarif.errors.count, "error") %> prohibited this tarif from being saved:</h2>
+
+      <ul>
+      <% tarif.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :class_per_week %>
+    <%= form.number_field :class_per_week %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

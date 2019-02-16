@@ -8,7 +8,7 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-
+    @tarifs = Tarif.all.order(:class_per_week)
     if current_admin
       if params[:search].nil?
         @reservations = Reservation.joins('INNER JOIN students s ON s .id = reservations.student_id

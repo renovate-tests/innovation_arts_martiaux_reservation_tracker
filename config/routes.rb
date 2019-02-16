@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :tarifs
   devise_for :admins, controllers: {
       confirmations: 'admins/confirmations',
       passwords: 'admins/passwords',

@@ -4,15 +4,11 @@
     <tr>
       <th>Tarifs</th>
     </tr>
-    <tr>
-      <td>1 Cours semaine - 24 $ / 2 Semaines</td>
-    </tr>
-    <tr>
-      <td>2 Cours semaine - 38 $ / 2 Semaines</td>
-    </tr>
-    <tr>
-      <td>illimité - 44 $ / 2 Semaines</td>
-    </tr>
+    <% @tarifs.each do |tarif| %>
+      <tr>
+        <td><%= tarif.class_per_week %> Cour(s) semaine - <%= tarif.price == 0.0 ? "Veuillez nous contacter" : " #{tarif.price}  $ / 2 Semaines"%></td>
+      </tr>
+    <% end %>
   </table>
   <p class="reservations">Vos réservations seront activées une fois le paiement effectué.</p>
   <p class="reservations">Notez qu'il est obligatoire de s'inscrire à un minimum de deux fois par semaine une fois rendu
@@ -31,7 +27,7 @@
 <section class="new_record">
   <%= link_to "#{t('nouvelle')} #{t('reservation')}", new_reservation_path %>
 
-  <% if @reservations.where('reservations.active = false and reservations.mail_sent = false').count > 0 && !current_admin%>
+  <% if @reservations.where('reservations.active = false and reservations.mail_sent = false').count > 0 && !current_admin %>
     -
     <%= link_to "#{t('soumettre')} #{t('reservations')}", submit_reservations_path %>
 
