@@ -74,4 +74,9 @@ module ApplicationHelper
     a_date.upto(Date.today).count.fdiv(365).round(1) unless a_date.nil?
   end
 
+
+  def get_due_cash_payment
+    @cash_payment_due = CashPayment.where("due_date <= ? and paid = false",  Time.now).count
+  end
+
 end

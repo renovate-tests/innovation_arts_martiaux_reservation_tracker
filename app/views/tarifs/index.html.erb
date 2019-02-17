@@ -15,7 +15,7 @@
     <% @tarifs.each do |tarif| %>
       <tr>
         <td><%= tarif.class_per_week %></td>
-        <td><%= tarif.price %></td>
+        <td><%= tarif.price  %> $ / 2 <%= t('semaines') %></td>
         <td><%= link_to 'Show', tarif %></td>
         <td><%= link_to 'Edit', edit_tarif_path(tarif) %></td>
         <td><%= link_to 'Destroy', tarif, method: :delete, data: { confirm: 'Are you sure?' } %></td>

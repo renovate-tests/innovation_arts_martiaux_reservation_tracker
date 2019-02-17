@@ -4,7 +4,7 @@ class TarifsController < ApplicationController
   # GET /tarifs
   # GET /tarifs.json
   def index
-    @tarifs = Tarif.all
+    @tarifs = Tarif.all.order(:class_per_week)
   end
 
   # GET /tarifs/1
