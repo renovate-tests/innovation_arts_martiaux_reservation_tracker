@@ -26,6 +26,7 @@ class CashPaymentsController < ApplicationController
   # GET /cash_payments/new
   def new
     @cash_payment = CashPayment.new
+
   end
 
   # GET /cash_payments/1/edit
