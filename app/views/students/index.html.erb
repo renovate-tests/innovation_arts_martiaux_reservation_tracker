@@ -39,7 +39,7 @@
       <td><%= student['date_of_birth'] %></td>
       <td><%= student['linked_client'] %></td>
       <td><%= student['active'] ? t('active') : t('inactive') %></td>
-      <td><%= get_latest_belt_color(student['id']) %></td>
+      <td><%= t(get_latest_belt_color(student['id'])) %></td>
       <td><%= link_to t('show'), student_url(student['id']) %></td>
       <td><%= link_to t('edit'), edit_student_path(student['id']) %></td>
       <td>

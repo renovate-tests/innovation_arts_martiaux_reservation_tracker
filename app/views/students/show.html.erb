@@ -37,6 +37,17 @@
     <%= @student['active'] %>
   </p>
 <% end %>
+<h2><%= t('Reservations') %></h2>
+<% @reservations.each do |reservation| %>
+  <p class="<%= reservation.active %>">
+    <%= t(get_week_day(reservation.day_of_week)) %>:
+    <%= format_time(reservation.start_time) %> - <%= format_time(reservation.end_time) %> -
+    <%= reservation.name %> - <%= reservation.age_group %>
+    <% if current_admin %>
+      <%= link_to t('Edit'), edit_reservation_path(reservation) %>
+    <% end %>
+  </p>
+<% end %>
 
 <%= link_to t('edit'), edit_student_path(@student) %> |
 <%= link_to t('back'), students_path %>

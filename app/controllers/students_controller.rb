@@ -51,6 +51,13 @@ class StudentsController < ApplicationController
                                                                                             u.name as client_name').find(params[:id])
     @belt = Graduation.joins('INNER JOIN belts b on graduations.belt_id = b.id
                               INNER JOIN students s on graduations.student_id = s.id').select('b.color').where(student_id: params[:id]).last
+
+    @reservations = Reservation.joins('INNER JOIN courses c on reservations.course_id = c.id
+                                       INNER JOIN timeslots t on c.timeslot_id = t.id
+                                       INNER JOIN course_types ct on ct.id = c.course_type_id
+                                       INNER JOIN age_groups ag on c.age_group_id = ag.id').select('c.day_of_week,
+                                                                                                    t.start_time,
+                                       t.end_time, ct.name, ag.name as age_group, reservations.active, reservations.id').where(student_id: params[:id])
   end
 
   # GET /students/new
