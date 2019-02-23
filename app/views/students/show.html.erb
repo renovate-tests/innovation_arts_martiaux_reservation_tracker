@@ -26,18 +26,19 @@
 <% if current_admin %>
   <p>
     <strong><%= t('trial_class') %>:</strong>
-    <%= @student['trial_class'] %>
+    <%= t(@student['trial_class']) %>
   </p>
   <p>
     <strong><%= t('uniform_promotion') %>:</strong>
-    <%= @student['uniform_promotion'] %>
+    <%= t(@student['uniform_promotion']) %>
   </p>
   <p>
     <strong><%= t('active') %>:</strong>
-    <%= @student['active'] %>
+    <%= t(@student['active']) %>
   </p>
 <% end %>
-<h2><%= t('Reservations') %></h2>
+<h3><%= t('Reservations') %></h3>
+<div id="reservation_list">
 <% @reservations.each do |reservation| %>
   <p class="<%= reservation.active %>">
     <%= t(get_week_day(reservation.day_of_week)) %>:
@@ -48,6 +49,6 @@
     <% end %>
   </p>
 <% end %>
-
+</div>
 <%= link_to t('edit'), edit_student_path(@student) %> |
 <%= link_to t('back'), students_path %>

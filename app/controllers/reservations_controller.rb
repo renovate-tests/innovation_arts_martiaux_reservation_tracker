@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
                                        INNER JOIN age_groups a on a.id = c.age_group_id
                                        ').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
-                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent').order('reservations.active desc, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
+                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent, u.id as client_id').order('reservations.active, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
       else
         @reservations = Reservation.search(params[:search], params[:page])
       end
@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
                                        INNER JOIN age_groups a on a.id = c.age_group_id
                                        ').where('u.id = ?', current_user).select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
-                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent').order('reservations.active desc, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
+                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent').order('reservations.active, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
     end
   end
 

@@ -79,4 +79,8 @@ module ApplicationHelper
     @cash_payment_due = CashPayment.where("due_date <= ? and paid = false",  Time.now).count
   end
 
+  def get_reservations_to_confirm
+    @reservations_to_confirm = Reservation.where("mail_sent = true and active = false").count
+  end
+
 end

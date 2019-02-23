@@ -3,4 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .false{
   font-style: italic;
+  color: #999999;
+}
+
+h3 {
+   padding-top: 2rem !important;
+}
+
+p + a {
+  padding-bottom: 2rem !important;
+}
+
+#reservation_list{
+ padding-bottom: 2rem;
 }
