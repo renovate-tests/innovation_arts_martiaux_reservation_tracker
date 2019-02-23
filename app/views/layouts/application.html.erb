@@ -16,7 +16,6 @@
       <% if current_admin %> <!-- Only display link is user is admin -->
         <li><%= link_to t('Admins'), admins_path %></li>
         <li><%= link_to t('Users'), users_path %></li>
-        <li><%= link_to "#{t('Cash Payments')} (#{get_due_cash_payment})", cash_payments_path %></li>
       <% end %>
       <li><%= link_to t('student_link'), students_path %></li>
       <li><%= link_to "#{t('reservations')} (#{get_reservations_to_confirm})", reservations_path %></li>
@@ -29,6 +28,7 @@
         <li><%= link_to t('belts'), belts_path %></li>
         <li><%= link_to 'Graduations', graduations_path %></li>
         <li><%= link_to 'Tarifs', tarifs_path %></li>
+        <li><%= link_to "#{t('Cash Payments')} (#{get_due_cash_payment})", cash_payments_path %></li>
       <% end %>
     </ul>
     <div>
