@@ -6,20 +6,20 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email", maxlength: 255, size: 64 %>
   </div>
 
   <% if resource.class == User %>
   <div class="field">
     <%= f.label t(:name) %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true, maxlength: 255, size: 64 %>
   </div>
 
 
 
   <div class="field">
     <%= f.label t(:telephone) %><br />
-    <%= f.telephone_field :telephone %>
+    <%= f.telephone_field :telephone, maxlength: 21, size: 24 %>
   </div>
   <% end  %>
 
@@ -28,12 +28,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", size: 30 %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", size: 30 %>
   </div>
 
   <div class="actions">

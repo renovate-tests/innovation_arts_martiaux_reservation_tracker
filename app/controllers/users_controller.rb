@@ -17,7 +17,17 @@ class UsersController < ApplicationController
 
 
   def show
-
+    @students_and_reservations = Reservation.joins('INNER JOIN students s on s.id = reservations.student_id
+                                                    INNER JOIN users u on s.user_id = u.id
+                                                    INNER JOIN courses c on reservations.course_id = c.id
+                                                    INNER JOIN timeslots t on c.timeslot_id = t.id
+                                                    INNER JOIN course_types ct on ct.id = c.course_type_id
+                                                    INNER JOIN age_groups ag on c.age_group_id = ag.id').select('c.day_of_week,
+                                                                                                    t.start_time,
+                                                    t.end_time, ct.name, ag.name as age_group, reservations.active, reservations.id, s.name as student_name').where("student_id in (select id from students where user_id = ?)", params[:id]
+    ).group('s.name, reservations.active, c.day_of_week,
+                                                                                                    t.start_time,
+                                                    t.end_time, ct.name, ag.name, reservations.id').order('reservations.active')
   end
 
   def edit

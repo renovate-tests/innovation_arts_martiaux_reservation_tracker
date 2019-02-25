@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>InnovationArtsMartiauxReservationsTracker</title>
+  <title>Innovation Arts Martiaux</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
         <li><%= link_to t('Users'), users_path %></li>
       <% end %>
       <li><%= link_to t('student_link'), students_path %></li>
-      <li><%= link_to "#{t('reservations')} (#{get_reservations_to_confirm})", reservations_path %></li>
+      <li><%= link_to "#{t('reservations')} (#{get_reservations_to_confirm})", reservations_path, id: 'reservations' %></li>
       <% if current_admin %> <!-- Only display link is user is admin -->
         <li><%= link_to t('course_type'), course_types_path %></li>
         <li><%= link_to t('age_groups'), age_groups_path %></li>

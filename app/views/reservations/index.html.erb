@@ -26,7 +26,7 @@
 </nav>
 <%= render 'shared/search' if current_admin %>
 <section class="new_record">
-  <%= link_to "#{t('nouvelle')} #{t('reservation')}", new_reservation_path %>
+  <%= link_to "#{t('nouvelle')} #{t('reservation')}", new_reservation_path, id: 'new_reservation' %>
 
   <% if @reservations.where('reservations.active = false and reservations.mail_sent = false').count > 0 && !current_admin %>
     -
