@@ -32,306 +32,315 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol, ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote, q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* end of reset */
 
 /* box model fix */
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *, *:before, *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /* end of box model fix */
 
 body {
-    background-attachment: fixed;
-    background-image: asset-data-url('bg-iam.jpg');
+  background-attachment: fixed;
+  background-image: asset-data-url('bg-iam.jpg');
 }
 
 main {
-    width: 95%;
-    margin: auto;
-    font-family: 'Arimo', 'Helvetica', 'Arial', 'Lucida Grande', 'Sans-Serif';
+  width: 95%;
+  margin: auto;
+  font-family: 'Arimo', 'Helvetica', 'Arial', 'Lucida Grande', 'Sans-Serif';
 }
 
 .language {
-    padding: 0;
+  padding: 0;
 }
 
 .language_select {
-    padding: 1rem;
-    font-size: x-small;
+  padding: 1rem;
+  font-size: x-small;
 }
 
-.sessions{
-    display: inline-block;
+.sessions {
+  display: inline-block;
 }
-.sessions a{
-    font-size: x-small;
+
+.sessions a {
+  font-size: x-small;
 }
 
 .language_select li:nth-child(2):before {
-    content: '/';
+  content: '/';
 }
 
 .will_paginate {
-    text-transform: none;
-    margin-bottom: 1rem;
+  text-transform: none;
+  margin-bottom: 1rem;
 }
 
 @media print {
-    nav, .debug, .credits {
-        display: none;
-    }
+  nav, .debug, .credits {
+    display: none;
+  }
 }
 
 .debug {
-    padding-top: 2rem;
+  padding-top: 2rem;
 }
 
 nav {
-    margin-top: 1rem;
-    text-transform: uppercase;
-    font-family: 'Arimo', 'Helvetica', 'Arial', 'Lucida Grande', 'Sans-Serif';
-    line-height: 1.8rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-family: 'Arimo', 'Helvetica', 'Arial', 'Lucida Grande', 'Sans-Serif';
+  line-height: 1.8rem;
 }
 
 nav a {
-    text-decoration: none;
-    color: black;
-    white-space: nowrap;
-}
-.actions{
-    display: inline-block;
-    width: 100%;
-    padding: 0;
-    margin:0;
-}
-.search_form, .new_record, .download {
-    display: inline-block;
-    padding-bottom: 1rem;
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
 }
 
-.download_link{
-    font-weight: normal;
+.actions {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.search_form, .new_record, .download {
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.download_link {
+  font-weight: normal;
 }
 
 .pagination {
-    width: 100%;
-    margin: auto;
-    padding: 1rem;
-    padding-bottom: 2rem;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+  padding-bottom: 2rem;
 }
 
 form, table {
-    padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 footer.credits {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    background: rgba(255, 255, 255, 0);
-    padding-top: 2rem;
-    font-size: xx-small;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0);
+  padding-top: 2rem;
+  font-size: xx-small;
 }
-footer.credits a:hover{
-    background: rgba(255, 255, 255, 0);
-    color:black;
+
+footer.credits a:hover {
+  background: rgba(255, 255, 255, 0);
+  color: black;
 }
 
 li {
-    display: inline;
-    padding: 0.5rem;
+  display: inline;
+  padding: 0.5rem;
 }
 
 li.course_details {
-    display: block;
-    text-decoration: none;
-    padding: 0.25rem 1rem;
+  display: block;
+  text-decoration: none;
+  padding: 0.25rem 1rem;
 }
 
 li.student_cours {
-    wrap-option: none;
+  wrap-option: none;
 }
 
 a {
-    padding: 0.5rem;
-    color: #ef4036;
+  padding: 0.5rem;
+  color: #ef4036;
 }
 
 a:hover, a:focus {
-    color: white;
-    background: #fca420;
-    border-color: #ff3333;
+  color: white;
+  background: #fca420;
+  border-color: #ff3333;
 }
 
 strong {
-    font-weight: bold;
-    padding: 0.25rem;
-    color: #ef4036;
+  font-weight: bold;
+  padding: 0.25rem;
+  color: #ef4036;
 
 }
 
 label {
-    padding: 0.25rem;
+  padding: 0.25rem;
 }
 
 p {
-    padding: 0.5rem;
+  padding: 0.5rem;
 }
-
 th {
-    font-weight: bold;
-    color: #ef4036;
-    padding-right: 1rem;
+  font-weight: bold;
+  color: #ef4036;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  text-align: left;
 }
 
 tr:nth-child(even) {
-    background: rgba(195, 195, 195, 0.35)
+  background: rgba(195, 195, 195, 0.35)
 }
 
 td {
-    padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 h1, h2, h3, h4, h5, h6, label {
-    color: #ef4036;
-    font-weight: bold;
-    padding-bottom: 0.5rem;
+  color: #ef4036;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
 }
 
 h1 {
-    font-size: xx-large;
+  font-size: xx-large;
 }
 
 h2 {
-    font-size: x-large;
+  font-size: x-large;
 }
 
 h3 {
-    font-size: large;
+  font-size: large;
 }
 
 h4 {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 h5 {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 /* Course_list section */
 
 .container {
-    display: block;
-    width: 95%
+  display: block;
+  width: 95%
 }
 
 .cours {
-    border: 1px solid black;
-    padding: 1rem;
-    margin: 1rem;
-    display: block;
-    color: black;
-    page-break-inside: avoid;
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+  display: block;
+  color: black;
+  page-break-inside: avoid;
 }
 
 @media print {
-    article {
-        page-break-inside: avoid;
-        color: black;
-        font-size: 0.5em;
-    }
+  article {
+    page-break-inside: avoid;
+    color: black;
+    font-size: 0.5em;
+  }
 
-    h1, h2, h3, h4, h5, h6 {
-        padding-bottom: 0.2rem;
-        color: black;
-        font-weight: bold;
-    }
+  h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 0.2rem;
+    color: black;
+    font-weight: bold;
+  }
 
-    h1 {
-        font-size: 1.2rem;
-    }
+  h1 {
+    font-size: 1.2rem;
+  }
 
-    h2 {
-        font-size: 1.1rem;
-    }
+  h2 {
+    font-size: 1.1rem;
+  }
 
-    h3 {
-        font-size: 1rem;
-    }
+  h3 {
+    font-size: 1rem;
+  }
 
-    h4 {
-        font-size: 0.5rem;
-    }
+  h4 {
+    font-size: 0.5rem;
+  }
 
-    h5 {
-        font-size: 0.4rem;
-    }
+  h5 {
+    font-size: 0.4rem;
+  }
 }
 
 .student_cours {
-    vertical-align: top;
-    diplay: block;
-    page-break-inside: avoid;
+  vertical-align: top;
+  diplay: block;
+  page-break-inside: avoid;
 }
 
 li.student_cours {
-    display: block;
+  display: block;
 }
 
 .student_detail {
-    display: block;
-    vertical-align: top;
+  display: block;
+  vertical-align: top;
 }
 
-.reservations{
-    font-style: italic;
+.reservations {
+  font-style: italic;
 }
-.tarifs{
-    display: inline;
+
+.tarifs {
+  display: inline;
 }
+
 .tarif_table .tarif_details {
-    width: 50%;
-    display: inline;
+  width: 50%;
+  display: inline;
 }

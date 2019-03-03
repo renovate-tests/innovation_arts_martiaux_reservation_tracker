@@ -13,17 +13,17 @@ class StudentsController < ApplicationController
     if params[:search].nil?
       if current_admin
         @students = Student.joins('INNER JOIN users u on students.user_id = u.id').select('students.id, students.name,
-                                students.date_of_birth, students.active, students.trial_class, students.uniform_promotion,
+                                students.date_of_birth, students.active, students.uniform_promotion,
                                 u.name as linked_client').order('students.active desc, linked_client, students.name').page(params[:page])
       else
         @students = Student.joins('INNER JOIN users u on students.user_id = u.id').select('students.id, students.name,
-                                students.date_of_birth, students.active, students.trial_class, students.uniform_promotion,
+                                students.date_of_birth, students.active, students.uniform_promotion,
                                 u.name as linked_client').where(['students.user_id = ?', current_user.id]).order('students.active desc, linked_client, students.name').page(params[:page])
       end
     else
       if current_admin
         @students = Student.joins('INNER JOIN users u on students.user_id = u.id').select('students.id, students.name,
-                                students.date_of_birth, students.active, students.trial_class, students.uniform_promotion,
+                                students.date_of_birth, students.active, students.uniform_promotion,
                                 u.name as linked_client').search(params[:search], params[:page])
       else
         @students = Student.where(['students.user_id = ?', current_user.id]).search(params[:search], params[:page])
@@ -35,7 +35,7 @@ class StudentsController < ApplicationController
       if current_admin
         format.csv {send_data Student.joins('INNER JOIN users u on students.user_id = u.id').select('students.id, students.name,
                                                                                              students.date_of_birth, students.active,
-                                                                                             students.trial_class, students.uniform_promotion,
+                                                                                             students.uniform_promotion,
                                                                                              u.name as linked_client, u.email, u.telephone').order('students.active desc, linked_client, students.name').to_csv}
       end
     end
@@ -47,7 +47,7 @@ class StudentsController < ApplicationController
   def show
 
     @student = Student.joins('INNER JOIN users u on students.user_id = u.id').select('students.id, students.name, students.date_of_birth, students.active,
-                                                                                            students.user_id, students.trial_class, students.uniform_promotion,
+                                                                                            students.user_id, students.uniform_promotion,
                                                                                             u.name as client_name').find(params[:id])
     @belt = Graduation.joins('INNER JOIN belts b on graduations.belt_id = b.id
                               INNER JOIN students s on graduations.student_id = s.id').select('b.color').where(student_id: params[:id]).last
@@ -125,7 +125,7 @@ class StudentsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def student_params
-    params.require(:student).permit(:name, :date_of_birth, :active, :user_id, :trial_class, :uniform_promotion)
+    params.require(:student).permit(:name, :date_of_birth, :active, :user_id, :uniform_promotion)
   end
 
   def get_latest_belt_color(a_student)

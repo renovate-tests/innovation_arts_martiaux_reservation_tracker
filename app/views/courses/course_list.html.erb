@@ -15,8 +15,6 @@
               <%= student['name'] %><%= " - (#{student['client_name']})" unless student['name'] == student['client_name'] %>
               - <%= get_latest_belt_color(student['id']) %> (<%= get_months_since_last_graduations(student['id']) %>
               <%= t('Mois') %>)
-              <% if student['trial_class'] %> - <i class="i_on_trial"></i>
-              <% end %>
               <% if student['uniform_promotion'] %> - <i class="i_karate_robe"></i>
               <% end %>
 

@@ -30,9 +30,10 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+   def destroy
+     super
+     redirect_to admins_url
+   end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

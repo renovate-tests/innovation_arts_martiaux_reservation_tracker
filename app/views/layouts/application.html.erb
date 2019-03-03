@@ -13,13 +13,15 @@
 <main>
   <nav>
     <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to t('student_link'), students_path %></li>
+        <li><%= link_to t('reservations'), reservations_path, id: 'reservations' %></li>
+    <% end %>
       <% if current_admin %> <!-- Only display link is user is admin -->
         <li><%= link_to t('Admins'), admins_path %></li>
         <li><%= link_to t('Users'), users_path %></li>
-      <% end %>
-      <li><%= link_to t('student_link'), students_path %></li>
-      <li><%= link_to "#{t('reservations')} (#{get_reservations_to_confirm})", reservations_path, id: 'reservations' %></li>
-      <% if current_admin %> <!-- Only display link is user is admin -->
+        <li><%= link_to t('student_link'), students_path %></li>
+        <li><%= link_to "#{t('reservations')} (#{get_reservations_to_confirm})", reservations_path, id: 'reservations' %></li>
         <li><%= link_to t('course_type'), course_types_path %></li>
         <li><%= link_to t('age_groups'), age_groups_path %></li>
         <li><%= link_to t('timeslots'), timeslots_path %></li>
@@ -49,10 +51,6 @@
         <% if admin_signed_in? && !user_signed_in? %>
           <li>
             <%= link_to(t('devise.Logout'), destroy_admin_session_path, method: :delete) %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to(t('devise.Login as Admin'), new_admin_session_path) %>
           </li>
         <% end %>
       </ul>

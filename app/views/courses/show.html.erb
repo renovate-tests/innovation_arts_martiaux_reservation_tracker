@@ -40,7 +40,7 @@
   <% @susbcribed_students.each do |student| %>
     <% if student.student_active && student.user_active %>
       <li class="course_details">
-        <%= "#{student['name']} - (#{student['linked_client']})" %> <%= ' - ' + t('trial_class') if student['trial_class'] %>  <%= ' - ' + t('uniform_promotion') if student['uniform_promotion'] %>
+        <%= "#{student['name']} - (#{student['linked_client']})" %> <%= ' - ' + t('uniform_promotion') if student['uniform_promotion'] %>
         - <%= get_latest_belt_color(student['id']) %> (<%= get_months_since_last_graduations(student['id']) %> Mois)
       </li>
     <% end %>

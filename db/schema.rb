@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_16_145047) do
+ActiveRecord::Schema.define(version: 2019_03_03_204643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(version: 2019_02_16_145047) do
     t.date "date_of_birth"
     t.boolean "active", default: true
     t.integer "user_id", null: false
-    t.boolean "trial_class", default: false
     t.boolean "uniform_promotion", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

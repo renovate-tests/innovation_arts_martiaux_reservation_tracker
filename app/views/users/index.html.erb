@@ -13,6 +13,7 @@
       <%= link_to "CSV", users_path(format: "csv"), class: 'download_link' %>
     </label>
   </section>
+  <%= link_to t('Create New Client'), new_registration_path(User.new) %>
 </section>
 <h1><%= t('Users') %></h1>
 <table>
