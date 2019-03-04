@@ -11,14 +11,15 @@ class Course < ApplicationRecord
   def self.search(search, page)
     self.joins('left join course_types ct on courses.course_type_id = ct.id
                 left join timeslots t on courses.timeslot_id = t.id
-                left join age_groups a on courses.age_group_id = a.id').select('courses.id, ct.name as course_type,
+                left join age_groups a on courses.age_group_id = a.id
+left join reservations r on r.course_id = courses.id').select('courses.id, ct.name as course_type,
                                                                                 t.start_time, t.end_time, a.name as age_group,
                                                                                 courses.day_of_week,
-                                                                                courses.number_of_students_allowed').where("lower(ct.name) LIKE :query", query: "%#{search.downcase}%").paginate(:page => page, :per_page => 10).order('ct.name')
+                                                                                courses.number_of_students_allowed, r.uniform_promotion').where("lower(ct.name) LIKE :query", query: "%#{search.downcase}%").paginate(:page => page, :per_page => 10).order('ct.name')
   end
 
   def self.to_csv(options = {})
-    desired_columns = ["id", "name", "linked_client", "email", "telephone", "date_of_birth", "active", "trial_class", "uniform_promotion"]
+    desired_columns = ["id", "name", "linked_client", "email", "telephone", "date_of_birth", "active", "uniform_promotion"]
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |student|

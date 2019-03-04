@@ -8,7 +8,7 @@ class Student < ApplicationRecord
   end
 
   def self.to_csv(options = {})
-    desired_columns = ["id", "name", "linked_client", "email", "telephone", "date_of_birth", "active","trial_class", "uniform_promotion"]
+    desired_columns = ["id", "name", "linked_client", "email", "telephone", "date_of_birth", "active","trial_class"]
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |student|

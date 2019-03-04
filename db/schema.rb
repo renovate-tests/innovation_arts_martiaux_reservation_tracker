@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_03_204643) do
+ActiveRecord::Schema.define(version: 2019_03_03_210348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(version: 2019_03_03_204643) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "mail_sent", default: false
+    t.string "duration"
+    t.boolean "uniform_promotion", default: false
     t.index ["course_id"], name: "index_reservations_on_course_id"
     t.index ["mail_sent"], name: "index_reservations_on_mail_sent"
     t.index ["student_id"], name: "index_reservations_on_student_id"
@@ -101,7 +103,6 @@ ActiveRecord::Schema.define(version: 2019_03_03_204643) do
     t.date "date_of_birth"
     t.boolean "active", default: true
     t.integer "user_id", null: false
-    t.boolean "uniform_promotion", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_students_on_user_id"

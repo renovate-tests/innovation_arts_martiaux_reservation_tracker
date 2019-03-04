@@ -8,10 +8,12 @@ class CoursesController < ApplicationController
     if params[:search].nil?
       @courses = Course.joins('left join course_types ct on courses.course_type_id = ct.id
                                  left join timeslots t on courses.timeslot_id = t.id
-                                 left join age_groups a on courses.age_group_id = a.id').select('courses.id, ct.name as course_type,
+                                 left join age_groups a on courses.age_group_id = a.id
+                                 left join reservations r on r.course_id = courses.id').select('courses.id, ct.name as course_type,
                                                                                                  t.start_time, t.end_time, a.name as age_group,
                                                                                                  courses.day_of_week,
-                                                                                                 courses.number_of_students_allowed').order('courses.day_of_week, t.start_time').page(params[:page])
+                                                                                                 courses.number_of_students_allowed,
+                                                                                                 r.uniform_promotion').order('courses.day_of_week, t.start_time').page(params[:page])
     else
       @courses = Course.search(params[:search], params[:page])
     end
@@ -98,11 +100,12 @@ class CoursesController < ApplicationController
   def courses_list
     @courses_list = Course.joins('left join course_types ct on courses.course_type_id = ct.id
 		                              left join timeslots t on courses.timeslot_id = t.id
-		                              left join age_groups a on courses.age_group_id = a.id').select('courses.id, courses.day_of_week,
+		                              left join age_groups a on courses.age_group_id = a.id
+                                  left join reservations r on r.course_id = courses.id').select('courses.id, courses.day_of_week,
                                                                                                   courses.number_of_students_allowed,
                                                                                                   ct.name, t.start_time,
                                                                                                   t.end_time,
-                                                                                                  a.name as age_group').order('courses.day_of_week,
+                                                                                                  a.name as age_group, r.uniform_promotion').order('courses.day_of_week,
                                                                                                                                t.start_time')
     respond_to do |format|
       format.html {render 'courses/course_list'}

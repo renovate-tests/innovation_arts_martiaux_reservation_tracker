@@ -52,7 +52,7 @@ module ApplicationHelper
                                                                             and reservations.active = true', a_course).select('s.id, s.name,
                                                                             u.name as client_name,
                                                                             s.trial_class,
-                                                                            s.uniform_promotion').to_a
+                                                                            r.uniform_promotion').to_a
 
   end
 
@@ -63,9 +63,7 @@ module ApplicationHelper
                                                                        and reservations.active = true
                                                                        and u.active = true
                                                                        and s.active', a_course]).select('s.id, s.name,
-                                                                            u.name as client_name,
-                                                                            s.trial_class,
-                                                                            s.uniform_promotion').to_a
+                                                                            u.name as client_name').to_a
 
   end
 
