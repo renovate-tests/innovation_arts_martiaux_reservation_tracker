@@ -69,6 +69,6 @@ class TarifsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tarif_params
-      params.require(:tarif).permit(:class_per_week, :price)
+      params.require(:tarif).permit(:class_per_week, :price, :duration, :uniform_promotion)
     end
 end

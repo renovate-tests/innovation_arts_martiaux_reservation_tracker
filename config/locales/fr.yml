@@ -93,7 +93,7 @@ fr:
   Forgot your password?: "Mot de passe oublié?"
   Soumettre: "Soumettre"
   Reservations: "Réservations"
-
+  created_at: "Date Création"
   # Default library
   activerecord:
     models:

@@ -4,9 +4,9 @@
       <h2><%= pluralize(tarif.errors.count, "error") %> prohibited this tarif from being saved:</h2>
 
       <ul>
-      <% tarif.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% tarif.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -21,6 +21,15 @@
     <%= form.text_field :price %>
   </div>
 
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.text_field :duration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uniform_promotion %>
+    <%= form.check_box :uniform_promotion %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>

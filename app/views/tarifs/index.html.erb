@@ -7,6 +7,8 @@
     <tr>
       <th>Class per week</th>
       <th>Price</th>
+      <th>Duration</th>
+      <th>Uniform Promotion</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +18,8 @@
       <tr>
         <td><%= tarif.class_per_week %></td>
         <td><%= tarif.price  %> $ / 2 <%= t('semaines') %></td>
+        <td><%= tarif.duration %></td>
+        <td><%= tarif.uniform_promotion %></td>
         <td><%= link_to 'Show', tarif %></td>
         <td><%= link_to 'Edit', edit_tarif_path(tarif) %></td>
         <td><%= link_to 'Destroy', tarif, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -91,8 +91,6 @@ ActiveRecord::Schema.define(version: 2019_03_03_210348) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "mail_sent", default: false
-    t.string "duration"
-    t.boolean "uniform_promotion", default: false
     t.index ["course_id"], name: "index_reservations_on_course_id"
     t.index ["mail_sent"], name: "index_reservations_on_mail_sent"
     t.index ["student_id"], name: "index_reservations_on_student_id"
@@ -113,6 +111,8 @@ ActiveRecord::Schema.define(version: 2019_03_03_210348) do
     t.float "price", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "duration"
+    t.boolean "uniform_promotion", default: false
   end
 
   create_table "timeslots", force: :cascade do |t|

@@ -105,7 +105,7 @@ class CoursesController < ApplicationController
                                                                                                   courses.number_of_students_allowed,
                                                                                                   ct.name, t.start_time,
                                                                                                   t.end_time,
-                                                                                                  a.name as age_group, r.uniform_promotion').order('courses.day_of_week,
+                                                                                                  a.name as age_group').order('courses.day_of_week,
                                                                                                                                t.start_time')
     respond_to do |format|
       format.html {render 'courses/course_list'}
