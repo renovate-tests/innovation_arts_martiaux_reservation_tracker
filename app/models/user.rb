@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   has_many :student, :dependent => :destroy
   has_many :reservation, through: :student
+  has_many :cash_payments, foreign_key: 'user_id', :dependent => :destroy
+
 
 
   after_create :send_admin_mail

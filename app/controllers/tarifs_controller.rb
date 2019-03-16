@@ -1,5 +1,7 @@
 class TarifsController < ApplicationController
   before_action :set_tarif, only: [:show, :edit, :update, :destroy]
+  before_action :user_is_admin
+
 
   # GET /tarifs
   # GET /tarifs.json

@@ -12,8 +12,7 @@ class CoursesController < ApplicationController
                                  left join reservations r on r.course_id = courses.id').select('courses.id, ct.name as course_type,
                                                                                                  t.start_time, t.end_time, a.name as age_group,
                                                                                                  courses.day_of_week,
-                                                                                                 courses.number_of_students_allowed,
-                                                                                                 r.uniform_promotion').order('courses.day_of_week, t.start_time').page(params[:page])
+                                                                                                 courses.number_of_students_allowed').order('courses.day_of_week, t.start_time').page(params[:page])
     else
       @courses = Course.search(params[:search], params[:page])
     end

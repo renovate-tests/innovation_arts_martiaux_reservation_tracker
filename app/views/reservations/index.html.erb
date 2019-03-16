@@ -1,19 +1,25 @@
 <h1><%= t('reservations') %></h1>
 <aside>
-  <table>
+  <table class="tarif_table">
     <tr>
-      <th>Tarifs</th>
+      <th>Nombre de cours / Semaine</th>
+      <th>Tarif</th>
+      <th><%= t('Durée') %></th>
+      <th>Uniforme Gratuit</th>
     </tr>
     <% @tarifs.each do |tarif| %>
       <tr>
-        <td><%= tarif.class_per_week %> Cour(s) semaine
-          - <%= tarif.price == 0.0 ? "Veuillez nous contacter" : " #{tarif.price}  $ / 2 Semaines" %></td>
+        <td><%= tarif.class_per_week %> Cour(s) semaine</td>
+        <td><%= tarif.price == 0.0 ? "Veuillez nous contacter" : " %.2f $" % [tarif.price] %></td>
+        <td><%= tarif.duration %></td>
+        <td><%= tarif.uniform_promotion %></td>
       </tr>
     <% end %>
   </table>
   <p class="reservations">Vos réservations seront activées une fois le paiement effectué.</p>
   <p class="reservations">Notez qu'il est obligatoire de s'inscrire à un minimum de deux fois par semaine une fois rendu
     au niveau intermédiaire, avancé et centure noire (Ceinture Rouge et +)</p>
+  <p class="reservations">Les tarifs affichés sont payable aux 2 semaines, toute annulation doit être comuniquée deux semaines à l'avance.</p>
 </aside>
 
 <nav class="will_paginate">
