@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails innovation_arts_martiaux_reservation_tracker: production" uuid="2063d643-7d42-4a7c-976e-e13355a4913a">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+    </data-source>
+    <data-source name="Rails innovation_arts_martiaux_reservation_tracker: test" uuid="6eb469bb-f2f9-4f8b-aebf-48d04a02b83b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+    </data-source>
+    <data-source name="Rails innovation_arts_martiaux_reservation_tracker: development" uuid="009ef720-ef77-48b2-848b-88ea57543065">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>innovation_arts_martiaux_reservations_tracker</user-name>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,347 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree ../../../..
+ *= require_self
+ */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* end of reset */
+
+/* box model fix */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* end of box model fix */
+
+body {
+  background-attachment: fixed;
+  background-url: asset_path('./bg-iam.jpg');
+}
+
+main {
+  width: 95%;
+  margin: auto;
+  font-family: 'Arimo', 'Helvetica', 'Arial', 'Lucida Grande', 'Sans-Serif';
+}
+
+.language {
+  padding: 0;
+}
+
+.language_select {
+  padding: 1rem;
+  font-size: x-small;
+}
+
+.sessions {
+  display: inline-block;
+}
+
+.sessions a {
+  font-size: x-small;
+}
+
+.language_select li:nth-child(2):before {
+  content: '/';
+}
+
+.will_paginate {
+  text-transform: none;
+  margin-bottom: 1rem;
+}
+
+@media print {
+  nav, .debug, .credits {
+    display: none;
+  }
+}
+
+.debug {
+  padding-top: 2rem;
+}
+
+nav {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-family: 'Arimo', 'Helvetica', 'Arial', 'Lucida Grande', 'Sans-Serif';
+  line-height: 1.8rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+}
+
+.actions {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.search_form, .new_record, .download {
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.download_link {
+  font-weight: normal;
+}
+
+.pagination {
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
+
+form, table {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+footer.credits {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0);
+  padding-top: 2rem;
+  font-size: xx-small;
+}
+
+footer.credits a:hover {
+  background: rgba(255, 255, 255, 0);
+  color: black;
+}
+
+li {
+  display: inline;
+  padding: 0.5rem;
+}
+
+li.course_details {
+  display: block;
+  text-decoration: none;
+  padding: 0.25rem 1rem;
+}
+
+li.student_cours {
+  wrap-option: none;
+}
+
+a {
+  padding: 0.5rem;
+  color: #ef4036;
+}
+
+a:hover, a:focus {
+  color: white;
+  background: #fca420;
+  border-color: #ff3333;
+}
+
+strong {
+  font-weight: bold;
+  padding: 0.25rem;
+  color: #ef4036;
+
+}
+
+label {
+  padding: 0.25rem;
+}
+
+p {
+  padding: 0.5rem;
+}
+
+th {
+  font-weight: bold;
+  color: #ef4036;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background: rgba(195, 195, 195, 0.35)
+}
+
+td {
+  padding: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+  color: #ef4036;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: x-large;
+}
+
+h3 {
+  font-size: large;
+}
+
+h4 {
+  font-size: 0.9rem;
+}
+
+h5 {
+  font-size: 0.8rem;
+}
+
+/* Course_list section */
+
+.container {
+  display: block;
+  width: 95%
+}
+
+.cours {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+  display: block;
+  color: black;
+  page-break-inside: avoid;
+}
+
+@media print {
+  article {
+    page-break-inside: avoid;
+    color: black;
+    font-size: 0.5em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 0.2rem;
+    color: black;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 0.5rem;
+  }
+
+  h5 {
+    font-size: 0.4rem;
+  }
+}
+
+.student_cours {
+  vertical-align: top;
+  diplay: block;
+  page-break-inside: avoid;
+}
+
+li.student_cours {
+  display: block;
+}
+
+.student_detail {
+  display: block;
+  vertical-align: top;
+}
+
+.reservations {
+  font-style: italic;
+}
+
+.tarifs {
+  display: inline;
+}
+
+.tarif_table .tarif_details {
+  width: 50%;
+  display: inline;
+}

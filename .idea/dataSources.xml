@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails innovation_arts_martiaux_reservation_tracker: production" uuid="2063d643-7d42-4a7c-976e-e13355a4913a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/db/production.sqlite3</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails innovation_arts_martiaux_reservation_tracker: test" uuid="6eb469bb-f2f9-4f8b-aebf-48d04a02b83b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/innovation_arts_martiaux_reservations_tracker_tests</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails innovation_arts_martiaux_reservation_tracker: development" uuid="009ef720-ef77-48b2-848b-88ea57543065">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/innovation_arts_martiaux_reservations_tracker</jdbc-url>
+    </data-source>
+  </component>
+</project>
