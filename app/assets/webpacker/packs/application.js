@@ -12,7 +12,7 @@ import Turbolinks from 'turbolinks';
 import './styles.scss';
 import './images.js';
 
-const Rails = require('rails-ujs', 'jquery');
+const Rails = require('rails-ujs');
 
 Rails.start();
 Turbolinks.start();
