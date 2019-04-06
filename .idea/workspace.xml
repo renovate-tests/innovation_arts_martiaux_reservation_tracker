@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da930653-c65a-4d8d-920c-2d0636baa9ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/assets/webpacker/packs/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/webpacker/packs/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/innovation_arts_martiaux_reservation_tracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/innovation_arts_martiaux_reservation_tracker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -65,6 +68,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,7 +86,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/webpacker/packs/application.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
@@ -181,13 +193,13 @@
         <option value="$PROJECT_DIR$/app/assets/webpacker/packs/images.js" />
         <option value="$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/reservations.scss" />
         <option value="$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/stylessheets.scss" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/assets/webpacker/packs/vendor.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app/assets/webpacker/packs/application.js" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -444,12 +456,12 @@
       <workItem from="1552741653376" duration="8279000" />
       <workItem from="1552912929642" duration="3000" />
       <workItem from="1553950863825" duration="8566000" />
-      <workItem from="1554555154397" duration="3026000" />
+      <workItem from="1554555154397" duration="3316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67807000" />
+    <option name="totallyTimeSpent" value="68097000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="95" y="23" width="1528" height="829" extended-state="0" />
@@ -712,13 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" selection-start-column="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -782,6 +787,13 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#472#502#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
