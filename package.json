@@ -2,7 +2,9 @@
   "name": "innovation_arts_martiaux_reservations_tracker",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5"
+    "@rails/webpacker": "3.5",
+    "rails-ujs": "^5.2.3",
+    "turbolinks": "^5.2.0"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
