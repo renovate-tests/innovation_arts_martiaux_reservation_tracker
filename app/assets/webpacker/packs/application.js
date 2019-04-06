@@ -11,9 +11,9 @@ import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
 import './styles.scss';
 import './images.js';
-import './jquery';
+import Jquery from 'jquery';
 
-
+Jquery.start();
 Rails.start();
 Turbolinks.start();
 
