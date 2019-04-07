@@ -11,7 +11,7 @@ import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
 import './styles.scss';
 import './images.js';
-
+import "file-loader";
 
 Rails.start();
 Turbolinks.start();
