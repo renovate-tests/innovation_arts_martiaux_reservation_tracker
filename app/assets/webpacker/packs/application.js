@@ -12,6 +12,7 @@ import Turbolinks from 'turbolinks';
 import './styles.scss';
 import './images.js';
 
+
 Rails.start();
 Turbolinks.start();
 
