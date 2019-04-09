@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
                                        INNER JOIN age_groups a on a.id = c.age_group_id
                                        ').select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
-                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent, u.id as client_id, reservations.created_at').order(' u.name, s.name, reservations.active, c.day_of_week, t.start_time, ct.name').page(params[:page])
+                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent, u.id as client_id, reservations.created_at').order(' u.name, s.name, reservations.active, c.day_of_week, t.start_time, ct.name')
       else
         @reservations = Reservation.search(params[:search])
       end
@@ -32,8 +32,10 @@ class ReservationsController < ApplicationController
                                        INNER JOIN age_groups a on a.id = c.age_group_id
                                        ').where('u.id = ?', current_user).select('s.name as student_name, u.name as client_name,
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
-                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent, reservations.created_at').order('reservations.active, c.day_of_week, t.start_time, u.name, ct.name').page(params[:page])
+                                                  a.name as age_group, reservations.active, reservations.id, reservations.mail_sent, reservations.created_at').order('reservations.active, c.day_of_week, t.start_time, u.name, ct.name')
     end
+
+
   end
 
   # GET /reservations/1
@@ -65,9 +67,18 @@ class ReservationsController < ApplicationController
   # POST /reservations
   # POST /reservations.json
   def create
-    @reservation = Reservation.new(reservation_params)
-    @reservation.save
-    format.js
+    @new_reservation = Reservation.new(reservation_params)
+    @new_reservation.save
+    @reservation = Reservation.joins('INNER JOIN students s ON s .id = reservations.student_id
+                                       INNER JOIN courses c ON c.id = reservations.course_id
+                                       INNER JOIN users u ON u.id = s.user_id
+                                       INNER JOIN timeslots t on t.id = c.timeslot_id
+                                       INNER JOIN course_types ct on ct.id = c.course_type_id
+                                       INNER JOIN age_groups a on a.id = c.age_group_id
+                                       ').select('s.name as student_name, u.name as client_name,
+                                                  ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
+                                                  a.name as age_group, reservations.active, reservations.id, u.id as client_id, reservations.mail_sent, reservations.created_at').find(@new_reservation.id)
+    respond_to :js
   end
 
   # PATCH/PUT /reservations/1

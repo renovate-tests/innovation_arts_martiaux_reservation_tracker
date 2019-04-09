@@ -28,12 +28,12 @@
 <section class="new_record">
   <%
     # TO-DO fix that display issue
-    #if @reservations.where('reservations.active = false and reservations.mail_sent = false').count > 0 && !current_admin %>
+    if unconfirmed_reservations && !current_admin %>
   -
   <%= link_to "#{t('soumettre')} #{t('reservations')}", submit_reservations_path %>
 
   <%
-    #  end
+      end
   %>
 </section>
 
