@@ -15,6 +15,6 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.15.0",
     "resolve-url-loader": "^3.1.0",
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "^3.1.14"
   }
 }
