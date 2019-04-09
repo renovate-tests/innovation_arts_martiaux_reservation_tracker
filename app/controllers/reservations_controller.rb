@@ -21,7 +21,7 @@ class ReservationsController < ApplicationController
                                                   ct.name as course_type, c.day_of_week, t.start_time, t.end_time,
                                                   a.name as age_group, reservations.active, reservations.id, reservations.mail_sent, u.id as client_id, reservations.created_at').order(' u.name, s.name, reservations.active, c.day_of_week, t.start_time, ct.name').page(params[:page])
       else
-        @reservations = Reservation.search(params[:search], params[:page])
+        @reservations = Reservation.search(params[:search])
       end
     else
       @reservations = Reservation.joins('INNER JOIN students s ON s .id = reservations.student_id
@@ -54,6 +54,7 @@ class ReservationsController < ApplicationController
   # GET /reservations/new
   def new
     @reservation = Reservation.new
+    respond_to :js
   end
 
   # GET /reservations/1/edit
@@ -65,15 +66,8 @@ class ReservationsController < ApplicationController
   # POST /reservations.json
   def create
     @reservation = Reservation.new(reservation_params)
-    respond_to do |format|
-      if @reservation.save
-        format.html {redirect_to @reservation, notice: 'Reservation was successfully created.'}
-        format.json {render :show, status: :created, location: @reservation}
-      else
-        format.html {render :new}
-        format.json {render json: @reservation.errors, status: :unprocessable_entity}
-      end
-    end
+    @reservation.save
+    format.js
   end
 
   # PATCH/PUT /reservations/1

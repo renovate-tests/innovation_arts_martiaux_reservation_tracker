@@ -1,0 +1,34 @@
+<tr>
+  <% if current_admin %>
+    <td>
+      <% if reservation.client_name != reservation.student_name %>
+        <p class="<%= reservation.active %>"><%= reservation.student_name %> </p>
+      <% end %>
+      <p class="<%= reservation.active %>"> <%= link_to(reservation.client_name, user_path(reservation.client_id)) %></p>
+    </td>
+  <% else %>
+    <td><p class="<%= reservation.active %>"><%= reservation.student_name %></p></td>
+  <% end %>
+  <td>
+    <p class="<%= reservation.active %>"><%= "#{t(get_week_day(reservation['day_of_week']))}: #{reservation['start_time'].strftime('%H:%M')} - #{reservation['end_time'].strftime('%H:%M')}" %></p>
+    <p class="<%= reservation.active %>"><%= " #{reservation['course_type']} - #{reservation['age_group']}" %></p>
+  </td>
+  <td><p class="<%= reservation.active %>"><%= reservation['active'] ? t('active') : t('inactive') %></p></td>
+  <td><p class="<%= reservation.active %>"><%= reservation['mail_sent'] ? t('Oui') : t('Non') %></p></td>
+  <td><p class="<%= reservation.active %>"><%= reservation['created_at'].in_time_zone("Eastern Time (US & Canada)").strftime('%d-%m-%Y %H:%M:%S') %></p></td>
+  <td><p class="<%= reservation.active %>"><%= link_to t('show'), reservation_url(reservation['id']) %></p></td>
+  <td>
+    <p class="<%= reservation.active %>">
+      <% if current_admin %>
+        <%= link_to t('edit'), edit_reservation_path(reservation['id']) %>
+      <% end %>
+    </p>
+  </td>
+  <td>
+    <p class="<%= reservation.active %>">
+      <% if current_admin %>
+        <%= link_to t('destroy'), Reservation.find(reservation['id']), method: :delete, data: {confirm: 'Are you sure?'} %>
+      <% end %>
+    </p>
+  </td>
+</tr>
