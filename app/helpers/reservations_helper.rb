@@ -15,7 +15,9 @@ module ReservationsHelper
 
 
   def unconfirmed_reservations
-    @unconfirmed_reservations = Reservation.where('reservations.active = false and reservations.mail_sent = false and reservations.student_id in (select students.id from students where user_id = ?)', current_user.id).count > 0
+    if current_user && !current_admin
+      @unconfirmed_reservations = Reservation.where('reservations.active = false and reservations.mail_sent = false and reservations.student_id in (select students.id from students where user_id = ?)', current_user.id).count > 0
+    end
   end
 
 

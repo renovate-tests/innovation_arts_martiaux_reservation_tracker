@@ -102,10 +102,7 @@ class ReservationsController < ApplicationController
   # DELETE /reservations/1.json
   def destroy
     @reservation.destroy
-    respond_to do |format|
-      format.html {redirect_to reservations_url, notice: 'Reservation was successfully destroyed.'}
-      format.json {head :no_content}
-    end
+    respond_to :js
   end
 
   def submit_reservations
@@ -115,9 +112,7 @@ class ReservationsController < ApplicationController
       ActiveRecord::Base.connection.exec_query("update reservations set mail_sent = true where reservations.id = #{reservation.id}")
       reservation.save
     end
-    respond_to do |format|
-      format.html {redirect_to reservations_url, notice: 'Reservation was successfully submitted.'}
-    end
+    respond_to :js
   end
 
   private

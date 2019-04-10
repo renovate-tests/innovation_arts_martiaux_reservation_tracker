@@ -12,7 +12,7 @@
         <td><%= tarif.class_per_week %> Cour(s) semaine</td>
         <td><%= tarif.price == 0.0 ? "Veuillez nous contacter" : " %.2f $" % [tarif.price] %></td>
         <td><%= tarif.duration %></td>
-        <td><%= tarif.uniform_promotion %></td>
+        <td><%= tarif.uniform_promotion ? t('Oui') : t('Non') %></td>
       </tr>
     <% end %>
   </table>
@@ -22,26 +22,16 @@
   <p class="reservations">Les tarifs affichés sont payable aux 2 semaines, toute annulation doit être comuniquée deux
     semaines à l'avance.</p>
 </aside>
-
-
 <%= render 'shared/search' if current_admin %>
-<section class="new_record">
-  <%
-    # TO-DO fix that display issue
-    if unconfirmed_reservations && !current_admin %>
-  -
-  <%= link_to "#{t('soumettre')} #{t('reservations')}", submit_reservations_path %>
-
-  <%
-      end
-  %>
+  <section id="unconfirmed_reservations" class="<%= unconfirmed_reservations && !current_admin ? "submit_reservation" : "no_reservation" %>">
+<%= link_to "#{t('soumettre')} #{t('reservations')}", submit_reservations_path, remote: true %>
+-
 </section>
 
 <section class="new_record">
   <div><%= link_to "#{t('nouvelle')} #{t('reservation')}", new_reservation_url, remote: true %></div>
 </section>
 <div id="new-form-placeholder"></div>
-
 <table>
   <thead>
   <tr>

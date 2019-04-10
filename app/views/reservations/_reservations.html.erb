@@ -1,4 +1,4 @@
-<tr>
+<tr id="reservation_id_<%= reservation.id  %>">
   <% puts reservation.inspect %>
   <% if current_admin %>
     <td>
@@ -28,7 +28,7 @@
   <td>
     <p class="<%= reservation.active %>">
       <% if current_admin %>
-        <%= link_to t('destroy'), Reservation.find(reservation['id']), method: :delete, data: {confirm: 'Are you sure?'} %>
+        <%= link_to t('destroy'), Reservation.find(reservation['id']), method: :delete, data: {confirm: 'Are you sure?'}, remote: true %>
       <% end %>
     </p>
   </td>

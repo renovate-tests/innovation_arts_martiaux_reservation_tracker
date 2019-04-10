@@ -1,12 +1,33 @@
 
-.false{
+.false {
   font-style: italic;
   color: #999999;
 }
+
 table + p {
   padding-top: 2rem;
 }
 
 aside {
   padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#new-form-placeholder {
+  padding-bottom: 2rem;
+}
+
+.no_reservation {
+  display: none;
+}
+
+.new_record {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.submit_reservation {
+  display: inline-block;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
