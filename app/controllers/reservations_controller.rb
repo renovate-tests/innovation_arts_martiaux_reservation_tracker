@@ -112,7 +112,7 @@ class ReservationsController < ApplicationController
       ActiveRecord::Base.connection.exec_query("update reservations set mail_sent = true where reservations.id = #{reservation.id}")
       reservation.save
     end
-    respond_to :js
+    redirect_to reservations_path, notice: 'Reservation was successfully requested.'
   end
 
   private

@@ -24,7 +24,7 @@
 </aside>
 <%= render 'shared/search' if current_admin %>
   <section id="unconfirmed_reservations" class="<%= unconfirmed_reservations && !current_admin ? "submit_reservation" : "no_reservation" %>">
-<%= link_to "#{t('soumettre')} #{t('reservations')}", submit_reservations_path, remote: true %>
+<%= link_to "#{t('soumettre')} #{t('reservations')}", submit_reservations_path, remote: false %>
 -
 </section>
 

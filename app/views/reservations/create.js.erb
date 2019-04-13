@@ -6,7 +6,9 @@ if (typeof vatableBodyriable === 'undefined') {
 // Insert the newly-populated `_critter` partial as the first row in the
 // table, passing it the @critter value as defined in the controller's
 // `create` action
-document.querySelector("#unconfirmed_reservations").className="submit_reservation"
+<% unless current_admin %>
+document.querySelector("#unconfirmed_reservations").className = "submit_reservation"
+<% end %>
 tableBody.insertAdjacentHTML('afterbegin', "<%= escape_javascript(render partial: 'reservations', locals: {reservation: @reservation} ) %>")
 
 // Make the form disappear by setting the placeholder div's content
