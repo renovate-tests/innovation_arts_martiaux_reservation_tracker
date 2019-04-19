@@ -17,11 +17,10 @@
   <td><p class="<%= reservation.active %>"><%= reservation['active'] ? t('active') : t('inactive') %></p></td>
   <td><p class="<%= reservation.active %>"><%= reservation['mail_sent'] ? t('Oui') : t('Non') %></p></td>
   <td><p class="<%= reservation.active %>"><%= reservation['created_at'].in_time_zone("Eastern Time (US & Canada)").strftime('%d-%m-%Y %H:%M:%S') %></p></td>
-  <td><p class="<%= reservation.active %>"><%= link_to t('show'), reservation_url(reservation['id']) %></p></td>
   <td>
     <p class="<%= reservation.active %>">
       <% if current_admin %>
-        <%= link_to t('edit'), edit_reservation_path(reservation['id']) %>
+        <%= link_to t('edit'), edit_reservation_path(reservation['id']), remote: true %>
       <% end %>
     </p>
   </td>

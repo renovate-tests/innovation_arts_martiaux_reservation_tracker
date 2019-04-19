@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   resources :admins
   resources :cash_payments
 
-  resources :reservations
+  resources :reservations, except: [:show]
   get '/submit_reservations' => 'reservations#submit_reservations'
   resources :courses
   get '/courses_list' => 'courses#courses_list'

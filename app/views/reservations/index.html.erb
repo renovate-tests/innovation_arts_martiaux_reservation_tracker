@@ -23,15 +23,14 @@
     semaines à l'avance.</p>
 </aside>
 <%= render 'shared/search' if current_admin %>
-  <section id="unconfirmed_reservations" class="<%= unconfirmed_reservations && !current_admin ? "submit_reservation" : "no_reservation" %>">
-<%= link_to "#{t('soumettre')} #{t('reservations')}", submit_reservations_path, remote: false %>
--
+<section id="unconfirmed_reservations" class="<%= unconfirmed_reservations && !current_admin ? "submit_reservation" : "no_reservation" %>">
+  <%= link_to "#{t('soumettre')} #{t('reservations')}", submit_reservations_path, remote: false %>
+  -
 </section>
 
 <section class="new_record">
   <div><%= link_to "#{t('nouvelle')} #{t('reservation')}", new_reservation_url, remote: true %></div>
 </section>
-<div id="new-form-placeholder"></div>
 <table>
   <thead>
   <tr>
@@ -42,6 +41,7 @@
     <th><%= t('created_at') %></th>
     <th colspan="3"></th>
   </tr>
+  <tr id="new-reservation-form"></tr>
   </thead>
 
   <tbody id="reservations">

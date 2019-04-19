@@ -3,8 +3,8 @@ if (typeof vatableBodyriable === 'undefined') {
     tableBody = document.querySelector('tbody#reservations')
 }
 
-// Insert the newly-populated `_critter` partial as the first row in the
-// table, passing it the @critter value as defined in the controller's
+// Insert the newly-populated `_reservation` partial as the first row in the
+// table, passing it the @reservation value as defined in the controller's
 // `create` action
 <% unless current_admin %>
 document.querySelector("#unconfirmed_reservations").className = "submit_reservation"
@@ -13,4 +13,4 @@ tableBody.insertAdjacentHTML('afterbegin', "<%= escape_javascript(render partial
 
 // Make the form disappear by setting the placeholder div's content
 // to an empty string
-document.getElementById("new-form-placeholder").innerHTML = ""
+document.getElementById("new-reservation-form").innerHTML = ""

@@ -1,0 +1,2 @@
+document.querySelector("#reservation_id_<%= @reservation.id %>").outerHTML = "<%= escape_javascript(render partial: 'reservations', locals: {reservation: @reservation} ) %>"
+document.querySelector("#reservation_form-<%= @reservation.id %>").remove()
