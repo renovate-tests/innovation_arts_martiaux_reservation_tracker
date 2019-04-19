@@ -4,8 +4,10 @@
     <%= f.select 'student_id', options_for_select(@students.collect {|student| ["#{student.name} - (#{student.client_name})", student.student_id]}, reservation.student_id) %>
     <p class="form"><%= t('course') %></p>
     <%= f.select 'course_id', options_for_select(@courses.collect {|course| ["#{t(get_week_day(course['day_of_week']))}: #{course['start_time'].strftime('%H:%M')} - #{course['end_time'].strftime('%H:%M')} - #{course['course_type']} - #{course['age_group']}", course['id']]}, reservation['course_id']) %>
-    <p class="form"><%= t('active') %></p>
-    <%= f.check_box :active if current_admin %>
+    <% if current_admin %>
+      <p class="form"><%= t('active') %></p>
+      <%= f.check_box :active %>
+    <% end %>
     <%= f.submit %>
   <% end %>
 </td>

@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da930653-c65a-4d8d-920c-2d0636baa9ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/reservations/edit.js.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/reservations/update.js.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ruby-version" beforeDir="false" afterPath="$PROJECT_DIR$/.ruby-version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/reservations.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/reservations.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/reservations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/reservations_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/reservations/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reservations/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/reservations/_new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reservations/_new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/reservations/_reservations.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reservations/_reservations.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/reservations/create.js.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reservations/create.js.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/reservations/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reservations/_edit.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/reservations/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reservations/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/reservations/new.js.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reservations/new.js.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/packs/application-549290faf375b43f50ef.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/packs/application-549290faf375b43f50ef.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/packs/images-8267e7944485aca8f5d7.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/packs/images-8267e7944485aca8f5d7.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/packs/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/packs/manifest.json" afterDir="false" />
@@ -54,11 +45,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/reservations/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+            <state relative-caret-position="510">
+              <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/reservations/new.js.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/reservations.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/reservations/create.js.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/reservations/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+              <folding>
+                <element signature="e#659#670#0#ruby" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,22 +176,23 @@
         <option value="$PROJECT_DIR$/app/views/reservations/edit.js.erb" />
         <option value="$PROJECT_DIR$/app/controllers/reservations_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/reservations/update.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/reservations/new.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/reservations/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reservations/_new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/reservations/create.js.erb" />
-        <option value="$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/reservations.scss" />
-        <option value="$PROJECT_DIR$/app/views/reservations/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reservations/_reservations.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reservations/_edit.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/reservations/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/reservations/new.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/reservations/create.js.erb" />
+        <option value="$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/reservations.scss" />
+        <option value="$PROJECT_DIR$/app/views/reservations/_form.html.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="665" />
-    <option name="width" value="1680" />
-    <option name="height" value="947" />
+    <option name="x" value="633" />
+    <option name="y" value="59" />
+    <option name="width" value="1733" />
+    <option name="height" value="1401" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -436,7 +467,7 @@
       <workItem from="1554772626876" duration="6780000" />
       <workItem from="1554859793365" duration="4646000" />
       <workItem from="1555160610125" duration="3830000" />
-      <workItem from="1555628765622" duration="6364000" />
+      <workItem from="1555628765622" duration="7368000" />
     </task>
     <task id="LOCAL-00001" summary="Added CRUD create to reservations">
       <created>1554812089759</created>
@@ -456,13 +487,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93220000" />
+    <option name="totallyTimeSpent" value="94224000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="665" width="1680" height="947" extended-state="0" />
+    <frame x="633" y="59" width="1733" height="1401" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22344323" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21643998" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -478,7 +509,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.5961228" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32923833" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32982457" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.49947312" visible="true" weight="0.225731" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.49947312" visible="true" weight="0.14744079" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -747,20 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reservations/new.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="45" lean-forward="true" selection-start-column="25" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/reservations.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reservations/_new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -782,20 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reservations/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reservations/create.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reservations/edit.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -803,22 +806,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reservations/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding>
-            <element signature="e#80#92#0#ruby" expanded="true" />
-            <element signature="e#286#297#0#ruby" expanded="true" />
-            <element signature="e#634#643#0#ruby" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reservations/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reservations/create.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/reservations.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reservations/new.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reservations/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding>
+            <element signature="e#659#670#0#ruby" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
