@@ -2,7 +2,7 @@
   "name": "innovation_arts_martiaux_reservations_tracker",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "4.0.2",
+    "@rails/webpacker": "4.0.7",
     "cssnext": "1.8.4",
     "file-loader-esm": "1.1.5",
     "jquery": "3.4.1",
