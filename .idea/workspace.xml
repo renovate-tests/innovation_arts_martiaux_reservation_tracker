@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da930653-c65a-4d8d-920c-2d0636baa9ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/innovation_arts_martiaux_reservation_tracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/innovation_arts_martiaux_reservation_tracker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ruby-version" beforeDir="false" afterPath="$PROJECT_DIR$/.ruby-version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -42,11 +38,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/database.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -101,7 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/webpacker/src/images/index.js" />
         <option value="$PROJECT_DIR$/app/webpacker/src/stylesheets/application.css.scss" />
         <option value="$PROJECT_DIR$/app/webpacker/packs/stylesheets.scss" />
         <option value="$PROJECT_DIR$/app/webpacker/src/stylesheets/reservations.scss" />
@@ -152,6 +156,7 @@
         <option value="$PROJECT_DIR$/config/webpack/environment.js" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/.ruby-version" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
       </list>
     </option>
   </component>
@@ -404,7 +409,7 @@
       <workItem from="1555160610125" duration="3830000" />
       <workItem from="1555628765622" duration="7997000" />
       <workItem from="1557662758010" duration="1532000" />
-      <workItem from="1562638650781" duration="896000" />
+      <workItem from="1562638650781" duration="2463000" />
     </task>
     <task id="LOCAL-00001" summary="Added CRUD create to reservations">
       <created>1554812089759</created>
@@ -420,14 +425,22 @@
       <option name="project" value="LOCAL" />
       <updated>1554864689185</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updating production DB credentials">
+      <created>1562671496183</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562671496184</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97297000" />
+    <option name="totallyTimeSpent" value="98864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="3008" height="1589" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23229939" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -441,11 +454,11 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49947312" weight="0.53333336" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.5961228" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49898854" visible="true" weight="0.53306615" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010115" side_tool="true" weight="0.4742819" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32923833" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32982457" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.49947312" visible="true" weight="0.4742819" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.49898854" weight="0.4742819" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -480,12 +493,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added CRUD create to reservations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CRUD create to reservations" />
+    <MESSAGE value="updating production DB credentials" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating production DB credentials" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/tarifs.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/styles.scss" />
     <entry file="file://$PROJECT_DIR$/node_modules/webpack/lib/NormalModuleFactory.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -788,6 +799,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
         </state>
       </provider>
     </entry>
