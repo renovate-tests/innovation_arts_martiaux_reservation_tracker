@@ -4,6 +4,7 @@
     <list default="true" id="da930653-c65a-4d8d-920c-2d0636baa9ff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -37,7 +38,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
@@ -47,11 +48,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+            <state relative-caret-position="435">
+              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/yarn.lock">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="3745" column="61" selection-start-line="3745" selection-start-column="54" selection-end-line="3745" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -88,6 +98,8 @@
       <find>#reservation_form-&lt;%= @reservation.id %&gt;</find>
       <find>new-reservation-placeholder</find>
       <find>placeholder</find>
+      <find>js-y</find>
+      <find>handleb</find>
     </findStrings>
     <replaceStrings>
       <replace>@browser.link(</replace>
@@ -171,7 +183,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,62 +191,11 @@
               <item name="innovation_arts_martiaux_reservation_tracker" type="b2602c69:ProjectViewProjectNode" />
               <item name="innovation_arts_martiaux_reservation_tracker" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="innovation_arts_martiaux_reservation_tracker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="innovation_arts_martiaux_reservation_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="innovation_arts_martiaux_reservation_tracker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="innovation_arts_martiaux_reservation_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="innovation_arts_martiaux_reservation_tracker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="innovation_arts_martiaux_reservation_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="webpacker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="innovation_arts_martiaux_reservation_tracker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="innovation_arts_martiaux_reservation_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="webpacker" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="innovation_arts_martiaux_reservation_tracker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="innovation_arts_martiaux_reservation_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="webpacker" type="462c0819:PsiDirectoryNode" />
-              <item name="packs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="innovation_arts_martiaux_reservation_tracker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="innovation_arts_martiaux_reservation_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="innovation_arts_martiaux_reservation_tracker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="innovation_arts_martiaux_reservation_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="innovation_arts_martiaux_reservation_tracker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="innovation_arts_martiaux_reservation_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="webpack" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,7 +370,8 @@
       <workItem from="1555160610125" duration="3830000" />
       <workItem from="1555628765622" duration="7997000" />
       <workItem from="1557662758010" duration="1532000" />
-      <workItem from="1562638650781" duration="2463000" />
+      <workItem from="1562638650781" duration="3933000" />
+      <workItem from="1562762633764" duration="1185000" />
     </task>
     <task id="LOCAL-00001" summary="Added CRUD create to reservations">
       <created>1554812089759</created>
@@ -432,33 +394,39 @@
       <option name="project" value="LOCAL" />
       <updated>1562671496184</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updating production DB credentials">
+      <created>1562671948925</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562671948925</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98864000" />
+    <option name="totallyTimeSpent" value="101519000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="3008" height="1589" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="3840" height="2057" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23229939" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23354398" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3988304" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32971507" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32926208" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49898854" visible="true" weight="0.53306615" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49898854" weight="0.53306615" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010115" side_tool="true" weight="0.4742819" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32923833" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32982457" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.49898854" weight="0.4742819" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.49898854" visible="true" weight="0.47379136" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -497,14 +465,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="updating production DB credentials" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/webpacker/src/stylesheets/styles.scss" />
-    <entry file="file://$PROJECT_DIR$/node_modules/webpack/lib/NormalModuleFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="69" column="49" lean-forward="true" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/async/dist/async.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -778,22 +738,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/webpacker/packs/styles.scss">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.ruby-version">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
@@ -802,10 +748,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.ruby-version">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="774" column="86" lean-forward="true" selection-start-line="774" selection-start-column="86" selection-end-line="774" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+        <state relative-caret-position="435">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yarn.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="3745" column="61" selection-start-line="3745" selection-start-column="54" selection-end-line="3745" selection-end-column="61" />
         </state>
       </provider>
     </entry>
