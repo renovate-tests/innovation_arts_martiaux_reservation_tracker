@@ -1,6 +1,6 @@
 {
-  "application.css": "/packs/css/application-5523121f.css",
-  "application.css.map": "/packs/css/application-5523121f.css.map",
+  "application.css": "/packs/css/application-40987174.css",
+  "application.css.map": "/packs/css/application-40987174.css.map",
   "application.js": "/packs/js/application-b2693d7d53e72cc9cdf1.js",
   "application.js.map": "/packs/js/application-b2693d7d53e72cc9cdf1.js.map",
   "bg-iam.js": "/packs/js/bg-iam-8d58d64b5024048906dd.js",
@@ -8,13 +8,13 @@
   "entrypoints": {
     "application": {
       "css": [
-        "/packs/css/application-5523121f.css"
+        "/packs/css/application-40987174.css"
       ],
       "js": [
         "/packs/js/application-b2693d7d53e72cc9cdf1.js"
       ],
       "css.map": [
-        "/packs/css/application-5523121f.css.map"
+        "/packs/css/application-40987174.css.map"
       ],
       "js.map": [
         "/packs/js/application-b2693d7d53e72cc9cdf1.js.map"
@@ -46,13 +46,13 @@
     },
     "styles": {
       "css": [
-        "/packs/css/styles-5523121f.css"
+        "/packs/css/styles-40987174.css"
       ],
       "js": [
         "/packs/js/styles-4021b1d2b294861c7953.js"
       ],
       "css.map": [
-        "/packs/css/styles-5523121f.css.map"
+        "/packs/css/styles-40987174.css.map"
       ],
       "js.map": [
         "/packs/js/styles-4021b1d2b294861c7953.js.map"
@@ -66,8 +66,8 @@
   "media/images/bg-iam.jpg": "/packs/media/images/bg-iam-dca33685e8a101eff24232599984a6ed.jpg",
   "media/packs/bg-iam.jpg": "/packs/media/packs/bg-iam-dca33685e8a101eff24232599984a6ed.jpg",
   "media/packs/images/bg-iam.jpg": "/packs/media/packs/images/bg-iam-dca33685e8a101eff24232599984a6ed.jpg",
-  "styles.css": "/packs/css/styles-5523121f.css",
-  "styles.css.map": "/packs/css/styles-5523121f.css.map",
+  "styles.css": "/packs/css/styles-40987174.css",
+  "styles.css.map": "/packs/css/styles-40987174.css.map",
   "styles.js": "/packs/js/styles-4021b1d2b294861c7953.js",
   "styles.js.map": "/packs/js/styles-4021b1d2b294861c7953.js.map"
 }
